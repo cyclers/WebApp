@@ -9,6 +9,7 @@ import { PersonnelSidebarComponent } from './pdm/components/browse/personnel-sid
 import { PersonnelTableComponent } from './pdm/components/browse/personnel-table/personnel-table.component';
 import { HomeComponent } from './home/home.component';
 import { routeConfig } from './router-config';
+import { PdmComponent } from './pdm/pdm.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { routeConfig } from './router-config';
     PersonnelListComponent,
     PersonnelSidebarComponent,
     PersonnelTableComponent,
-    HomeComponent
+    HomeComponent,
+    PdmComponent
   ],
   imports: [
     BrowserModule,
