@@ -10,6 +10,9 @@ import { PersonnelTableComponent } from './pdm/components/browse/personnel-table
 import { HomeComponent } from './home/home.component';
 import { routeConfig } from './router-config';
 import { PdmComponent } from './pdm/pdm.component';
+import { NavbarComponent } from './layout/navbar/navbar.component';
+import { TopbarComponent } from './layout/wrapper/topbar/topbar.component';
+import { FooterComponent } from './layout/wrapper/footer/footer.component';
 
 
 @NgModule({
@@ -20,7 +23,10 @@ import { PdmComponent } from './pdm/pdm.component';
     PersonnelSidebarComponent,
     PersonnelTableComponent,
     HomeComponent,
-    PdmComponent
+    PdmComponent,
+    NavbarComponent,
+    TopbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
