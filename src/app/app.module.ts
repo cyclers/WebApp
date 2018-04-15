@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router'
-
+import { HttpModule } from '@angular/http';
+import { PersonService } from './person.service'
 import { AppComponent } from './app.component';
 import { BrowseComponent } from './pdm/components/browse/browse.component';
 import { PersonnelListComponent } from './pdm/components/browse/personnel-list/personnel-list.component';
@@ -30,9 +31,10 @@ import { FooterComponent } from './layout/wrapper/footer/footer.component';
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routeConfig)
+    RouterModule.forRoot(routeConfig),
+    HttpModule
   ],
-  providers: [],
+  providers: [PersonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
