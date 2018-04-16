@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BrowseVM } from '../personnel-table/personnel-table.component';
 
 
 @Component({
@@ -10,8 +11,8 @@ export class PersonnelSidebarComponent implements OnInit {
 
 
 
-  openSidebar: boolean = true
-  staff: number
+  openSidebar: boolean = false
+  staff: BrowseVM
   constructor() {   }
 
   ngOnInit() {
@@ -20,12 +21,12 @@ export class PersonnelSidebarComponent implements OnInit {
 
 
   setClasses() {
-
-    this.openSidebar = !this.openSidebar
+    
     if (this.openSidebar) {
       let classes = { 'animated sidebar-open': this.openSidebar }
       return classes
-    } else {
+    } 
+    else {
       let classes = { 'animated': !this.openSidebar }
       return classes
     }

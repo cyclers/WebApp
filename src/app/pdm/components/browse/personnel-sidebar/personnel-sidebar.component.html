@@ -1,25 +1,47 @@
 <!-- <a (click)="setClasses()" >x</a> -->
 <!-- class="animated" -->
-<div id="right-sidebar" [ngClass]="setClasses()" >
-    <h3>{{staff }}</h3>
+<div id="right-sidebar"  [ngClass]="setClasses()" >
+    <h3>{{staff.PersonnelID }}</h3>
+
+
+
+
     <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 100%;"><div class="sidebar-container" style="overflow: hidden; width: auto; height: 100%;">
 
+        
         <ul class="nav nav-tabs navs-3">
 
             <li class="active"><a data-toggle="tab" href="#tab-1" aria-expanded="true">
-                Notes
+                Basic
             </a></li>
             <li class=""><a data-toggle="tab" href="#tab-2" aria-expanded="false">
-                Projects
+                Org
             </a></li>
+
             <li class=""><a data-toggle="tab" href="#tab-3" aria-expanded="false">
-                <i class="fa fa-gear"></i>
+                    Connect
+                <!-- <i class="fa fa-gear"></i> -->
             </a></li>
         </ul>
 
         <div class="tab-content">
 
-
+                <div class="sidebar-message">
+                        <a href="#">
+                            <div class="pull-left text-center">
+                                <img alt="image" class="img-circle message-avatar" src="../../../../../assets/img/a6.jpg">
+            
+                            </div>
+                            <div class="media-body">
+                                <!-- <div>Name: {{ staff.Name }} </div> -->
+                                <!-- <div>Name: {{ staff.Title }} </div> -->
+                                
+                                
+                                <br>
+                                
+                            </div>
+                        </a>
+                    </div>
             <div id="tab-1" class="tab-pane active">
 
                 <div class="sidebar-title">
