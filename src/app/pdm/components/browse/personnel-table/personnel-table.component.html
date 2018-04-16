@@ -1,3 +1,4 @@
+<app-personnel-sidebar></app-personnel-sidebar>
 <br>
 
 <div class="row">
@@ -97,7 +98,7 @@
             </thead>
 
             <tbody>
-                    <tr *ngFor="let person of Persons" class="gradeX">
+                    <tr *ngFor="let person of Persons; let i = index" class="gradeX" (click)="setClasses(person.PersonnelID)" (dblclick)="setClasses('toggle')">
                         <td>{{person.PersonnelID }}</td>
                         <td>{{person.Name }}</td>
                         <td>{{person.HiringDate | date: 'shortDate' }}</td>

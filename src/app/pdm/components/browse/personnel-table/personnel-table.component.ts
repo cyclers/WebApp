@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Http } from '@angular/http'
 import { Observable } from 'rxjs/Observable';
 import { PersonService } from '../../../../person.service';
+import { PersonnelSidebarComponent } from '../personnel-sidebar/personnel-sidebar.component';
 
 @Component({
   selector: 'app-personnel-table',
@@ -11,6 +12,10 @@ import { PersonService } from '../../../../person.service';
 export class PersonnelTableComponent implements OnInit {
 
   Persons: BrowseVM[]
+  selectedRow: number
+
+  @ViewChild(PersonnelSidebarComponent) private sidebar: PersonnelSidebarComponent
+  
   constructor(private personService: PersonService) { 
 
           
@@ -23,6 +28,14 @@ export class PersonnelTableComponent implements OnInit {
           
   }
 
+  setClasses(rowNo: any){
+    if(rowNo == 'toggle'){
+      this.sidebar.setClasses()
+    } else {
+      this.sidebar.staff = rowNo
+    }
+
+  }
 
 }
 
