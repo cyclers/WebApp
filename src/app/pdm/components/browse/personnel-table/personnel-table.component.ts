@@ -30,7 +30,7 @@ export class PersonnelTableComponent implements OnInit {
     if(rowNo == 'toggle'){
       this.sidebar.openSidebar = !this.sidebar.openSidebar
     } else {
-      this.sidebar.staff = this.Persons[rowNo]
+      this.sidebar.staff = this.Persons[rowNo -1]
     }}
 
 }
