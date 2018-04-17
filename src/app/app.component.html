@@ -1,12 +1,17 @@
-
 <div id="wrapper">
-    <app-navbar></app-navbar>
-    <div id="page-wrapper" class="gray-bg">
+  <app-navbar></app-navbar>
+  <div id="page-wrapper" class="gray-bg">
 
-        <app-topbar></app-topbar>
-        <router-outlet></router-outlet>
-        <app-footer></app-footer>
+    <app-topbar></app-topbar>
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+    <h2>
+      {{title}}
+    </h2>
+    <button>Start Animation</button>
 
-    </div>
+    <p style="border:1px solid #555;border-radius:3px;color:white;background:#555;height:105px;width:260px;position:relative; margin-top:10px">jQuery</p>
+
+  </div>
 
 </div>
