@@ -16,6 +16,8 @@ import { TopbarComponent } from './layout/wrapper/topbar/topbar.component';
 import { FooterComponent } from './layout/wrapper/footer/footer.component';
 import { MaintainComponent } from './pdm/components/maintain/maintain.component';
 import { TestAreaComponent } from './home/test-area/test-area.component';
+import { ActionsComponent } from './pdm/components/maintain/infopages/actions/actions.component';
+import { OrgassignComponent } from './pdm/components/maintain/infopages/orgassign/orgassign.component';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { TestAreaComponent } from './home/test-area/test-area.component';
     TopbarComponent,
     FooterComponent,
     MaintainComponent,
-    TestAreaComponent
+    TestAreaComponent,
+    ActionsComponent,
+    OrgassignComponent
   ],
   imports: [
     BrowserModule,
