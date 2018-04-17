@@ -16,10 +16,7 @@ export class PersonnelTableComponent implements OnInit {
 
   @ViewChild(PersonnelSidebarComponent) private sidebar: PersonnelSidebarComponent
   
-  constructor(private personService: PersonService) { 
-
-          
-  }
+  constructor(private personService: PersonService) { }
     
 
   ngOnInit() {
@@ -29,13 +26,12 @@ export class PersonnelTableComponent implements OnInit {
   }
 
   setClasses(rowNo: any){
-    if(rowNo == 'toggle'){
-      this.sidebar.setClasses()
-    } else {
-      this.sidebar.staff = rowNo
-    }
 
-  }
+    if(rowNo == 'toggle'){
+      this.sidebar.openSidebar = !this.sidebar.openSidebar
+    } else {
+      this.sidebar.staff = this.Persons[rowNo -1]
+    }}
 
 }
 
