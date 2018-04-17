@@ -15,6 +15,7 @@ import { NavbarComponent } from './layout/navbar/navbar.component';
 import { TopbarComponent } from './layout/wrapper/topbar/topbar.component';
 import { FooterComponent } from './layout/wrapper/footer/footer.component';
 import { MaintainComponent } from './pdm/components/maintain/maintain.component';
+import { TestAreaComponent } from './home/test-area/test-area.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { MaintainComponent } from './pdm/components/maintain/maintain.component'
     NavbarComponent,
     TopbarComponent,
     FooterComponent,
-    MaintainComponent
+    MaintainComponent,
+    TestAreaComponent
   ],
   imports: [
     BrowserModule,
