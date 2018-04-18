@@ -7,7 +7,7 @@ import { PdmService } from '../../../../../services/pdm.service';
   styles: []
 })
 export class AwardsComponent implements OnInit {
-  Awards
+  Awards: Awards
 
   constructor(private pdmService: PdmService) { }
 
@@ -22,4 +22,13 @@ export class AwardsComponent implements OnInit {
     })
     }
     
+}
+
+interface Awards {
+  "id": any
+  "StaffId":any
+  "AwardType": any
+  "TargetBonus": any
+  "Currency": any
+  "Percentage": any
 }

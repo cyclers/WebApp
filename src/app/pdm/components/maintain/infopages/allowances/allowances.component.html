@@ -3,9 +3,9 @@
   <div class="col-sm-6 b-r"><h3 class="m-t-none m-b">Recurring Allowances
       </h3>
   <form role="form">
-          <div class="form-group">Wage Type <input class="form-control"></div>
-          <div class="form-group">Amount <input class="form-control"></div>
-          <div class="form-group">Currency <input class="form-control"></div>
+          <div class="form-group">Wage Type <input  [(ngModel)]="Allowances.WageType" [ngModelOptions]="{standalone: true}" class="form-control"></div>
+          <div class="form-group">Amount <input  [(ngModel)]="Allowances.Amount" [ngModelOptions]="{standalone: true}"class="form-control"></div>
+          <div class="form-group">Currency <input  [(ngModel)]="Allowances.Currency" [ngModelOptions]="{standalone: true}"class="form-control"></div>
           
   
   </form>

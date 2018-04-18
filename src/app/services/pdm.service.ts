@@ -20,17 +20,13 @@ export class PdmService {
     
   }
 
-  LoadPersonal(suffix: string): Observable<PersonalVM>{
+  loadStaffRecord(suffix: string): Observable<any>{
     return this.http.get('https://5ad281c4df04690014938bea.mockapi.io/api/' + suffix)
     .map(res => res.json());
      
    }
 
-   LoadAddress(suffix: string): Observable<Address>{
-    return this.http.get('https://5ad281c4df04690014938bea.mockapi.io/api/' + suffix)
-    .map(res => res.json());
-     
-   }
+
 
 
 

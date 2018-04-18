@@ -8,7 +8,7 @@ import { PdmService } from '../../../../../services/pdm.service';
 })
 export class PreviousComponent implements OnInit {
 
-  PreviousEmployers
+  PreviousEmployers: Employer
 
   constructor(private pdmService: PdmService) { }
 
@@ -16,10 +16,20 @@ export class PreviousComponent implements OnInit {
   }
 
   loadInfoPagePreviousEmployers(id) {
-    this.pdmService.loadStaffRecord('Staff/' +id + '/Personal/' + id)
+    this.pdmService.loadStaffRecord('Staff/' +id + '/PreviousEmployers/' + id)
       .subscribe(data => {
       this.PreviousEmployers = data
         console.log(data)
       })
   }
+}
+
+interface Employer {
+  "EmpID": any
+  "StaffId": any
+  "Employer": any
+  "StartDate": any
+  "EndDate": any
+  "Country": any
+  "JobTitle": any
 }

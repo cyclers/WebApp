@@ -3,10 +3,9 @@
   <div class="col-sm-6 b-r"><h3 class="m-t-none m-b">Family Members
       </h3>
   <form role="form">
-          <div class="form-group">Member Name <input class="form-control"></div>
-          <div class="form-group">Relationship <input class="form-control"></div>
-          <div class="form-group">First Name <input class="form-control"></div>
-          
+          <div class="form-group">Member Name <input  [(ngModel)]="Family.MemberName" [ngModelOptions]="{standalone: true}" class="form-control"></div>
+          <div class="form-group">Relationship <input  [(ngModel)]="Family.Relationship" [ngModelOptions]="{standalone: true}" class="form-control"></div>
+
   
   </form>
   

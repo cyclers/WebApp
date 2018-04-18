@@ -8,7 +8,7 @@ import { PdmService } from '../../../../../services/pdm.service';
 })
 export class GeneralinfoComponent implements OnInit {
 
-  GeneralInfo
+  GeneralInfo: General
 
   constructor(private pdmService: PdmService) { }
 
@@ -16,10 +16,19 @@ export class GeneralinfoComponent implements OnInit {
   }
 
   loadInfoPageGeneralInfo(id) {
-    this.pdmService.loadStaffRecord('Staff/' +id + '/Personal/' + id)
+    this.pdmService.loadStaffRecord('Staff/' +id + '/General/' + id)
       .subscribe(data => {
       this.GeneralInfo = data
         console.log(data)
       })
   }
+}
+
+interface General {
+
+  "id": any
+  "StaffId": any
+  "createdAt":any
+  "name": any
+  "imageUrl": any
 }

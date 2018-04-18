@@ -19,7 +19,7 @@ export class AddressComponent implements OnInit {
 
 
   loadInfoPageAddress(id: number){
-    this.pdmService.LoadAddress('Staff/' +id + '/Addresses/' + id)
+    this.pdmService.loadStaffRecord('Staff/' +id + '/Addresses/' + id)
     .subscribe(data => {this.Addresses = data
    
     })
@@ -45,6 +45,5 @@ export interface Address {
   EmergencyName2: string;
   Relationship2: string;
   Phone2: string;
-  
   
 }

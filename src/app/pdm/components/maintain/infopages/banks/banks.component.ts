@@ -7,7 +7,7 @@ import { PdmService } from '../../../../../services/pdm.service';
   styles: []
 })
 export class BanksComponent implements OnInit {
-  Banks
+  Banks:Bank
 
   constructor(private pdmService: PdmService) { }
 
@@ -16,10 +16,21 @@ export class BanksComponent implements OnInit {
   }
 
   loadInfoPageBanks(id){
-    this.pdmService.loadStaffRecord('Staff/' +id + '/Personal/' + id)
+    this.pdmService.loadStaffRecord('Staff/' +id + '/Banks/' + id)
     .subscribe(data => {this.Banks = data
     console.log(data)
     })
     }
     
+}
+
+interface Bank {
+  "EmpID": any
+  "StaffId": any
+  "BankCountry": any
+  "BranchName": any
+  "BranchCode": any
+  "BankKey": any
+  "AccountNo": any
+  "Currency": any
 }

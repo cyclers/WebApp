@@ -9,17 +9,27 @@ import { PdmService } from '../../../../../services/pdm.service';
 export class ActionsComponent implements OnInit {
 
   constructor(private pdmService: PdmService) { }
-  Actions
+  Actions: Actions
 
   ngOnInit() {
   }
 
   loadInfoPageActions(id: number){
-    this.pdmService.loadStaffRecord('Staff/' +id + '/Personal/' + id)
+    this.pdmService.loadStaffRecord('Staff/' +id + '/Actions/' + id)
     .subscribe(data => {this.Actions = data
     console.log(data)
     })
     }
     
     
+}
+
+interface Actions {
+  "EmpId": any
+  "browseId": any
+  "ActionType": any
+  "ActionReason": any
+  "TerminationReason":any
+  "EmploymentStatus": any
+  "ActionCode": any
 }

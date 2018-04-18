@@ -7,7 +7,7 @@ import { PdmService } from '../../../../../services/pdm.service';
   styles: []
 })
 export class AllowancesComponent implements OnInit {
-  Allowances
+  Allowances: Allowance
 
   constructor(private pdmService: PdmService) { }
 
@@ -22,4 +22,12 @@ export class AllowancesComponent implements OnInit {
     })
     }
     
+}
+
+interface Allowance {
+  "id": any
+  "StaffId": any
+  "WageType": any
+  "Amount": any
+  "Currency": any
 }

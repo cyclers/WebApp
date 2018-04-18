@@ -7,7 +7,7 @@ import { PdmService } from '../../../../../services/pdm.service';
   styles: []
 })
 export class BasicpayComponent implements OnInit {
-  BasicPay
+  BasicPay: BasicPay
 
   constructor(private pdmService: PdmService) { }
 
@@ -23,4 +23,13 @@ export class BasicpayComponent implements OnInit {
   }
 }
   
+interface BasicPay {
+  "id": any
+  "StaffId": any
+  "Reason": any
+  "Grade": any
+  "PayPeriod": any
+  "MonthlySalary": any
+  "Amount": any
+  "Currency": any
 }
