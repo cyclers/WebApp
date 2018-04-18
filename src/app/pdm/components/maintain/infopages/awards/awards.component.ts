@@ -2,24 +2,24 @@ import { Component, OnInit } from '@angular/core';
 import { PdmService } from '../../../../../services/pdm.service';
 
 @Component({
-  selector: 'app-actions',
-  templateUrl: './actions.component.html',
+  selector: 'app-awards',
+  templateUrl: './awards.component.html',
   styles: []
 })
-export class ActionsComponent implements OnInit {
+export class AwardsComponent implements OnInit {
+  Awards
 
   constructor(private pdmService: PdmService) { }
-  Actions
+
 
   ngOnInit() {
   }
 
-  loadInfoPageActions(id: number){
+  loadInfoPageAwards(id){
     this.pdmService.loadStaffRecord('Staff/' +id + '/Personal/' + id)
-    .subscribe(data => {this.Actions = data
+    .subscribe(data => {this.Awards = data
     console.log(data)
     })
     }
-    
     
 }

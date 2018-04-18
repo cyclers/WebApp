@@ -2,24 +2,25 @@ import { Component, OnInit } from '@angular/core';
 import { PdmService } from '../../../../../services/pdm.service';
 
 @Component({
-  selector: 'app-orgassign',
-  templateUrl: './orgassign.component.html',
+  selector: 'app-datemilestones',
+  templateUrl: './datemilestones.component.html',
   styles: []
 })
-export class OrgassignComponent implements OnInit {
+export class DatemilestonesComponent implements OnInit {
 
-  OrgAssign
+  DateMilestones
 
   constructor(private pdmService: PdmService) { }
 
   ngOnInit() {
   }
 
-  loadInfoPageOrgAssign(id) {
+  loadInfoPageDateMilestones(id) {
     this.pdmService.loadStaffRecord('Staff/' +id + '/Personal/' + id)
       .subscribe(data => {
-      this.OrgAssign = data
+      this.DateMilestones = data
         console.log(data)
       })
   }
 }
+

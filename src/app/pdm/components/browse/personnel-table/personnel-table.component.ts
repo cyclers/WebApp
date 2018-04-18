@@ -1,8 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Http } from '@angular/http'
 import { Observable } from 'rxjs/Observable';
-import { PersonService } from '../../../../person.service';
+
 import { PersonnelSidebarComponent } from '../personnel-sidebar/personnel-sidebar.component';
+import { PdmService } from '../../../../services/pdm.service';
+
 
 @Component({
   selector: 'app-personnel-table',
@@ -16,7 +18,7 @@ export class PersonnelTableComponent implements OnInit {
 
   @ViewChild(PersonnelSidebarComponent) private sidebar: PersonnelSidebarComponent
   
-  constructor(private personService: PersonService) { }
+  constructor(private personService: PdmService) { }
     
 
   ngOnInit() {
