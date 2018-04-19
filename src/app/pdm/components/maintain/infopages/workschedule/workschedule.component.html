@@ -3,11 +3,11 @@
   <div class="col-sm-6 b-r"><h3 class="m-t-none m-b">Work Schedule Rule
       </h3>
   <form role="form">
-          <div class="form-group">Work Schedule Rule <input class="form-control"></div>
-          <div class="form-group">Part-Time Employee <input class="form-control"></div>
-          <div class="form-group">Weekly Working Hrs. <input class="form-control"></div>
-          <div class="form-group">Monthly Working Hrs. <input class="form-control"></div>
-          <div class="form-group">Shift-based? <input class="form-control"></div>
+          <div class="form-group">Work Schedule Rule <input [(ngModel)]="WorkSchedules && WorkSchedules.WorkScheduleRule" [ngModelOptions]="{standalone: true}" class="form-control"></div>
+          <div class="form-group">Part-Time Employee <input [(ngModel)]="WorkSchedules && WorkSchedules.PartTimeEmployee" [ngModelOptions]="{standalone: true}" class="form-control"></div>
+          <div class="form-group">Weekly Working Hrs. <input [(ngModel)]="WorkSchedules && WorkSchedules.WeeklyWorkingHrs" [ngModelOptions]="{standalone: true}" class="form-control"></div>
+          <div class="form-group">Monthly Working Hrs. <input [(ngModel)]="WorkSchedules && WorkSchedules.MonthlyWorkingHrs" [ngModelOptions]="{standalone: true}" class="form-control"></div>
+          <div class="form-group">Shift-based? <input [(ngModel)]="WorkSchedules && WorkSchedules.Shiftbased" [ngModelOptions]="{standalone: true}" class="form-control"></div>
           
   
   </form>

@@ -8,7 +8,7 @@ import { PdmService } from '../../../../../services/pdm.service';
 })
 export class LicensesComponent implements OnInit {
 
-  Licenses
+  licenses : Licenses
 
   constructor(private pdmService: PdmService) { }
 
@@ -16,7 +16,15 @@ export class LicensesComponent implements OnInit {
   }
 
   loadInfoPageLicenses(id) {
-    this.pdmService.loadStaffRecord('Staff/' +id + '/Personal/' + id)
-      .subscribe(data => this.Licenses = data)
+    this.pdmService.loadStaffRecord('Staff/' +id + '/Licenses/' + id)
+      .subscribe(data => this.licenses = data)
   }
 }
+  export interface Licenses {
+    "LicenseType": any
+    "LicenseName": any
+    "IssueDate": any
+    "ExpirationDate": any
+      "IssueInstitute" : any
+      "EntityCountry" : any
+  }

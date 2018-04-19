@@ -5,6 +5,8 @@ import { RouterModule } from '@angular/router'
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms'
 
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 import { PdmService } from './services/pdm.service';
 import { AppComponent } from './app.component';
 import { BrowseComponent } from './pdm/components/browse/browse.component';
@@ -77,6 +79,7 @@ import { GeneralinfoComponent } from './pdm/components/maintain/infopages/genera
   imports: [
     BrowserModule,
     RouterModule.forRoot(routeConfig),
+    NgbModule.forRoot(),
     // HttpModule, 
     FormsModule, HttpClientModule
   ],

@@ -16,7 +16,7 @@ export class AllowancesComponent implements OnInit {
   }
 
   loadInfoPageAllowances(id){
-    this.pdmService.loadStaffRecord('Staff/' +id + '/Personal/' + id)
+    this.pdmService.loadStaffRecord('Staff/' +id + '/Allowance/' + id)
     .subscribe(data => this.Allowances = data)
     }
     
