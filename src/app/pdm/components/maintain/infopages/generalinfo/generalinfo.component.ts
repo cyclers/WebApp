@@ -18,10 +18,7 @@ export class GeneralinfoComponent implements OnInit {
 
   loadInfoPageGeneralInfo(id) {
     this.pdmService.loadStaffRecord('Staff/' +id + '/General/' + id)
-      .subscribe(data => { console.log('heeeeeeeeeey',data)
-      this.GeneralInfo = data
-        
-      })
+      .subscribe(data => this.GeneralInfo = data)
   }
 }
 

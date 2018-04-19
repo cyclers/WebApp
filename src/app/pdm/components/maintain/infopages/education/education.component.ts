@@ -17,10 +17,7 @@ export class EducationComponent implements OnInit {
 
   loadInfoPageEducation(id) {
     this.pdmService.loadStaffRecord('Staff/' +id + '/Personal/' + id)
-      .subscribe(data => {
-      this.Education = data
-        console.log(data)
-      })
+      .subscribe(data => this.Education = data)
   }
 }
 

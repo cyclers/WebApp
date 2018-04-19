@@ -27,8 +27,7 @@ export class PersonnelTableComponent implements OnInit {
 
   getData():void{
     this.personService.loadUserData()
-          .subscribe(allData => {this.Persons = allData
-          console.log(allData)})
+          .subscribe(allData => this.Persons = allData)
         
   }
 

@@ -53,7 +53,6 @@ export class MaintainComponent implements OnInit {
 
   enteredId(id: number){
     this.id = id
-    // console.log("bbbbbbbbbbbbbb",id)
     this.loadTab(this.tabId)
   }
 

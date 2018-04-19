@@ -16,9 +16,7 @@ export class ActionsComponent implements OnInit {
 
   loadInfoPageActions(id: number){
     this.pdmService.loadStaffRecord('Staff/' +id + '/Actions/' + id)
-    .subscribe(data => {this.Actions = data
-    console.log(data)
-    })
+    .subscribe(data => this.Actions = data)
     }
     
     

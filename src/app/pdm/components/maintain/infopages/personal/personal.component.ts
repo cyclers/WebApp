@@ -17,8 +17,6 @@ export class PersonalComponent implements OnInit {
 
   loadInfoPagePersonal(id){
     this.pdmService.loadStaffRecord('Staff/' +id + '/Personal/' + id)
-    .subscribe(data => {this.Personal = data
-    // console.log(data)
-    })
+    .subscribe(data => this.Personal = data)
   }
 }

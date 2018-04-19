@@ -13,34 +13,17 @@ import { Actions } from '../pdm/components/maintain/infopages/actions/actions.co
 @Injectable()
 export class PdmService {
 
-  constructor(private http: HttpClient) { 
-
-          
-  }
+  constructor(private http: HttpClient) { }
     
   loadUserData(): Observable<BrowseVM[]>{
    return this.http.get<BrowseVM[]>('https://5ad281c4df04690014938bea.mockapi.io/api/browse')
-  //  .map(res => res.json());
-  // .subscribe(data => console.log('xxxxxxxkj', data))
-    
-  }
+    }
 
   loadStaffRecord(suffix: string): Observable<any>{
     return this.http.get<any>('https://5ad281c4df04690014938bea.mockapi.io/api/' + suffix)
-    // .map(res => res.json());
-     
-
-
  
    }
 
-
-
-   commonHttpHeaders(suffix: number) {
-    const headers = new Headers();
-    // headers.append('USERID',suffix.toString());
-    headers.append('Content-Type', 'application/json; charset=utf-8');
-    return {headers};
 } 
 
 

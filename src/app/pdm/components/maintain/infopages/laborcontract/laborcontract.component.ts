@@ -17,9 +17,6 @@ export class LaborcontractComponent implements OnInit {
 
   loadInfoPageLaborContract(id) {
     this.pdmService.loadStaffRecord('Staff/' +id + '/Personal/' + id)
-      .subscribe(data => {
-      this.LaborContract = data
-        console.log(data)
-      })
+      .subscribe(data => this.LaborContract = data)
   }
 }

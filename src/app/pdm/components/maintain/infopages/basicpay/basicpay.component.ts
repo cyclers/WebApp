@@ -16,10 +16,7 @@ export class BasicpayComponent implements OnInit {
 
   loadInfoPageBasicPay(id) {
     this.pdmService.loadStaffRecord('Staff/' +id + '/Personal/' + id)
-      .subscribe(data => {
-      this.BasicPay = data
-        console.log(data)
-      })
+      .subscribe(data => this.BasicPay = data)
   }
 }
   

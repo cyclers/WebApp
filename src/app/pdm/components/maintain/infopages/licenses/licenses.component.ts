@@ -17,9 +17,6 @@ export class LicensesComponent implements OnInit {
 
   loadInfoPageLicenses(id) {
     this.pdmService.loadStaffRecord('Staff/' +id + '/Personal/' + id)
-      .subscribe(data => {
-      this.Licenses = data
-        console.log(data)
-      })
+      .subscribe(data => this.Licenses = data)
   }
 }

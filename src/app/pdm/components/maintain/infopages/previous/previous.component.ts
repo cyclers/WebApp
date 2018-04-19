@@ -17,10 +17,7 @@ export class PreviousComponent implements OnInit {
 
   loadInfoPagePreviousEmployers(id) {
     this.pdmService.loadStaffRecord('Staff/' +id + '/PreviousEmployers/' + id)
-      .subscribe(data => {
-      this.PreviousEmployers = data
-        console.log(data)
-      })
+      .subscribe(data => this.PreviousEmployers = data)
   }
 }
 
