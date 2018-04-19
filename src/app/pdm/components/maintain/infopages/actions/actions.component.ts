@@ -24,7 +24,7 @@ export class ActionsComponent implements OnInit {
     
 }
 
-interface Actions {
+export interface Actions {
   "EmpId": any
   "browseId": any
   "ActionType": any

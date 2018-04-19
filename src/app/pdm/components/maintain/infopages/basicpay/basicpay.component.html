@@ -3,12 +3,12 @@
   <div class="col-sm-6 b-r"><h3 class="m-t-none m-b">Wage Details
       </h3>
   <form role="form">
-          <div class="form-group">Reason <input [(ngModel)]="BasicPay.Reason" [ngModelOptions]="{standalone: true}" class="form-control"></div>
-          <div class="form-group">Grade <input [(ngModel)]="BasicPay.Grade" [ngModelOptions]="{standalone: true}" class="form-control"></div>
-          <div class="form-group">Pay Period <input [(ngModel)]="BasicPay.PayPeriod" [ngModelOptions]="{standalone: true}" class="form-control"></div>
-          <div class="form-group">Monthly Salary <input [(ngModel)]="BasicPay.MonthlySalary" [ngModelOptions]="{standalone: true}" class="form-control"></div>
-          <div class="form-group"> Amount <input [(ngModel)]="BasicPay.Amount" [ngModelOptions]="{standalone: true}" class="form-control"></div>
-          <div class="form-group">Currency <input [(ngModel)]="BasicPay.Currency" [ngModelOptions]="{standalone: true}" class="form-control"></div>
+          <div class="form-group">Reason <input [(ngModel)]="BasicPay && BasicPay.Reason" [ngModelOptions]="{standalone: true}" class="form-control"></div>
+          <div class="form-group">Grade <input [(ngModel)]="BasicPay && BasicPay.Grade" [ngModelOptions]="{standalone: true}" class="form-control"></div>
+          <div class="form-group">Pay Period <input [(ngModel)]="BasicPay && BasicPay.PayPeriod" [ngModelOptions]="{standalone: true}" class="form-control"></div>
+          <div class="form-group">Monthly Salary <input [(ngModel)]="BasicPay && BasicPay.MonthlySalary" [ngModelOptions]="{standalone: true}" class="form-control"></div>
+          <div class="form-group"> Amount <input [(ngModel)]="BasicPay && BasicPay.Amount" [ngModelOptions]="{standalone: true}" class="form-control"></div>
+          <div class="form-group">Currency <input [(ngModel)]="BasicPay && BasicPay.Currency" [ngModelOptions]="{standalone: true}" class="form-control"></div>
           
   
   </form>

@@ -12,9 +12,9 @@
 
                 </div>
                 <div class="media-body">
-                    <div>Name: {{ staff.Name }} </div>
-                    <div>Division: {{staff.Division }} </div>
-                    <div>Title: {{ staff.Title }} </div>
+                    <div>Name: {{ staff?.Name }} </div>
+                    <div>Division: {{staff?.Division }} </div>
+                    <div>Title: {{ staff?.Title }} </div>
                     
                     
                     <br>
@@ -49,10 +49,10 @@
                     <i class="fa fa-tim"></i> You have 10 new message.
                 </div>
 
-                <div>Hiring Date: {{ staff.HiringDate }} </div>
-                <div>Cost Center: {{ staff.Costcenter }} </div>
-                <div>Status: {{ staff.EmploymentStatus }} </div>
-                <div>Exit Date: {{ staff.EndDate }} </div>
+                <div>Hiring Date: {{ staff?.HiringDate }} </div>
+                <div>Cost Center: {{ staff?.Costcenter }} </div>
+                <div>Status: {{ staff?.EmploymentStatus }} </div>
+                <div>Exit Date: {{ staff?.EndDate }} </div>
 
             </div>
 
@@ -62,9 +62,9 @@
                     <i class="fa fa-tim"></i> You have 14 projects. 10 not completed.
                 </div>
                 
-                <div>Division: {{staff.Division }} </div>
-                <div>Department: {{ staff.Department }} </div>
-                <div>Business Unit: {{ staff.BU }} </div>
+                <div>Division: {{staff?.Division }} </div>
+                <div>Department: {{ staff?.Department }} </div>
+                <div>Business Unit: {{ staff?.BU }} </div>
 
             </div>
 

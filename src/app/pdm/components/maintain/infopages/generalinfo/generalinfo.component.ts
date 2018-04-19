@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PdmService } from '../../../../../services/pdm.service';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-generalinfo',
@@ -17,14 +18,14 @@ export class GeneralinfoComponent implements OnInit {
 
   loadInfoPageGeneralInfo(id) {
     this.pdmService.loadStaffRecord('Staff/' +id + '/General/' + id)
-      .subscribe(data => {
+      .subscribe(data => { console.log('heeeeeeeeeey',data)
       this.GeneralInfo = data
-        console.log(data)
+        
       })
   }
 }
 
-interface General {
+export interface General {
 
   "id": any
   "StaffId": any

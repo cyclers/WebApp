@@ -3,11 +3,11 @@
   <div class="col-sm-6 b-r"><h3 class="m-t-none m-b">Previous Employers
       </h3>
   <form role="form">
-          <div class="form-group">Employer <input  [(ngModel)]="PreviousEmployers.Employer" [ngModelOptions]="{standalone: true}" class="form-control"></div>
-          <div class="form-group">Start Date <input [(ngModel)]="PreviousEmployers.StartDate" [ngModelOptions]="{standalone: true}"  class="form-control"></div>
-          <div class="form-group">End Date <input  [(ngModel)]="PreviousEmployers.EndDate" [ngModelOptions]="{standalone: true}" class="form-control"></div>
-          <div class="form-group">Country <input  [(ngModel)]="PreviousEmployers.Country" [ngModelOptions]="{standalone: true}" class="form-control"></div>
-          <div class="form-group">Job Title <input  [(ngModel)]="PreviousEmployers.JobTitle" [ngModelOptions]="{standalone: true}" class="form-control"></div>
+          <div class="form-group">Employer <input  [(ngModel)]="PreviousEmployers && PreviousEmployers.Employer" [ngModelOptions]="{standalone: true}" class="form-control"></div>
+          <div class="form-group">Start Date <input [(ngModel)]="PreviousEmployers && PreviousEmployers.StartDate" [ngModelOptions]="{standalone: true}"  class="form-control"></div>
+          <div class="form-group">End Date <input  [(ngModel)]="PreviousEmployers && PreviousEmployers.EndDate" [ngModelOptions]="{standalone: true}" class="form-control"></div>
+          <div class="form-group">Country <input  [(ngModel)]="PreviousEmployers && PreviousEmployers.Country" [ngModelOptions]="{standalone: true}" class="form-control"></div>
+          <div class="form-group">Job Title <input  [(ngModel)]="PreviousEmployers && PreviousEmployers.JobTitle" [ngModelOptions]="{standalone: true}" class="form-control"></div>
           
   
   </form>
