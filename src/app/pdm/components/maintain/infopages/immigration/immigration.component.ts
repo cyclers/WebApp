@@ -8,7 +8,7 @@ import { PdmService } from '../../../../../services/pdm.service';
 })
 export class ImmigrationComponent implements OnInit {
 
-  immigration :Immigration
+  Immigration
 
   constructor(private pdmService: PdmService) { }
 
@@ -16,21 +16,7 @@ export class ImmigrationComponent implements OnInit {
   }
 
   loadInfoPageImmigration(id) {
-    this.pdmService.loadStaffRecord('Staff/' +id + '/Immigration/' + id)
-      .subscribe(data => this.immigration = data)
+    this.pdmService.loadStaffRecord('Staff/' +id + '/Personal/' + id)
+      .subscribe(data => this.Immigration = data)
   }
-}
-
-
-export interface Immigration {
-  "NameInPassport": any
-  "PassportNo": any
-  "PassportCounty": any
-  "PassportIssuePlace": any
-  "PassportExpirationDate":any
-  "VisaNo": any
-  "Designation": any
-  "DurationInYrs":any
-  "ResidencePermitNo": any
-  "Sponsor": any
 }

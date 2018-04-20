@@ -8,7 +8,7 @@ import { PdmService } from '../../../../../services/pdm.service';
 })
 export class FilesComponent implements OnInit {
 
-  Files:File
+  Files
 
   constructor(private pdmService: PdmService) { }
 
@@ -16,15 +16,7 @@ export class FilesComponent implements OnInit {
   }
 
   loadInfoPageFiles(id) {
-    this.pdmService.loadStaffRecord('Staff/' +id + '/Attachments/' + id)
+    this.pdmService.loadStaffRecord('Staff/' +id + '/Personal/' + id)
       .subscribe(data => this.Files = data)
   }
-}
-
-export interface File {
-  "Picture": any
-  "DocumentID": any
-  "DocumentTitle": any
-  "AttachmentType": any
-  "File": any
 }

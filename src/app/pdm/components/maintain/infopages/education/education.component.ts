@@ -8,27 +8,16 @@ import { PdmService } from '../../../../../services/pdm.service';
 })
 export class EducationComponent implements OnInit {
 
-  education : Education
+  Education
 
   constructor(private pdmService: PdmService) { }
 
   ngOnInit() {
   }
 
-  loadInfoPageEducation(id:number) {
-    this.pdmService.loadStaffRecord('Staff/' +id + '/Education/' + id)
-      .subscribe(data => this.education = data)
+  loadInfoPageEducation(id) {
+    this.pdmService.loadStaffRecord('Staff/' +id + '/Personal/' + id)
+      .subscribe(data => this.Education = data)
   }
 }
 
-export interface Education {
-  "id": any
-  "Univeristy":any
-  "Faculty": any
-  "Country": any
-  "EducationLevel": any
-  "Major": any
-  "GraduationYear": any
-  "Masters": any
-  "PhD": any
-}

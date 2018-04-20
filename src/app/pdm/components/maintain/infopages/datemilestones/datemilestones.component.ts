@@ -8,7 +8,7 @@ import { PdmService } from '../../../../../services/pdm.service';
 })
 export class DatemilestonesComponent implements OnInit {
 
-  DateMilestones : DateMilestones
+  DateMilestones
 
   constructor(private pdmService: PdmService) { }
 
@@ -16,13 +16,8 @@ export class DatemilestonesComponent implements OnInit {
   }
 
   loadInfoPageDateMilestones(id) {
-    this.pdmService.loadStaffRecord('Staff/' +id + '/DateMilestones/' + id)
+    this.pdmService.loadStaffRecord('Staff/' +id + '/Personal/' + id)
       .subscribe(data => this.DateMilestones = data)
   }
 }
 
-
-export interface DateMilestones{
-"DateID" : any
-"DateType" : any
-}
