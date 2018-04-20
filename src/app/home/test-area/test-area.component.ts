@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from "jquery";
+import { PdmService } from '../../services/pdm.service';
 
 @Component({
   selector: 'app-test-area',
@@ -8,11 +9,17 @@ import * as $ from "jquery";
 })
 export class TestAreaComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private pdmservice: PdmService) { }
+  apidata 
   title = "app";
 
   ngOnInit() {
+    this.pdmservice.loadTarekData().subscribe(data => 
+      {
+        console.log(data.rows)
+        this.apidata = data.rows
+      })
+
     $(document).ready(function() {
       $("button").click(function() {
         var div = $("p");
