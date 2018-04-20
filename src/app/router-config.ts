@@ -8,9 +8,11 @@ import { MaintainComponent } from "./pdm/components/maintain/maintain.component"
 
 export const routeConfig = [
     { path : 'home', component: HomeComponent},
-    { path : 'personnel', component: PdmComponent},
-    { path: 'personnel/browse', component: BrowseComponent },
-    { path: 'personnel/maintain', component: MaintainComponent },
+    { 
+        path : 'personnel', 
+        component: PdmComponent},
+        { path: 'personnel/browse', component: BrowseComponent },
+        { path: 'personnel/maintain', component: MaintainComponent },
     { path: '', component: HomeComponent},] 
 
     
