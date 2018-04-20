@@ -3,8 +3,8 @@
   <div class="col-sm-6 b-r"><h3 class="m-t-none m-b">Employement Dates
       </h3>
   <form role="form">
-          <div class="form-group">Date ID <input  class="form-control"></div>
-          <div class="form-group">Date Type <input  class="form-control"></div>
+          <div class="form-group">Date ID <input [(ngModel)]="DateMilestones && DateMilestones.DateID" [ngModelOptions]="{standalone: true}"  class="form-control"></div>
+          <div class="form-group">Date Type <input [(ngModel)]="DateMilestones && DateMilestones.DateType" [ngModelOptions]="{standalone: true}"  class="form-control"></div>
           <div class="form-group">Date 
              <form class="form-inline">
               <div class="form-group">

@@ -6,6 +6,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms'
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatInputModule} from '@angular/material/input';
 
 import { PdmService } from './services/pdm.service';
 import { AppComponent } from './app.component';
@@ -39,7 +43,8 @@ import { AwardsComponent } from './pdm/components/maintain/infopages/awards/awar
 import { FilesComponent } from './pdm/components/maintain/infopages/files/files.component';
 import { DatemilestonesComponent } from './pdm/components/maintain/infopages/datemilestones/datemilestones.component';
 import { GeneralinfoComponent } from './pdm/components/maintain/infopages/generalinfo/generalinfo.component';
-
+import { MatNativeDateModule } from '@angular/material/core';
+//import {MatMomentDateModule } from '@angular/material-moment-adapter';
 
 
 
@@ -80,8 +85,13 @@ import { GeneralinfoComponent } from './pdm/components/maintain/infopages/genera
     BrowserModule,
     RouterModule.forRoot(routeConfig),
     NgbModule.forRoot(),
+    BrowserAnimationsModule,
     // HttpModule, 
-    FormsModule, HttpClientModule
+    FormsModule, HttpClientModule,
+    MatDatepickerModule,
+    MatInputModule,
+    MatNativeDateModule,
+   // MatMomentDateModule
   ],
   providers: [PdmService],
   bootstrap: [AppComponent]

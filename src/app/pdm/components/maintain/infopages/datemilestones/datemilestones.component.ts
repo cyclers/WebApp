@@ -8,7 +8,7 @@ import { PdmService } from '../../../../../services/pdm.service';
 })
 export class DatemilestonesComponent implements OnInit {
 
-  DateMilestones
+  DateMilestones : DateMilestones
 
   constructor(private pdmService: PdmService) { }
 
@@ -22,3 +22,7 @@ export class DatemilestonesComponent implements OnInit {
 }
 
 
+export interface DateMilestones{
+"DateID" : any
+"DateType" : any
+}

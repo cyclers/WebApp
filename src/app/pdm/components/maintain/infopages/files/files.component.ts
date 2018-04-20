@@ -16,7 +16,7 @@ export class FilesComponent implements OnInit {
   }
 
   loadInfoPageFiles(id) {
-    this.pdmService.loadStaffRecord('Staff/' +id + '/Files/' + id)
+    this.pdmService.loadStaffRecord('Staff/' +id + '/Attachments/' + id)
       .subscribe(data => this.Files = data)
   }
 }

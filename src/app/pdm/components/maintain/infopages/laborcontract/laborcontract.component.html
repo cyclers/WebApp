@@ -3,10 +3,29 @@
   <div class="col-sm-6 b-r"><h3 class="m-t-none m-b">Labor Contract
       </h3>
   <form role="form">
-          <div class="form-group">Current Contract Type <input [(ngModel)]="LaborContract && LaborContract.CurrentContractType" [ngModelOptions]="{standalone: true}" class="form-control"></div>
-          <div class="form-group">Probation EndDate <input [(ngModel)]="LaborContract && LaborContract.ProbationEndDate" [ngModelOptions]="{standalone: true}" class="form-control"></div>
-          <div class="form-group">From <input  class="form-control"></div>
-          <div class="form-group">To <input  class="form-control"></div>
+          <div class="form-group">Current Contract Type <input [(ngModel)]="laborContract && laborContract.CurrentContractType" [ngModelOptions]="{standalone: true}" class="form-control"></div>
+   <div class="form-group">Probation EndDate </div>
+          <div class="input-group input-group-sm mb-3">
+              <input class="form-control" placeholder="yyyy-mm-dd"
+              (click)="w.toggle()" name="dp" [(ngModel)]="model8" ngbDatepicker #w="ngbDatepicker">
+              <div class="input-group-append" style="display: flex">
+                
+              </div>
+            </div>
+          <div class="form-group">From    <div class="input-group input-group-sm mb-3">
+              <input class="form-control" placeholder="yyyy-mm-dd"
+              (click)="i.toggle()" name="dp" [(ngModel)]="model6" ngbDatepicker #i="ngbDatepicker">
+              <div class="input-group-append" style="display: flex">
+                
+              </div>
+            </div></div>
+          <div class="form-group">To    <div class="input-group input-group-sm mb-3">
+              <input class="form-control" placeholder="yyyy-mm-dd"
+              (click)="p.toggle()" name="dp" [(ngModel)]="model7" ngbDatepicker #p="ngbDatepicker">
+              <div class="input-group-append" style="display: flex">
+                
+              </div>
+            </div></div>
           
   
   </form>

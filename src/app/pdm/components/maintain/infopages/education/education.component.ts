@@ -26,9 +26,9 @@ export interface Education {
   "Univeristy":any
   "Faculty": any
   "Country": any
-  "educationLevel": any
+  "EducationLevel": any
   "Major": any
-  "graduationYear": any
+  "GraduationYear": any
   "Masters": any
   "PhD": any
 }

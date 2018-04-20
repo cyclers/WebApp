@@ -16,15 +16,15 @@ export class WorkscheduleComponent implements OnInit {
   }
 
   loadInfoPageWorkSchedules(id) {
-    this.pdmService.loadStaffRecord('Staff/' +id + '/WorkSchedules/' + id)
+    this.pdmService.loadStaffRecord('Staff/' +id + '/WorkSchedule/' + id)
       .subscribe(data => this.workSchedules = data)
   }
 }
  export interface WorkSchedules { 
   "WorkScheduleRule": any
-  "PartTimeEmployee": any
+  "Part-TimeEmployee": any
   "WeeklyWorkingHrs":any
   "MonthlyWorkingHrs": any
-  "Shiftbased": any
+  "Shift-based": any
   
  }

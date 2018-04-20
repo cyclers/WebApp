@@ -25,8 +25,7 @@ export class GeneralinfoComponent implements OnInit {
 export interface General {
 
   "id": any
-  "StaffId": any
-  "createdAt":any
-  "name": any
-  "imageUrl": any
+  
+  "CreationDate":any
+  
 }
