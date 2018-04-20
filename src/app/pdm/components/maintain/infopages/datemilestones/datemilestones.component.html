@@ -3,9 +3,24 @@
   <div class="col-sm-6 b-r"><h3 class="m-t-none m-b">Employement Dates
       </h3>
   <form role="form">
-          <div class="form-group">Date ID <input class="form-control"></div>
-          <div class="form-group">Date Type <input class="form-control"></div>
-          <div class="form-group">Date <input class="form-control"></div>
+          <div class="form-group">Date ID <input [(ngModel)]="DateMilestones && DateMilestones.DateID" [ngModelOptions]="{standalone: true}"  class="form-control"></div>
+          <div class="form-group">Date Type <input [(ngModel)]="DateMilestones && DateMilestones.DateType" [ngModelOptions]="{standalone: true}"  class="form-control"></div>
+          <div class="form-group">Date 
+             <form class="form-inline">
+              <div class="form-group">
+                <div class="input-group input-group-sm mb-3">
+                  <input class="form-control" placeholder="yyyy-mm-dd"
+                  (click)="t.toggle()" name="dp" [(ngModel)]="model3" ngbDatepicker #t="ngbDatepicker">
+                  <div class="input-group-append" style="display: flex">
+                    <!-- <button class="btn-outline-secondary"  style="padding: 0px; border: 1px solid transparent ; cursor: pointer" type="button">
+                          <i class="material-icons md-36">date_range</i>
+                       <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/> -->
+                    <!-- </button> -->
+                  </div>
+                </div>
+              </div>
+            </form>
+</div>
           
   </form>
   
