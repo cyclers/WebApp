@@ -1,8 +1,7 @@
 <br>
 
 
-<div class="col-sm-4"><input type="text" class="form-control"
-     (keyup.enter)="enteredId(staffid.value)" #staffid placeholder="Enter ID"></div>
+<div class="col-sm-4"><input type="text" class="form-control" (keyup.enter)="enteredId(staffid.value)" #staffid placeholder="Enter ID"></div>
 
 
     
@@ -19,15 +18,15 @@
             <li (click)="loadTab(7)" class=""><a data-toggle="tab" href="#tab-7">Family</a></li>
             <li (click)="loadTab(8)" class=""><a data-toggle="tab" href="#tab-8">History</a></li>
             <li (click)="loadTab(9)" class=""><a data-toggle="tab" href="#tab-9">Banks</a></li>
-        
+
             <li class="btn-group">
                     <a data-toggle="dropdown" class="" > <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                             <li (click)="loadTab(10)" class=""><a data-toggle="tab" href="#tab-10">Contracts</a></li>
                             <li (click)="loadTab(11)" class=""><a data-toggle="tab" href="#tab-11">Education</a></li>
                             <li (click)="loadTab(12)" class=""><a data-toggle="tab" href="#tab-12">Schedules</a></li>
-                            <li (click)="loadTab(13)" class=""><a data-toggle="tab" href="#tab-13">Immigration</a></li>
-                            <li (click)="loadTab(14)" class=""><a data-toggle="tab" href="#tab-14">Licenses</a></li>
+                            <li (click)="loadTab(13)" class=""><a data-toggle="tab" href="#tab-13">Licenses</a></li>
+                            <li (click)="loadTab(14)" class=""><a data-toggle="tab" href="#tab-14">Immigration</a></li>
                             <li (click)="loadTab(15)" class=""><a data-toggle="tab" href="#tab-15">Basic Pay</a></li>
                             <li (click)="loadTab(16)" class=""><a data-toggle="tab" href="#tab-16">Allowances</a></li>
                             <li (click)="loadTab(17)" class=""><a data-toggle="tab" href="#tab-17">Awards</a></li>
@@ -36,50 +35,18 @@
                 </li>
         </ul>
         <br>
-        <div style="display: flex">
-        <form class="form-inline">
-            <div class="form-group">
-              <div class="input-group input-group-sm mb-3">
-                <input class="form-control" placeholder="yyyy-mm-dd"
-                       name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
-                <div class="input-group-append" style="display: flex">
-                  <button class=" btn-outline-secondary" style="padding: 0px; border: 1px solid transparent ; cursor: pointer" (click)="d.toggle()" type="button">
-                        <i class="material-icons">date_range</i>
-                    <!-- <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/> -->
-                  </button>
-                </div>
-              </div>
-            </div>
-          </form>
-        <!-- <input type="text" class="input-sm" name="start" value="05/14/2014"> -->
-                <div style=" padding: 6px;
-                margin-left: 33px;">to</div>
-                <form class="form-inline">
-                        <div class="form-group">
-                          <div class="input-group input-group-sm mb-3">
-                            <input class="form-control" placeholder="yyyy-mm-dd"
-                                   name="dp" [(ngModel)]="model2" ngbDatepicker #r="ngbDatepicker">
-                            <div class="input-group-append" style="display: flex">
-                              <button class="btn-outline-secondary"  style="padding: 0px; border: 1px solid transparent ; cursor: pointer" (click)="r.toggle()" type="button">
-                                    <i class="material-icons md-36">date_range</i>
-                                <!-- <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/> -->
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      </form>
-       
-                <!-- <input type="text" class="input-sm" name="end" value="05/22/2014"> -->
-                <div style="padding-left: 32px;">
+        <input type="text" class="input-sm" name="start" value="05/14/2014">
+                <span class="">to</span>
+                <input type="text" class="input-sm" name="end" value="05/22/2014">
                 <button class="btn btn-link " type="button"><i class="fa fa-backward"></i></button>
                 <button class="btn btn-link " type="button"><i class="fa fa-forward"></i></button>
                 <button class="btn btn-link " type="button"><i class="fa fa-file"></i> New</button>
                 <button class="btn btn-link " type="button"><i class="fa fa-edit"></i>&nbsp;&nbsp;<span class="bold">Edit</span></button>
                 <button (click)="postD()" class="btn btn-link " type="button"><i class="fa fa-save"></i>&nbsp;Save</button>
                 <button class="btn btn-link " type="button"><i class="fa fa-eye"></i>&nbsp;Overview</button>
-                </div>
+        
 
-            </div>
+                
                 <br><br>
 
 <div class="tab-content">
@@ -97,7 +64,7 @@
 
 
 <div id="tab-4" class="tab-pane">
-<app-datemilestones></app-datemilestones>
+<app-datemilestones></app-datemilestones>>
 </div>
 
 <div id="tab-5" class="tab-pane">
