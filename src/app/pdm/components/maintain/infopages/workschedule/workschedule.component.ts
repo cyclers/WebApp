@@ -8,7 +8,7 @@ import { PdmService } from '../../../../../services/pdm.service';
 })
 export class WorkscheduleComponent implements OnInit {
 
-  WorkSchedules
+  workSchedules :WorkSchedules
 
   constructor(private pdmService: PdmService) { }
 
@@ -16,7 +16,15 @@ export class WorkscheduleComponent implements OnInit {
   }
 
   loadInfoPageWorkSchedules(id) {
-    this.pdmService.loadStaffRecord('Staff/' +id + '/Personal/' + id)
-      .subscribe(data => this.WorkSchedules = data)
+    this.pdmService.loadStaffRecord('Staff/' +id + '/WorkSchedule/' + id)
+      .subscribe(data => this.workSchedules = data)
   }
 }
+ export interface WorkSchedules { 
+  "WorkScheduleRule": any
+  "Part-TimeEmployee": any
+  "WeeklyWorkingHrs":any
+  "MonthlyWorkingHrs": any
+  "Shift-based": any
+  
+ }
