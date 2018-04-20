@@ -21,7 +21,7 @@ export class FamilyComponent implements OnInit {
   }
 }
 
-export interface Family {
+interface Family {
   "EmpID": any
   "StaffId": any
   "MemberName": any
