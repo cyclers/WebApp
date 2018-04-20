@@ -33,6 +33,7 @@ export class GeneralinfoComponent implements OnInit {
   }
 }
 
+
 export interface General {
 
   "id": any

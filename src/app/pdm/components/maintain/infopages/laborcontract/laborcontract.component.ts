@@ -8,7 +8,7 @@ import { PdmService } from '../../../../../services/pdm.service';
 })
 export class LaborcontractComponent implements OnInit {
 
-  LaborContract
+  laborContract : LaborContract
 
   constructor(private pdmService: PdmService) { }
 
@@ -16,7 +16,17 @@ export class LaborcontractComponent implements OnInit {
   }
 
   loadInfoPageLaborContract(id) {
-    this.pdmService.loadStaffRecord('Staff/' +id + '/Personal/' + id)
-      .subscribe(data => this.LaborContract = data)
+    this.pdmService.loadStaffRecord('Staff/' +id + '/LaborContract/' + id)
+      .subscribe(data => this.laborContract = data)
   }
+}
+
+
+export interface LaborContract{
+  "EmpID": any
+  "StaffId": any
+  "CurrentContractType": any
+  "EndDate": any
+  "From": any
+  "To": any
 }

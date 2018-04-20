@@ -16,8 +16,8 @@ export class TestAreaComponent implements OnInit {
   ngOnInit() {
     this.pdmservice.loadTarekData().subscribe(data => 
       {
-        console.log(data.rows)
-        this.apidata = data.rows
+        // console.log(data.rows)
+        // this.apidata = data.rows
       })
 
     $(document).ready(function() {

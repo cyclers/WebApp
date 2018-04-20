@@ -1,7 +1,8 @@
 <br>
 
 
-<div class="col-sm-4"><input type="text" class="form-control" (keyup.enter)="enteredId(staffid.value)" #staffid placeholder="Enter ID"></div>
+<div class="col-sm-4"><input type="text" class="form-control"
+     (keyup.enter)="enteredId(staffid.value)" #staffid placeholder="Enter ID"></div>
 
 
     
@@ -18,7 +19,7 @@
             <li (click)="loadTab(7)" class=""><a data-toggle="tab" href="#tab-7">Family</a></li>
             <li (click)="loadTab(8)" class=""><a data-toggle="tab" href="#tab-8">History</a></li>
             <li (click)="loadTab(9)" class=""><a data-toggle="tab" href="#tab-9">Banks</a></li>
-
+        
             <li class="btn-group">
                     <a data-toggle="dropdown" class="" > <span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -35,18 +36,47 @@
                 </li>
         </ul>
         <br>
-        <input type="text" class="input-sm" name="start" value="05/14/2014">
-                <span class="">to</span>
-                <input type="text" class="input-sm" name="end" value="05/22/2014">
+        <div style="display: flex">
+
+
+          <div class="input-group input-group-sm mb-3">
+            <input class="form-control" placeholder="yyyy-mm-dd"
+            (click)="t.toggle()" name="dp" [(ngModel)]="model" ngbDatepicker #t="ngbDatepicker">
+            <div class="input-group-append" style="display: flex">
+              <!-- <button class="btn-outline-secondary"  style="padding: 0px; border: 1px solid transparent ; cursor: pointer" type="button">
+                    <i class="material-icons md-36">date_range</i>
+                 <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/> -->
+              <!-- </button> -->
+            </div>
+          </div>          
+
+        <!-- <input type="text" class="input-sm" name="start" value="05/14/2014"> -->
+                <div style=" padding: 2px;
+                margin-left: 5px; margin-right: 10px;">to</div>
+
+                <div class="input-group input-group-sm mb-3">
+                  <input class="form-control" placeholder="yyyy-mm-dd"
+                  (click)="t.toggle()" name="dp" [(ngModel)]="model" ngbDatepicker #t="ngbDatepicker">
+                  <div class="input-group-append" style="display: flex">
+                    <!-- <button class="btn-outline-secondary"  style="padding: 0px; border: 1px solid transparent ; cursor: pointer" type="button">
+                          <i class="material-icons md-36">date_range</i>
+                       <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/> -->
+                    <!-- </button> -->
+                  </div>
+                </div>
+
+       
+                <!-- <input type="text" class="input-sm" name="end" value="05/22/2014"> -->
+                <div style="padding-left: 32px;">
                 <button class="btn btn-link " type="button"><i class="fa fa-backward"></i></button>
                 <button class="btn btn-link " type="button"><i class="fa fa-forward"></i></button>
                 <button class="btn btn-link " type="button"><i class="fa fa-file"></i> New</button>
                 <button class="btn btn-link " type="button"><i class="fa fa-edit"></i>&nbsp;&nbsp;<span class="bold">Edit</span></button>
-                <button (click)="postD()" class="btn btn-link " type="button"><i class="fa fa-save"></i>&nbsp;Save</button>
+                <button class="btn btn-link " type="button"><i class="fa fa-save"></i>&nbsp;Save</button>
                 <button class="btn btn-link " type="button"><i class="fa fa-eye"></i>&nbsp;Overview</button>
-        
+                </div>
 
-                
+            </div>
                 <br><br>
 
 <div class="tab-content">
@@ -102,11 +132,12 @@
 </div>
 
 <div id="tab-13" class="tab-pane">
-<app-immigration></app-immigration>
+  <app-licenses></app-licenses>
 </div>
 
 <div id="tab-14" class="tab-pane">
-<app-licenses></app-licenses>
+
+<app-immigration></app-immigration>
 </div>
 
 <div id="tab-15" class="tab-pane">

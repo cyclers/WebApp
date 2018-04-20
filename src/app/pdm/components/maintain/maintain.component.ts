@@ -45,6 +45,8 @@ export class MaintainComponent implements OnInit {
 
   id:number
   tabId:number
+  model
+  
   constructor() { }
 
   ngOnInit() {
