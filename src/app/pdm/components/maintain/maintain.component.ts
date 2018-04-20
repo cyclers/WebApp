@@ -56,11 +56,6 @@ export class MaintainComponent implements OnInit {
     this.loadTab(this.tabId)
   }
 
-  postD(){
-    console.log("be5")
-    this.infoPage1.postData()
-  }
-
   loadTab(tabNo:any ){
     this.tabId = tabNo
     
