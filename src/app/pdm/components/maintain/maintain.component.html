@@ -1,821 +1,162 @@
 <br>
-<div class="col-sm-4">
-  <input type="text" class="form-control" placeholder="Enter ID">
-</div>
-<br>
-<br>
-<br>
-<br>
+
+
+<div class="col-sm-4"><input type="text" class="form-control"
+     (keyup.enter)="enteredId(staffid.value)" #staffid placeholder="Enter ID"></div>
+
+
+
+    <br><br><br><br>
 <div class="col-lg-12">
-  <div class="tabs-container">
-    <ul class="nav nav-tabs">
-      <li class="" *ngFor="let page1 of infoPages; let j=index;">
-        <a data-toggle="tab" href="#tab-{{j+1}}">{{page1}}</a>
-      </li>
-      <li class="btn-group">
-        <a data-toggle="dropdown" class="">
-          <span class="caret"></span>
-        </a>
-        <ul class="dropdown-menu">
-          <li *ngFor="let page of infoPagesDropdown; let i=index;">
-            <a data-toggle="tab" href="#tab-{{i+10}}">{{page}}</a>
-          </li>
+    <div class="tabs-container">
+        <ul class="nav nav-tabs">
+            <li (click)="loadTab(1)" class="active"><a data-toggle="tab" href="#tab-1"> Overview</a></li>
+            <li (click)="loadTab(2)" class=""><a data-toggle="tab" href="#tab-2">Actions</a></li>
+            <li (click)="loadTab(3)" class=""><a data-toggle="tab" href="#tab-3">Org Assign.</a></li>
+            <li (click)="loadTab(4)" class=""><a data-toggle="tab" href="#tab-4">Dates</a></li>
+            <li (click)="loadTab(5)" class=""><a data-toggle="tab" href="#tab-5">Personal</a></li>
+            <li (click)="loadTab(6)" class=""><a data-toggle="tab" href="#tab-6">Address</a></li>
+            <li (click)="loadTab(7)" class=""><a data-toggle="tab" href="#tab-7">Family</a></li>
+            <li (click)="loadTab(8)" class=""><a data-toggle="tab" href="#tab-8">History</a></li>
+            <li (click)="loadTab(9)" class=""><a data-toggle="tab" href="#tab-9">Banks</a></li>
+
+            <li class="btn-group">
+                    <a data-toggle="dropdown" class="" > <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                            <li (click)="loadTab(10)" class=""><a data-toggle="tab" href="#tab-10">Contracts</a></li>
+                            <li (click)="loadTab(11)" class=""><a data-toggle="tab" href="#tab-11">Education</a></li>
+                            <li (click)="loadTab(12)" class=""><a data-toggle="tab" href="#tab-12">Schedules</a></li>
+                            <li (click)="loadTab(13)" class=""><a data-toggle="tab" href="#tab-13">Licenses</a></li>
+                            <li (click)="loadTab(14)" class=""><a data-toggle="tab" href="#tab-14">Immigration</a></li>
+                            <li (click)="loadTab(15)" class=""><a data-toggle="tab" href="#tab-15">Basic Pay</a></li>
+                            <li (click)="loadTab(16)" class=""><a data-toggle="tab" href="#tab-16">Allowances</a></li>
+                            <li (click)="loadTab(17)" class=""><a data-toggle="tab" href="#tab-17">Awards</a></li>
+                            <li (click)="loadTab(18)" class=""><a data-toggle="tab" href="#tab-18 ">Files</a></li>
+                    </ul>
+                </li>
         </ul>
-      </li>
-    </ul>
-    <br>
-    <input type="text" class="input-sm" name="start" value="05/14/2014">
-    <span class="">to</span>
-    <input type="text" class="input-sm" name="end" value="05/22/2014">
-    <button class="btn btn-link " type="button">
-      <i class="fa fa-backward"></i>
-    </button>
-    <button class="btn btn-link " type="button">
-      <i class="fa fa-forward"></i>
-    </button>
-    <button class="btn btn-link " type="button">
-      <i class="fa fa-file"></i> New</button>
-    <button class="btn btn-link " type="button">
-      <i class="fa fa-edit"></i>&nbsp;&nbsp;
-      <span class="bold">Edit</span>
-    </button>
-    <button class="btn btn-link " type="button">
-      <i class="fa fa-save"></i>&nbsp;Save</button>
-    <button class="btn btn-link " type="button">
-      <i class="fa fa-eye"></i>&nbsp;Overview</button>
+        <br>
+        <div style="display: flex">
 
 
-
-    <br>
-    <br>
-
-    <div class="tab-content">
-      <div id="tab-1" class="tab-pane active">
-        <div class="panel-body">
-          <div class="row">
-            <div class="col-sm-6 b-r">
-              <h3 class="m-t-none m-b">Overview</h3>
-              <p>This is an overview of the personnel data.</p>
-              <form role="form">
-              </form>
-            </div>
-            <div class="col-sm-6">
-              <br>
-              <br>
-              <br>
-
+          <div class="input-group input-group-sm mb-3">
+            <input class="form-control" placeholder="yyyy-mm-dd"
+            (click)="t.toggle()" name="dp" [(ngModel)]="model" ngbDatepicker #t="ngbDatepicker">
+            <div class="input-group-append" style="display: flex">
+              <!-- <button class="btn-outline-secondary"  style="padding: 0px; border: 1px solid transparent ; cursor: pointer" type="button">
+                    <i class="material-icons md-36">date_range</i>
+                 <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/> -->
+              <!-- </button> -->
             </div>
           </div>
-        </div>
-      </div>
+
+        <!-- <input type="text" class="input-sm" name="start" value="05/14/2014"> -->
+                <div style=" padding: 2px;
+                margin-left: 5px; margin-right: 10px;">to</div>
+
+                <div class="input-group input-group-sm mb-3">
+                  <input class="form-control" placeholder="yyyy-mm-dd"
+                  (click)="t.toggle()" name="dp" [(ngModel)]="model" ngbDatepicker #t="ngbDatepicker">
+                  <div class="input-group-append" style="display: flex">
+                    <!-- <button class="btn-outline-secondary"  style="padding: 0px; border: 1px solid transparent ; cursor: pointer" type="button">
+                          <i class="material-icons md-36">date_range</i>
+                       <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/> -->
+                    <!-- </button> -->
+                  </div>
+                </div>
 
 
-      <div id="tab-2" class="tab-pane">
-        <div class="panel-body">
-          <div class="row">
-            <div class="col-sm-6 b-r">
-              <h3 class="m-t-none m-b">Personnel Action </h3>
-              <form role="form">
-                <div class="form-group">Company Code
-                  <input class="form-control">
+                <!-- <input type="text" class="input-sm" name="end" value="05/22/2014"> -->
+                <div style="padding-left: 32px;">
+                <button class="btn btn-link " type="button"><i class="fa fa-backward"></i></button>
+                <button class="btn btn-link " type="button"><i class="fa fa-forward"></i></button>
+                <button class="btn btn-link " type="button"><i class="fa fa-file"></i> New</button>
+                <button class="btn btn-link " type="button"><i class="fa fa-edit"></i>&nbsp;&nbsp;<span class="bold">Edit</span></button>
+                <button class="btn btn-link " type="button"><i class="fa fa-save"></i>&nbsp;Save</button>
+                <button class="btn btn-link " type="button"><i class="fa fa-eye"></i>&nbsp;Overview</button>
                 </div>
-                <div class="form-group">BU
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Division
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Department
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Title
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Personnel Areal
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Personnel Sub-Area
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Cost Center
-                  <input class="form-control">
-                </div>
-
-              </form>
 
             </div>
-            <div class="col-sm-6">
-              <br>
-              <br>
-              <br>
-              <div class="form-group">Employee Group
-                <input class="form-control">
-              </div>
-              <div class="form-group">Employee Sub-Group
-                <input class="form-control">
-              </div>
-              <div class="form-group">Pay Area
-                <input class="form-control">
-              </div>
-              <div class="form-group">Job Family
-                <input class="form-control">
-              </div>
-              <div class="form-group">Job Sub-Family
-                <input class="form-control">
-              </div>
-              <div class="form-group">Position Code
-                <input class="form-control">
-              </div>
-              <div class="form-group">Organization Unit
-                <input class="form-control">
-              </div>
+                <br><br>
 
-            </div>
-          </div>
-        </div>
-      </div>
+<div class="tab-content">
+<div id="tab-1" class="tab-pane active">
+<app-generalinfo></app-generalinfo>
+</div>
 
-      <div id="tab-3" class="tab-pane">
-        <div class="panel-body">
-          <div class="row">
-            <div class="col-sm-6 b-r">
-              <h3 class="m-t-none m-b">Company Structure
-              </h3>
-              <form role="form">
-                <div class="form-group">Company Code
-                  <input class="form-control">
-                </div>
-                <div class="form-group">BU
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Division
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Department
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Title
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Personnel Areal
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Personnel Sub-Area
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Cost Center
-                  <input class="form-control">
-                </div>
+<div id="tab-2" class="tab-pane">
+<app-actions></app-actions>
+</div>
 
-              </form>
+<div id="tab-3" class="tab-pane">
+<app-orgassign></app-orgassign>
+</div>
 
-            </div>
-            <div class="col-sm-6">
-              <br>
-              <br>
-              <br>
-              <div class="form-group">Employee Group
-                <input class="form-control">
-              </div>
-              <div class="form-group">Employee Sub-Group
-                <input class="form-control">
-              </div>
-              <div class="form-group">Pay Area
-                <input class="form-control">
-              </div>
-              <div class="form-group">Job Family
-                <input class="form-control">
-              </div>
-              <div class="form-group">Job Sub-Family
-                <input class="form-control">
-              </div>
-              <div class="form-group">Position Code
-                <input class="form-control">
-              </div>
-              <div class="form-group">Organization Unit
-                <input class="form-control">
-              </div>
 
-            </div>
-          </div>
-        </div>
-      </div>
+<div id="tab-4" class="tab-pane">
+<app-datemilestones></app-datemilestones>>
+</div>
 
-      <div id="tab-4" class="tab-pane">
-        <div class="panel-body">
-          <div class="row">
-            <div class="col-sm-6 b-r">
-              <h3 class="m-t-none m-b">Employement Dates
-              </h3>
-              <form role="form">
-                <div class="form-group">Date ID
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Date Type
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Date
-                  <input class="form-control">
-                </div>
+<div id="tab-5" class="tab-pane">
+<app-personal></app-personal>
+</div>
 
-              </form>
 
-            </div>
-            <div class="col-sm-6">
-              <br>
-              <br>
-              <br>
+<div id="tab-6" class="tab-pane">
+<app-address></app-address>
+</div>
 
-            </div>
-          </div>
-        </div>
-      </div>
 
+<div id="tab-7" class="tab-pane">
+<app-family></app-family>
+</div>
 
-      <div id="tab-5" class="tab-pane">
-        <div class="panel-body">
-          <div class="row">
-            <div class="col-sm-6 b-r">
-              <h3 class="m-t-none m-b">Name
-              </h3>
-              <form role="form">
-                <div class="form-group">Form of Address
-                  <input class="form-control">
-                </div>
-                <div class="form-group">First Name
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Last Name
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Arabic Full Name
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Gender
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Date of Birth
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Country of Birth
-                  <input class="form-control">
-                </div>
+<div id="tab-8" class="tab-pane">
+<app-previous></app-previous>
+</div>
 
-              </form>
+<div id="tab-9" class="tab-pane">
+<app-banks></app-banks>
+</div>
 
-            </div>
-            <div class="col-sm-6">
-              <br>
-              <br>
-              <br>
+<div id="tab-10" class="tab-pane">
+<app-laborcontract></app-laborcontract>
+</div>
 
-            </div>
-          </div>
-        </div>
-      </div>
+<div id="tab-11" class="tab-pane">
+<app-education></app-education>
+</div>
 
+<div id="tab-12" class="tab-pane">
+<app-workschedule></app-workschedule>
+</div>
 
-      <div id="tab-6" class="tab-pane">
-        <div class="panel-body">
-          <div class="row">
-            <div class="col-sm-6 b-r">
-              <h3 class="m-t-none m-b">Address</h3>
-              <form role="form">
-                <div class="form-group">Address 1
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Address 2
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Postal Code
-                  <input class="form-control">
-                </div>
-                <div class="form-group">City
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Country
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Private Email
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Business Email
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Country of Birth
-                  <input class="form-control">
-                </div>
+<div id="tab-13" class="tab-pane">
+  <app-licenses></app-licenses>
+</div>
 
-              </form>
+<div id="tab-14" class="tab-pane">
 
-            </div>
-            <div class="col-sm-6">
-              <br>
-              <br>
-              <br>
-              <div class="form-group">Private Cell
-                <input class="form-control">
-              </div>
-              <div class="form-group">Emergency Name(1)
-                <input class="form-control">
-              </div>
-              <div class="form-group">Relationship
-                <input class="form-control">
-              </div>
-              <div class="form-group">Phone
-                <input class="form-control">
-              </div>
-              <div class="form-group">Emergency Name(2)
-                <input class="form-control">
-              </div>
-              <div class="form-group">Relationship
-                <input class="form-control">
-              </div>
-              <div class="form-group">Phone
-                <input class="form-control">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+<app-immigration></app-immigration>
+</div>
 
+<div id="tab-15" class="tab-pane">
+<app-basicpay></app-basicpay>
+</div>
 
-      <div id="tab-7" class="tab-pane">
-        <div class="panel-body">
-          <div class="row">
-            <div class="col-sm-6 b-r">
-              <h3 class="m-t-none m-b">Family Members
-              </h3>
-              <form role="form">
-                <div class="form-group">Member Name
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Relationship
-                  <input class="form-control">
-                </div>
-                <div class="form-group">First Name
-                  <input class="form-control">
-                </div>
+<div id="tab-16" class="tab-pane">
+<app-allowances></app-allowances>
+</div>
 
+<div id="tab-17" class="tab-pane">
+<app-awards></app-awards>
+</div>
 
-              </form>
+<div id="tab-18" class="tab-pane">
+<app-files></app-files>
+</div>
 
-            </div>
-            <div class="col-sm-6">
-              <br>
-              <br>
-              <br>
 
 
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <div id="tab-8" class="tab-pane">
-        <div class="panel-body">
-          <div class="row">
-            <div class="col-sm-6 b-r">
-              <h3 class="m-t-none m-b">Previous Employers
-              </h3>
-              <form role="form">
-                <div class="form-group">Employer
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Start Date
-                  <input class="form-control">
-                </div>
-                <div class="form-group">End Date
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Country
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Job Title
-                  <input class="form-control">
-                </div>
-
-
-              </form>
-
-            </div>
-            <div class="col-sm-6">
-              <br>
-              <br>
-              <br>
-
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div id="tab-9" class="tab-pane">
-        <div class="panel-body">
-          <div class="row">
-            <div class="col-sm-6 b-r">
-              <h3 class="m-t-none m-b">Bank Details
-              </h3>
-              <form role="form">
-                <div class="form-group">Bank Name
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Bank Country
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Branch Name
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Branch Code
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Bank Key
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Account No.
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Currency
-                  <input class="form-control">
-                </div>
-
-
-              </form>
-
-            </div>
-            <div class="col-sm-6">
-              <br>
-              <br>
-              <br>
-
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div id="tab-10" class="tab-pane">
-        <div class="panel-body">
-          <div class="row">
-            <div class="col-sm-6 b-r">
-              <h3 class="m-t-none m-b">Labor Contract
-              </h3>
-              <form role="form">
-                <div class="form-group">Current Contract Type
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Probation EndDate
-                  <input class="form-control">
-                </div>
-                <div class="form-group">From
-                  <input class="form-control">
-                </div>
-                <div class="form-group">To
-                  <input class="form-control">
-                </div>
-
-
-              </form>
-
-            </div>
-            <div class="col-sm-6">
-              <br>
-              <br>
-              <br>
-
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div id="tab-11" class="tab-pane">
-        <div class="panel-body">
-          <div class="row">
-            <div class="col-sm-6 b-r">
-              <h3 class="m-t-none m-b">Education
-              </h3>
-              <form role="form">
-                <div class="form-group">Univeristy
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Faculty
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Country
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Education Level
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Major
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Graduation Year
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Masters?
-                  <input class="form-control">
-                </div>
-                <div class="form-group">PhD?
-                  <input class="form-control">
-                </div>
-
-
-              </form>
-
-            </div>
-            <div class="col-sm-6">
-              <br>
-              <br>
-              <br>
-
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div id="tab-12" class="tab-pane">
-        <div class="panel-body">
-          <div class="row">
-            <div class="col-sm-6 b-r">
-              <h3 class="m-t-none m-b">Work Schedule Rule
-              </h3>
-              <form role="form">
-                <div class="form-group">Work Schedule Rule
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Part-Time Employee
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Weekly Working Hrs.
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Monthly Working Hrs.
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Shift-based?
-                  <input class="form-control">
-                </div>
-
-
-              </form>
-
-            </div>
-            <div class="col-sm-6">
-              <br>
-              <br>
-              <br>
-
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div id="tab-13" class="tab-pane">
-        <div class="panel-body">
-          <div class="row">
-            <div class="col-sm-6 b-r">
-              <h3 class="m-t-none m-b">Basic Data
-              </h3>
-              <form role="form">
-                <div class="form-group">Name in Passport
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Passport No.
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Passport County
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Passport Issue Place
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Passport Expiration Date
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Visa No.
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Designation
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Duration in Yrs.
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Residence Permit No.
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Sponsor
-                  <input class="form-control">
-                </div>
-
-
-              </form>
-
-            </div>
-            <div class="col-sm-6">
-              <br>
-              <br>
-              <br>
-
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div id="tab-14" class="tab-pane">
-        <div class="panel-body">
-          <div class="row">
-            <div class="col-sm-6 b-r">
-              <h3 class="m-t-none m-b">License details
-              </h3>
-              <form role="form">
-                <div class="form-group">License Type
-                  <input class="form-control">
-                </div>
-                <div class="form-group">License Name
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Issue Date
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Expiration Date
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Issue Institute
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Entity Country
-                  <input class="form-control">
-                </div>
-
-
-              </form>
-
-            </div>
-            <div class="col-sm-6">
-              <br>
-              <br>
-              <br>
-
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div id="tab-15" class="tab-pane">
-        <div class="panel-body">
-          <div class="row">
-            <div class="col-sm-6 b-r">
-              <h3 class="m-t-none m-b">Wage Details
-              </h3>
-              <form role="form">
-                <div class="form-group">Reason
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Grade
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Pay Period
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Monthly Salary
-                  <input class="form-control">
-                </div>
-                <div class="form-group"> Amount
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Currency
-                  <input class="form-control">
-                </div>
-
-
-              </form>
-
-            </div>
-            <div class="col-sm-6">
-              <br>
-              <br>
-              <br>
-
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div id="tab-16" class="tab-pane">
-        <div class="panel-body">
-          <div class="row">
-            <div class="col-sm-6 b-r">
-              <h3 class="m-t-none m-b">Recurring Allowances
-              </h3>
-              <form role="form">
-                <div class="form-group">Wage Type
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Amount
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Currency
-                  <input class="form-control">
-                </div>
-
-
-              </form>
-
-            </div>
-            <div class="col-sm-6">
-              <br>
-              <br>
-              <br>
-
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div id="tab-17" class="tab-pane">
-        <div class="panel-body">
-          <div class="row">
-            <div class="col-sm-6 b-r">
-              <h3 class="m-t-none m-b">Annual Awards
-              </h3>
-              <form role="form">
-                <div class="form-group">Award Type
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Target Bonus
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Currency
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Percentage
-                  <input class="form-control">
-                </div>
-
-
-              </form>
-
-            </div>
-            <div class="col-sm-6">
-              <br>
-              <br>
-              <br>
-
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div id="tab-18" class="tab-pane">
-        <div class="panel-body">
-          <div class="row">
-            <div class="col-sm-6 b-r">
-              <h3 class="m-t-none m-b">Attachements
-              </h3>
-              <form role="form">
-                <div class="form-group">Picture
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Document ID
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Document Title
-                  <input class="form-control">
-                </div>
-                <div class="form-group">Attachment Type
-                  <input class="form-control">
-                </div>
-                <div class="form-group">File
-                  <input class="form-control">
-                </div>
-
-
-              </form>
-
-            </div>
-            <div class="col-sm-6">
-              <br>
-              <br>
-              <br>
-
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-
-
-
-    </div>
+</div>

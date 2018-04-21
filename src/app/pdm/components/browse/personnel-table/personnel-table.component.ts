@@ -1,8 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Http } from '@angular/http'
 import { Observable } from 'rxjs/Observable';
-import { PersonService } from '../../../../person.service';
+
 import { PersonnelSidebarComponent } from '../personnel-sidebar/personnel-sidebar.component';
+import { PdmService } from '../../../../services/pdm.service';
+
 
 @Component({
   selector: 'app-personnel-table',
@@ -16,13 +18,17 @@ export class PersonnelTableComponent implements OnInit {
 
   @ViewChild(PersonnelSidebarComponent) private sidebar: PersonnelSidebarComponent
   
-  constructor(private personService: PersonService) { }
+  constructor(private personService: PdmService) { }
     
 
   ngOnInit() {
+  this.getData()
+  }
+
+  getData():void{
     this.personService.loadUserData()
           .subscribe(allData => this.Persons = allData)
-          
+        
   }
 
   setClasses(rowNo: any){
@@ -37,14 +43,14 @@ export class PersonnelTableComponent implements OnInit {
 
 export interface BrowseVM {
 PersonnelID: any,
-Name: string,
-HiringDate: Date,
-Division: string,
-Department: string,
-Title: string,
-Costcenter: number,
-BU: string,
-EmploymentStatus: string,
-EndDate: Date
+Name: any,
+HiringDate: any,
+Division: any,
+Department: any,
+Title: any,
+Costcenter: any,
+BU: any,
+EmploymentStatus: any,
+EndDate: any
 
 }

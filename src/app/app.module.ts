@@ -1,8 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router'
-import { HttpModule } from '@angular/http';
-import { PersonService } from './person.service'
+// import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms'
+
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
+import { PdmService } from './services/pdm.service';
 import { AppComponent } from './app.component';
 import { BrowseComponent } from './pdm/components/browse/browse.component';
 import { PersonnelListComponent } from './pdm/components/browse/personnel-list/personnel-list.component';
@@ -18,6 +23,24 @@ import { MaintainComponent } from './pdm/components/maintain/maintain.component'
 import { TestAreaComponent } from './home/test-area/test-area.component';
 import { ActionsComponent } from './pdm/components/maintain/infopages/actions/actions.component';
 import { OrgassignComponent } from './pdm/components/maintain/infopages/orgassign/orgassign.component';
+import { PersonalComponent } from './pdm/components/maintain/infopages/personal/personal.component';
+import { AddressComponent } from './pdm/components/maintain/infopages/address/address.component';
+import { FamilyComponent } from './pdm/components/maintain/infopages/family/family.component';
+import { PreviousComponent } from './pdm/components/maintain/infopages/previous/previous.component';
+import { BanksComponent } from './pdm/components/maintain/infopages/banks/banks.component';
+import { LaborcontractComponent } from './pdm/components/maintain/infopages/laborcontract/laborcontract.component';
+import { EducationComponent } from './pdm/components/maintain/infopages/education/education.component';
+import { WorkscheduleComponent } from './pdm/components/maintain/infopages/workschedule/workschedule.component';
+import { ImmigrationComponent } from './pdm/components/maintain/infopages/immigration/immigration.component';
+import { LicensesComponent } from './pdm/components/maintain/infopages/licenses/licenses.component';
+import { BasicpayComponent } from './pdm/components/maintain/infopages/basicpay/basicpay.component';
+import { AllowancesComponent } from './pdm/components/maintain/infopages/allowances/allowances.component';
+import { AwardsComponent } from './pdm/components/maintain/infopages/awards/awards.component';
+import { FilesComponent } from './pdm/components/maintain/infopages/files/files.component';
+import { DatemilestonesComponent } from './pdm/components/maintain/infopages/datemilestones/datemilestones.component';
+import { GeneralinfoComponent } from './pdm/components/maintain/infopages/generalinfo/generalinfo.component';
+
+
 
 
 @NgModule({
@@ -35,14 +58,32 @@ import { OrgassignComponent } from './pdm/components/maintain/infopages/orgassig
     MaintainComponent,
     TestAreaComponent,
     ActionsComponent,
-    OrgassignComponent
+    OrgassignComponent,
+    PersonalComponent,
+    AddressComponent,
+    FamilyComponent,
+    PreviousComponent,
+    BanksComponent,
+    LaborcontractComponent,
+    EducationComponent,
+    WorkscheduleComponent,
+    ImmigrationComponent,
+    LicensesComponent,
+    BasicpayComponent,
+    AllowancesComponent,
+    AwardsComponent,
+    FilesComponent,
+    DatemilestonesComponent,
+    GeneralinfoComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routeConfig),
-    HttpModule
+    NgbModule.forRoot(),
+    // HttpModule, 
+    FormsModule, HttpClientModule
   ],
-  providers: [PersonService],
+  providers: [PdmService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

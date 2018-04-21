@@ -98,12 +98,13 @@
             </thead>
 
             <tbody>
-                    <tr *ngFor="let person of Persons; let i = index" class="gradeX" (dblclick)="setClasses('toggle')" (click)="setClasses(person.PersonnelID)">
-                        <td>{{person.PersonnelID }}</td>
-                        <td>{{person.Name }}</td>
-                        <td>{{person.HiringDate | date: 'shortDate' }}</td>
-                        <td>{{person.Division }}</td>
-                        <td>{{person.Title }}</td>
+                    <tr *ngFor="let person of Persons; let i = index" class="gradeX"
+                     (dblclick)="setClasses('toggle')" (click)="setClasses(person.PersonnelID)">
+                        <td>{{person?.PersonnelID }}</td>
+                        <td>{{person?.Name }}</td>
+                        <td>{{person?.HiringDate | date: 'shortDate' }}</td>
+                        <td>{{person?.Division }}</td>
+                        <td>{{person?.Title }}</td>
                     </tr>
                     </tbody>
 

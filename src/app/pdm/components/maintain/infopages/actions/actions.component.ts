@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PdmService } from '../../../../../services/pdm.service';
 
 @Component({
   selector: 'app-actions',
@@ -7,9 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActionsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private pdmService: PdmService) { }
+  Actions: Actions
 
   ngOnInit() {
   }
 
+  loadInfoPageActions(id: number){
+    this.pdmService.loadStaffRecord('Staff/' +id + '/Actions/' + id)
+    .subscribe(data => this.Actions = data)
+    }
+    
+    
+}
+
+export interface Actions {
+  "EmpId": any
+  "browseId": any
+  "ActionType": any
+  "ActionReason": any
+  "TerminationReason":any
+  "EmploymentStatus": any
+  "ActionCode": any
 }
