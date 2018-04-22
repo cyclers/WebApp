@@ -16,9 +16,15 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": ["styles.css"],
+<<<<<<< HEAD
       "scripts": ["../node_modules/jquery/dist/jquery.min.js", 
         "./assets/js/datatables.min.js",
       "./assets/js/jquery.steps.min.js"],
+||||||| merged common ancestors
+      "scripts": ["../node_modules/jquery/dist/jquery.min.js", "./assets/js/datatables.min.js"],
+=======
+      "scripts": ["../node_modules/jquery/dist/jquery.min.js"],
+>>>>>>> 152d55d7e22b133b0a1172f1a95e38c427f35c13
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
