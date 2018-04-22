@@ -17,7 +17,7 @@ export class TestAreaComponent implements OnInit {
 
   ngOnInit() {
 
-    $(document).ready(function(){
+   
       $('.dataTables-example').DataTable({
           pageLength: 10,
           responsive: true,
@@ -42,7 +42,7 @@ export class TestAreaComponent implements OnInit {
 
       });
 
-  });
+
 
 
   }
