@@ -1,46 +1,18 @@
 <br>
 <div class="col-lg-4">
   <div class="ibox">
-      <div class="ibox-content">
-          <h3>Personnel Data Management</h3>
-
-
-          <ul class="sortable-list connectList agile-list ui-sortable" id="todo">
-              <li routerLink='/personnel/browse' class="warning-element ui-sortable-handle" id="task1">
-                  Browse Staff Information 
-                  <div class="agile-detail">
-                      <br>
-                      <a class="pull-left btn btn-xs btn-white">Access quick information...</a>
-                      <br>
-                  </div>
-              </li>
-              <li routerLink='/personnel/maintain' class="success-element ui-sortable-handle" id="task2">
-                  Display and Maintain Master Data
-
-                  <div class="agile-detail">
-                      <br>
-                      <a href="#" class="pull-left btn btn-xs btn-white">See and change details...</a>
-                      <br>
-                  
-                  </div>
-              </li>
-              <li class="info-element ui-sortable-handle" id="task3">
-                  Personnel Actions
-                  <div class="agile-detail">
-                      <br>
-                      <a href="#" class="pull-left btn btn-xs btn-white">Upload changes...</a>
-                      <br>
-                  </div>
-              </li>
-              <li class="danger-element ui-sortable-handle" id="task4">
-                  Personnel Actions
-                  <div class="agile-detail">
-                      <br>
-                      <a href="#" class="pull-left btn btn-xs btn-white">Get your hands on data...</a>
-                      <br>
-                  </div>
-              </li>
-          </ul>
-      </div>
+    <div class="ibox-content">
+      <h3>Personnel Data Management</h3>
+      <ul class="sortable-list connectList agile-list ui-sortable" id="todo">
+        <li *ngFor="let section of sections" routerLink={{section.url}} class="success-element ui-sortable-handle" id={section.id}>
+          {{section.title}}
+          <div class="agile-detail">
+            <br>
+            <span class="pull-left btn btn-xs btn-white">{{section.description}}</span>
+            <br>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>

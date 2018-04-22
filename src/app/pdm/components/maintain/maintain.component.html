@@ -1,162 +1,150 @@
 <br>
 
 
-<div class="col-sm-4"><input type="text" class="form-control"
-     (keyup.enter)="enteredId(staffid.value)" #staffid placeholder="Enter ID"></div>
+<div class="col-sm-4">
+  <input type="text" class="form-control" (keyup.enter)="enteredId(staffid.value)" #staffid placeholder="Enter ID">
+</div>
 
 
 
-    <br><br><br><br>
+<br>
+<br>
+<br>
+<br>
 <div class="col-lg-12">
-    <div class="tabs-container">
-        <ul class="nav nav-tabs">
-            <li (click)="loadTab(1)" class="active"><a data-toggle="tab" href="#tab-1"> Overview</a></li>
-            <li (click)="loadTab(2)" class=""><a data-toggle="tab" href="#tab-2">Actions</a></li>
-            <li (click)="loadTab(3)" class=""><a data-toggle="tab" href="#tab-3">Org Assign.</a></li>
-            <li (click)="loadTab(4)" class=""><a data-toggle="tab" href="#tab-4">Dates</a></li>
-            <li (click)="loadTab(5)" class=""><a data-toggle="tab" href="#tab-5">Personal</a></li>
-            <li (click)="loadTab(6)" class=""><a data-toggle="tab" href="#tab-6">Address</a></li>
-            <li (click)="loadTab(7)" class=""><a data-toggle="tab" href="#tab-7">Family</a></li>
-            <li (click)="loadTab(8)" class=""><a data-toggle="tab" href="#tab-8">History</a></li>
-            <li (click)="loadTab(9)" class=""><a data-toggle="tab" href="#tab-9">Banks</a></li>
+  <div class="tabs-container">
+    <ul class="nav nav-tabs">
+      <li *ngFor="let infoPage of infoPages" class="">
+        <a *ngIf="infoPage.id < 10" data-toggle="tab" routerLink={{infoPage.url}}>{{infoPage.title}}</a>
+      </li>
 
-            <li class="btn-group">
-                    <a data-toggle="dropdown" class="" > <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                            <li (click)="loadTab(10)" class=""><a data-toggle="tab" href="#tab-10">Contracts</a></li>
-                            <li (click)="loadTab(11)" class=""><a data-toggle="tab" href="#tab-11">Education</a></li>
-                            <li (click)="loadTab(12)" class=""><a data-toggle="tab" href="#tab-12">Schedules</a></li>
-                            <li (click)="loadTab(13)" class=""><a data-toggle="tab" href="#tab-13">Licenses</a></li>
-                            <li (click)="loadTab(14)" class=""><a data-toggle="tab" href="#tab-14">Immigration</a></li>
-                            <li (click)="loadTab(15)" class=""><a data-toggle="tab" href="#tab-15">Basic Pay</a></li>
-                            <li (click)="loadTab(16)" class=""><a data-toggle="tab" href="#tab-16">Allowances</a></li>
-                            <li (click)="loadTab(17)" class=""><a data-toggle="tab" href="#tab-17">Awards</a></li>
-                            <li (click)="loadTab(18)" class=""><a data-toggle="tab" href="#tab-18 ">Files</a></li>
-                    </ul>
-                </li>
+      <li class="btn-group">
+        <a data-toggle="dropdown" class="">
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li *ngFor="let infoPage of infoPages" (click)="loadTab(10)" class="">
+            <a *ngIf="infoPage.id >= 10" data-toggle="tab" routerLink={{infoPage.url}}>{{infoPage.title}}</a>
+          </li>
         </ul>
-        <br>
-        <div style="display: flex">
+      </li>
+    </ul>
+    <br>
+
+    <div style="display: flex">
+      <div class="input-group input-group-sm mb-3">
+        <input class="form-control" placeholder="yyyy-mm-dd" (click)="t.toggle()" name="dp" [(ngModel)]="model" ngbDatepicker #t="ngbDatepicker">
+        <div class="input-group-append" style="display: flex">
+        </div>
+      </div>
+      <div style=" padding: 2px;margin-left: 5px; margin-right: 10px;">to</div>
+      <div class="input-group input-group-sm mb-3">
+        <input class="form-control" placeholder="yyyy-mm-dd" (click)="t.toggle()" name="dp" [(ngModel)]="model" ngbDatepicker #t="ngbDatepicker">
+        <div class="input-group-append" style="display: flex">
+        </div>
+      </div>
+
+      <div style="padding-left: 32px;">
+        <button class="btn btn-link " type="button">
+          <i class="fa fa-backward"></i>
+        </button>
+        <button class="btn btn-link " type="button">
+          <i class="fa fa-forward"></i>
+        </button>
+        <button class="btn btn-link " type="button">
+          <i class="fa fa-file"></i> New</button>
+        <button class="btn btn-link " type="button">
+          <i class="fa fa-edit"></i>&nbsp;&nbsp;
+          <span class="bold">Edit</span>
+        </button>
+        <button class="btn btn-link " type="button">
+          <i class="fa fa-save"></i>&nbsp;Save</button>
+        <button class="btn btn-link " type="button">
+          <i class="fa fa-eye"></i>&nbsp;Overview</button>
+      </div>
+
+    </div>
+    <br>
+    <br>
+
+    <div class="tab-content">
+      <div id="tab-1" class="tab-pane active">
+        <app-generalinfo></app-generalinfo>
+      </div>
+
+      <div id="tab-2" class="tab-pane">
+        <app-actions></app-actions>
+      </div>
+
+      <div id="tab-3" class="tab-pane">
+        <app-orgassign></app-orgassign>
+      </div>
 
 
-          <div class="input-group input-group-sm mb-3">
-            <input class="form-control" placeholder="yyyy-mm-dd"
-            (click)="t.toggle()" name="dp" [(ngModel)]="model" ngbDatepicker #t="ngbDatepicker">
-            <div class="input-group-append" style="display: flex">
-              <!-- <button class="btn-outline-secondary"  style="padding: 0px; border: 1px solid transparent ; cursor: pointer" type="button">
-                    <i class="material-icons md-36">date_range</i>
-                 <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/> -->
-              <!-- </button> -->
-            </div>
-          </div>
+      <div id="tab-4" class="tab-pane">
+        <app-datemilestones></app-datemilestones>>
+      </div>
 
-        <!-- <input type="text" class="input-sm" name="start" value="05/14/2014"> -->
-                <div style=" padding: 2px;
-                margin-left: 5px; margin-right: 10px;">to</div>
-
-                <div class="input-group input-group-sm mb-3">
-                  <input class="form-control" placeholder="yyyy-mm-dd"
-                  (click)="t.toggle()" name="dp" [(ngModel)]="model" ngbDatepicker #t="ngbDatepicker">
-                  <div class="input-group-append" style="display: flex">
-                    <!-- <button class="btn-outline-secondary"  style="padding: 0px; border: 1px solid transparent ; cursor: pointer" type="button">
-                          <i class="material-icons md-36">date_range</i>
-                       <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/> -->
-                    <!-- </button> -->
-                  </div>
-                </div>
+      <div id="tab-5" class="tab-pane">
+        <app-personal></app-personal>
+      </div>
 
 
-                <!-- <input type="text" class="input-sm" name="end" value="05/22/2014"> -->
-                <div style="padding-left: 32px;">
-                <button class="btn btn-link " type="button"><i class="fa fa-backward"></i></button>
-                <button class="btn btn-link " type="button"><i class="fa fa-forward"></i></button>
-                <button class="btn btn-link " type="button"><i class="fa fa-file"></i> New</button>
-                <button class="btn btn-link " type="button"><i class="fa fa-edit"></i>&nbsp;&nbsp;<span class="bold">Edit</span></button>
-                <button class="btn btn-link " type="button"><i class="fa fa-save"></i>&nbsp;Save</button>
-                <button class="btn btn-link " type="button"><i class="fa fa-eye"></i>&nbsp;Overview</button>
-                </div>
-
-            </div>
-                <br><br>
-
-<div class="tab-content">
-<div id="tab-1" class="tab-pane active">
-<app-generalinfo></app-generalinfo>
-</div>
-
-<div id="tab-2" class="tab-pane">
-<app-actions></app-actions>
-</div>
-
-<div id="tab-3" class="tab-pane">
-<app-orgassign></app-orgassign>
-</div>
+      <div id="tab-6" class="tab-pane">
+        <app-address></app-address>
+      </div>
 
 
-<div id="tab-4" class="tab-pane">
-<app-datemilestones></app-datemilestones>>
-</div>
+      <div id="tab-7" class="tab-pane">
+        <app-family></app-family>
+      </div>
 
-<div id="tab-5" class="tab-pane">
-<app-personal></app-personal>
-</div>
+      <div id="tab-8" class="tab-pane">
+        <app-previous></app-previous>
+      </div>
 
+      <div id="tab-9" class="tab-pane">
+        <app-banks></app-banks>
+      </div>
 
-<div id="tab-6" class="tab-pane">
-<app-address></app-address>
-</div>
+      <div id="tab-10" class="tab-pane">
+        <app-laborcontract></app-laborcontract>
+      </div>
 
+      <div id="tab-11" class="tab-pane">
+        <app-education></app-education>
+      </div>
 
-<div id="tab-7" class="tab-pane">
-<app-family></app-family>
-</div>
+      <div id="tab-12" class="tab-pane">
+        <app-workschedule></app-workschedule>
+      </div>
 
-<div id="tab-8" class="tab-pane">
-<app-previous></app-previous>
-</div>
+      <div id="tab-13" class="tab-pane">
+        <app-licenses></app-licenses>
+      </div>
 
-<div id="tab-9" class="tab-pane">
-<app-banks></app-banks>
-</div>
+      <div id="tab-14" class="tab-pane">
 
-<div id="tab-10" class="tab-pane">
-<app-laborcontract></app-laborcontract>
-</div>
+        <app-immigration></app-immigration>
+      </div>
 
-<div id="tab-11" class="tab-pane">
-<app-education></app-education>
-</div>
+      <div id="tab-15" class="tab-pane">
+        <app-basicpay></app-basicpay>
+      </div>
 
-<div id="tab-12" class="tab-pane">
-<app-workschedule></app-workschedule>
-</div>
+      <div id="tab-16" class="tab-pane">
+        <app-allowances></app-allowances>
+      </div>
 
-<div id="tab-13" class="tab-pane">
-  <app-licenses></app-licenses>
-</div>
+      <div id="tab-17" class="tab-pane">
+        <app-awards></app-awards>
+      </div>
 
-<div id="tab-14" class="tab-pane">
-
-<app-immigration></app-immigration>
-</div>
-
-<div id="tab-15" class="tab-pane">
-<app-basicpay></app-basicpay>
-</div>
-
-<div id="tab-16" class="tab-pane">
-<app-allowances></app-allowances>
-</div>
-
-<div id="tab-17" class="tab-pane">
-<app-awards></app-awards>
-</div>
-
-<div id="tab-18" class="tab-pane">
-<app-files></app-files>
-</div>
+      <div id="tab-18" class="tab-pane">
+        <app-files></app-files>
+      </div>
 
 
 
 
-</div>
+    </div>

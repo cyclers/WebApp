@@ -1,22 +1,22 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { PersonalComponent } from './infopages/personal/personal.component';
-import { ActionsComponent } from './infopages/actions/actions.component';
-import { OrgassignComponent } from './infopages/orgassign/orgassign.component';
-import { DatemilestonesComponent } from './infopages/datemilestones/datemilestones.component';
-import { AddressComponent } from './infopages/address/address.component';
-import { FamilyComponent } from './infopages/family/family.component';
-import { PreviousComponent } from './infopages/previous/previous.component';
-import { BanksComponent } from './infopages/banks/banks.component';
-import { LaborcontractComponent } from './infopages/laborcontract/laborcontract.component';
-import { EducationComponent } from './infopages/education/education.component';
-import { WorkscheduleComponent } from './infopages/workschedule/workschedule.component';
-import { LicensesComponent } from './infopages/licenses/licenses.component';
-import { ImmigrationComponent } from './infopages/immigration/immigration.component';
-import { BasicpayComponent } from './infopages/basicpay/basicpay.component';
-import { AllowancesComponent } from './infopages/allowances/allowances.component';
-import { AwardsComponent } from './infopages/awards/awards.component';
-import { FilesComponent } from './infopages/files/files.component';
-import { GeneralinfoComponent } from './infopages/generalinfo/generalinfo.component';
+import { Component, OnInit, ViewChild } from "@angular/core";
+import { PersonalComponent } from "./infopages/personal/personal.component";
+import { ActionsComponent } from "./infopages/actions/actions.component";
+import { OrgassignComponent } from "./infopages/orgassign/orgassign.component";
+import { DatemilestonesComponent } from "./infopages/datemilestones/datemilestones.component";
+import { AddressComponent } from "./infopages/address/address.component";
+import { FamilyComponent } from "./infopages/family/family.component";
+import { PreviousComponent } from "./infopages/previous/previous.component";
+import { BanksComponent } from "./infopages/banks/banks.component";
+import { LaborcontractComponent } from "./infopages/laborcontract/laborcontract.component";
+import { EducationComponent } from "./infopages/education/education.component";
+import { WorkscheduleComponent } from "./infopages/workschedule/workschedule.component";
+import { LicensesComponent } from "./infopages/licenses/licenses.component";
+import { ImmigrationComponent } from "./infopages/immigration/immigration.component";
+import { BasicpayComponent } from "./infopages/basicpay/basicpay.component";
+import { AllowancesComponent } from "./infopages/allowances/allowances.component";
+import { AwardsComponent } from "./infopages/awards/awards.component";
+import { FilesComponent } from "./infopages/files/files.component";
+import { GeneralinfoComponent } from "./infopages/generalinfo/generalinfo.component";
 
 @Component({
   selector: "app-maintain",
@@ -24,133 +24,217 @@ import { GeneralinfoComponent } from './infopages/generalinfo/generalinfo.compon
   styles: []
 })
 export class MaintainComponent implements OnInit {
-<<<<<<< HEAD
+  @ViewChild(GeneralinfoComponent) private infoPage1: GeneralinfoComponent;
+  @ViewChild(ActionsComponent) private infoPage2: ActionsComponent;
+  @ViewChild(OrgassignComponent) private infoPage3: OrgassignComponent;
+  @ViewChild(DatemilestonesComponent)
+  private infoPage4: DatemilestonesComponent;
+  @ViewChild(PersonalComponent) private infoPage5: PersonalComponent;
+  @ViewChild(AddressComponent) private infoPage6: AddressComponent;
+  @ViewChild(FamilyComponent) private infoPage7: FamilyComponent;
+  @ViewChild(PreviousComponent) private infoPage8: PreviousComponent;
+  @ViewChild(BanksComponent) private infoPage9: BanksComponent;
+  @ViewChild(LaborcontractComponent) private infoPage10: LaborcontractComponent;
+  @ViewChild(EducationComponent) private infoPage11: EducationComponent;
+  @ViewChild(WorkscheduleComponent) private infoPage12: WorkscheduleComponent;
+  @ViewChild(LicensesComponent) private infoPage13: LicensesComponent;
+  @ViewChild(ImmigrationComponent) private infoPage14: ImmigrationComponent;
+  @ViewChild(BasicpayComponent) private infoPage15: BasicpayComponent;
+  @ViewChild(AllowancesComponent) private infoPage16: AllowancesComponent;
+  @ViewChild(AwardsComponent) private infoPage17: AwardsComponent;
+  @ViewChild(FilesComponent) private infoPage18: FilesComponent;
+
+  id: number;
+  tabId: number;
+  model;
+
   constructor() {}
-  infoPagesDropdown: Array<String> = [
-    "Contracts",
-    "Education",
-    "Schedules",
-    "Licenses",
-    "Immigration",
-    "Basic Pay",
-    "Allowances",
-    "Awards",
-    "Files"
-  ];
-  infoPages: Array<String> = [
-    "Overview",
-    "Actions",
-    "Org Assign.",
-    "Dates",
-    "Personal",
-    "Address",
-    "Family",
-    "History",
-    "Banks"
-  ];
-  ngOnInit() {}
-=======
-  @ViewChild(GeneralinfoComponent) private infoPage1: GeneralinfoComponent
-  @ViewChild(ActionsComponent) private infoPage2: ActionsComponent
-  @ViewChild(OrgassignComponent) private infoPage3: OrgassignComponent
-  @ViewChild(DatemilestonesComponent) private infoPage4: DatemilestonesComponent
-  @ViewChild(PersonalComponent) private infoPage5: PersonalComponent
-  @ViewChild(AddressComponent) private infoPage6: AddressComponent
-  @ViewChild(FamilyComponent) private infoPage7: FamilyComponent
-  @ViewChild(PreviousComponent) private infoPage8: PreviousComponent
-  @ViewChild(BanksComponent) private infoPage9: BanksComponent
-  @ViewChild(LaborcontractComponent) private infoPage10: LaborcontractComponent
-  @ViewChild(EducationComponent) private infoPage11: EducationComponent
-  @ViewChild(WorkscheduleComponent) private infoPage12: WorkscheduleComponent
-  @ViewChild(LicensesComponent) private infoPage13: LicensesComponent
-  @ViewChild(ImmigrationComponent) private infoPage14: ImmigrationComponent
-  @ViewChild(BasicpayComponent) private infoPage15: BasicpayComponent
-  @ViewChild(AllowancesComponent) private infoPage16: AllowancesComponent
-  @ViewChild(AwardsComponent) private infoPage17: AwardsComponent
-  @ViewChild(FilesComponent) private infoPage18: FilesComponent
-
-  id:number
-  tabId:number
-  model
-
-  constructor() { }
 
   ngOnInit() {
-    this.tabId = 1
+    this.tabId = 1;
   }
 
-  enteredId(id: number){
-    this.id = id
-    this.loadTab(this.tabId)
+  enteredId(id: number) {
+    this.id = id;
+    this.loadTab(this.tabId);
   }
 
-  postD(){
-    console.log("be5")
-    this.infoPage1.postData()
+  postD() {
+    console.log("be5");
+    this.infoPage1.postData();
   }
 
-  loadTab(tabNo:any ){
-    this.tabId = tabNo
+  loadTab(tabNo: any) {
+    this.tabId = tabNo;
 
-    switch (tabNo)  {
+    switch (tabNo) {
       case 1:
-        this.infoPage1.loadInfoPageGeneralInfo(this.id)
+        this.infoPage1.loadInfoPageGeneralInfo(this.id);
         break;
-        case 2:
-        this.infoPage2.loadInfoPageActions(this.id)
+      case 2:
+        this.infoPage2.loadInfoPageActions(this.id);
         break;
-        case 3:
-        this.infoPage3.loadInfoPageOrgAssign(this.id)
+      case 3:
+        this.infoPage3.loadInfoPageOrgAssign(this.id);
         break;
-        case 4:
-        this.infoPage4.loadInfoPageDateMilestones(this.id)
+      case 4:
+        this.infoPage4.loadInfoPageDateMilestones(this.id);
         break;
-        case 5:
-        this.infoPage5.loadInfoPagePersonal(this.id)
+      case 5:
+        this.infoPage5.loadInfoPagePersonal(this.id);
         break;
-        case 6:
-        this.infoPage6.loadInfoPageAddress(this.id)
+      case 6:
+        this.infoPage6.loadInfoPageAddress(this.id);
         break;
-        case 7:
-        this.infoPage7.loadInfoPageFamily(this.id)
+      case 7:
+        this.infoPage7.loadInfoPageFamily(this.id);
         break;
-        case 8:
-        this.infoPage8.loadInfoPagePreviousEmployers(this.id)
+      case 8:
+        this.infoPage8.loadInfoPagePreviousEmployers(this.id);
         break;
-        case 9:
-        this.infoPage9.loadInfoPageBanks(this.id)
+      case 9:
+        this.infoPage9.loadInfoPageBanks(this.id);
         break;
-        case 10:
-        this.infoPage10.loadInfoPageLaborContract(this.id)
+      case 10:
+        this.infoPage10.loadInfoPageLaborContract(this.id);
         break;
-        case 11:
-        this.infoPage11.loadInfoPageEducation(this.id)
+      case 11:
+        this.infoPage11.loadInfoPageEducation(this.id);
         break;
-        case 12:
-        this.infoPage12.loadInfoPageWorkSchedules(this.id)
+      case 12:
+        this.infoPage12.loadInfoPageWorkSchedules(this.id);
         break;
-        case 13:
-        this.infoPage13.loadInfoPageLicenses(this.id)
+      case 13:
+        this.infoPage13.loadInfoPageLicenses(this.id);
         break;
-        case 14:
-        this.infoPage14.loadInfoPageImmigration(this.id)
+      case 14:
+        this.infoPage14.loadInfoPageImmigration(this.id);
         break;
-        case 15:
-        this.infoPage15.loadInfoPageBasicPay(this.id)
+      case 15:
+        this.infoPage15.loadInfoPageBasicPay(this.id);
         break;
-        case 16:
-        this.infoPage16.loadInfoPageAllowances(this.id)
+      case 16:
+        this.infoPage16.loadInfoPageAllowances(this.id);
         break;
-        case 17:
-        this.infoPage17.loadInfoPageAwards(this.id)
+      case 17:
+        this.infoPage17.loadInfoPageAwards(this.id);
         break;
-        case 18:
-        this.infoPage18.loadInfoPageFiles(this.id)
+      case 18:
+        this.infoPage18.loadInfoPageFiles(this.id);
         break;
-        default:
+      default:
         break;
-
+    }
   }
-}
->>>>>>> b67566ef3d9abe8f188be76d38d296e2155f85ea
+  infoPages = [
+    {
+      id: 1,
+      title: "Overview",
+      url: "./overview",
+      class: ""
+    },
+    {
+      id: 2,
+      title: "Actions",
+      url: "./actions",
+      class: ""
+    },
+    {
+      id: 3,
+      title: "Org Assign.",
+      url: "./orgassign",
+      class: ""
+    },
+    {
+      id: 4,
+      title: "Dates",
+      url: "./dates",
+      class: ""
+    },
+    {
+      id: 5,
+      title: "Personal",
+      url: "./personnel",
+      class: ""
+    },
+    {
+      id: 6,
+      title: "Address",
+      url: "./address",
+      class: ""
+    },
+    {
+      id: 7,
+      title: "Family",
+      url: "./family",
+      class: ""
+    },
+    {
+      id: 8,
+      title: "History",
+      url: "./history",
+      class: ""
+    },
+    {
+      id: 9,
+      title: "Banks",
+      url: "./banks",
+      class: ""
+    },
+    {
+      id: 10,
+      title: "Contracts",
+
+      url: "./contracts",
+      class: ""
+    },
+    {
+      id: 11,
+      title: "Education",
+      url: "./education",
+      class: ""
+    },
+    {
+      id: 12,
+      title: "Schedules",
+      url: "./chedules",
+      class: ""
+    },
+    {
+      id: 13,
+      title: "Licenses",
+      url: "./licenses",
+      class: ""
+    },
+    {
+      id: 14,
+      title: "Immigration",
+      url: "./immigration",
+      class: ""
+    },
+    {
+      id: 15,
+      title: "Basic Pay",
+      url: "./basicpay",
+      class: ""
+    },
+    {
+      id: 16,
+      title: "Allowances",
+      url: "./allowances",
+      class: ""
+    },
+    {
+      id: 17,
+      title: "Awards",
+      url: "./awards",
+      class: ""
+    },
+    {
+      id: 18,
+      title: "Files",
+      url: "./files",
+      class: ""
+    }
+  ];
 }
