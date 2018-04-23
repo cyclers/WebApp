@@ -1,3 +1,8 @@
+// https://egghead.io/lessons/javascript-creating-demo-apis-with-json-server
+// go to cd src/app/services
+// type             json-server wat.js
+//make a post command via app.component.ts
+
 var _ = require('lodash');
 var  faker = require("faker");
 
