@@ -24,32 +24,8 @@ import { GeneralinfoComponent } from './infopages/generalinfo/generalinfo.compon
   styles: []
 })
 export class MaintainComponent implements OnInit {
-<<<<<<< HEAD
-  constructor() {}
-  infoPagesDropdown: Array<String> = [
-    "Contracts",
-    "Education",
-    "Schedules",
-    "Licenses",
-    "Immigration",
-    "Basic Pay",
-    "Allowances",
-    "Awards",
-    "Files"
-  ];
-  infoPages: Array<String> = [
-    "Overview",
-    "Actions",
-    "Org Assign.",
-    "Dates",
-    "Personal",
-    "Address",
-    "Family",
-    "History",
-    "Banks"
-  ];
-  ngOnInit() {}
-=======
+
+
   @ViewChild(GeneralinfoComponent) private infoPage1: GeneralinfoComponent
   @ViewChild(ActionsComponent) private infoPage2: ActionsComponent
   @ViewChild(OrgassignComponent) private infoPage3: OrgassignComponent
@@ -152,5 +128,4 @@ export class MaintainComponent implements OnInit {
 
   }
 }
->>>>>>> b67566ef3d9abe8f188be76d38d296e2155f85ea
 }

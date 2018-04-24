@@ -12,24 +12,24 @@ export class AppComponent {
 
   constructor(private http: HttpClient){
 
- this.wawa()
+//  this.wawa()
   
   } 
 
 
-  wawa(): Observable<any>{
-    console.log("12312333333333333")
-    return this.http.post<any>('http://localhost:3000/browse', JSON.stringify({id: 200}))
-  }
+  // wawa(): Observable<any>{
+  //   console.log("12312333333333333")
+  //   return this.http.post<any>('http://localhost:3000/browse', JSON.stringify(Khaled))
+  // }
   }
   
-var Khaled = {
-  "id": 1120,
-}
+// var Khaled = {
+//   "id": 1120,
+// }
 
-function commonheaders(){
-  const headers = new HttpHeaders();
-  headers.append('Content-Type', 'application/json; charset=utf-8');
+// function commonheaders(){
+//   const headers = new HttpHeaders();
+//   headers.append('Content-Type', 'application/json; charset=utf-8');
 
-  return {headers};
-}
+//   return {headers};
+// }
