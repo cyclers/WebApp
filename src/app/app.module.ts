@@ -4,7 +4,9 @@ import { RouterModule } from '@angular/router'
 // import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms'
+import { ReactiveFormsModule } from '@angular/forms';
 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { PdmService } from './services/pdm.service';
@@ -39,9 +41,12 @@ import { AwardsComponent } from './pdm/components/maintain/infopages/awards/awar
 import { FilesComponent } from './pdm/components/maintain/infopages/files/files.component';
 import { DatemilestonesComponent } from './pdm/components/maintain/infopages/datemilestones/datemilestones.component';
 import { GeneralinfoComponent } from './pdm/components/maintain/infopages/generalinfo/generalinfo.component';
+import { PersonalActionComponent } from './pdm/components/personal-action/personal-action.component';
 
-
-
+import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -74,14 +79,23 @@ import { GeneralinfoComponent } from './pdm/components/maintain/infopages/genera
     AwardsComponent,
     FilesComponent,
     DatemilestonesComponent,
-    GeneralinfoComponent
+    GeneralinfoComponent,
+    PersonalActionComponent,
+    
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routeConfig),
     NgbModule.forRoot(),
     // HttpModule, 
-    FormsModule, HttpClientModule
+    FormsModule, HttpClientModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatButtonModule, MatCheckboxModule,
+    MatStepperModule,
+    MatFormFieldModule,
+    MatInputModule
+
   ],
   providers: [PdmService],
   bootstrap: [AppComponent]
