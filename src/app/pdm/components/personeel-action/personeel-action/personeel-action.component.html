@@ -1,0 +1,228 @@
+
+<h2>the date is: {{thePersoneelDate| json}}</h2>
+
+
+
+{{selectedAction}}
+
+<div class="col-lg-12">
+
+    <mat-horizontal-stepper [linear]="isLinear" #stepper="matHorizontalStepper">
+      
+     
+      <mat-step>
+          <ng-template matStepLabel>Enter Actions</ng-template>
+        
+          <div> 
+              <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+            <button mat-button >Save</button> 
+            <button mat-button >Cancel</button> 
+            <button mat-button >Finish</button> 
+          </div>
+            <app-actions></app-actions>
+
+      </mat-step>
+      
+      <mat-step *ngIf="ChangeEntryExitDate">
+        <ng-template matStepLabel>Enter Org Assign</ng-template>
+        <div> 
+            <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+          <button mat-button >Save</button> 
+          <button mat-button >Cancel</button> 
+          <button mat-button >Finish</button> 
+        </div>
+        <app-orgassign></app-orgassign>
+        
+    </mat-step>
+    <mat-step *ngIf="newHire || Rehire">
+      <ng-template matStepLabel>Enter Personal Info</ng-template>
+      <div> 
+          <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+        <button mat-button >Save</button> 
+        <button mat-button >Cancel</button> 
+        <button mat-button >Finish</button> 
+      </div>
+      <app-personal></app-personal>
+      
+  </mat-step>
+  <mat-step *ngIf="newHire || Rehire || Separation || !ChangeEntryExitDate">
+      <ng-template matStepLabel>Enter Dates</ng-template>
+      <div> 
+          <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+        <button mat-button >Save</button> 
+        <button mat-button >Cancel</button> 
+        <button mat-button >Finish</button> 
+      </div>
+        <app-datemilestones></app-datemilestones>
+      
+  </mat-step>
+  <mat-step *ngIf="newHire || Rehire">
+    <ng-template matStepLabel>Enter Address</ng-template>
+    <div> 
+        <button mat-button matStepperPrevious>Back</button>
+      <button mat-button matStepperNext>Next</button>
+      <button mat-button >Save</button> 
+      <button mat-button >Cancel</button> 
+      <button mat-button >Finish</button> 
+    </div>
+    <app-address></app-address>
+    
+</mat-step>
+      <!-- <mat-step *ngIf="">
+          <ng-template matStepLabel>Enter Family Dep</ng-template>
+          <div> 
+              <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+            <button mat-button >Save</button> 
+            <button mat-button >Cancel</button> 
+            <button mat-button >Finish</button> 
+          </div>
+          <app-family></app-family>
+         
+      </mat-step>
+      <mat-step *ngIf="">
+        <ng-template matStepLabel>Enter Previous Emp</ng-template>
+        <div> 
+            <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+          <button mat-button >Save</button> 
+          <button mat-button >Cancel</button> 
+          <button mat-button >Finish</button> 
+        </div>
+        <app-previous></app-previous>
+        
+    </mat-step>  -->
+    <!-- <mat-step *ngIf="">
+      <ng-template matStepLabel>Enter Bank</ng-template>
+      <div> 
+          <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+        <button mat-button >Save</button> 
+        <button mat-button >Cancel</button> 
+        <button mat-button >Finish</button> 
+      </div>
+      <app-banks></app-banks>
+      
+  </mat-step> -->
+  <mat-step >
+    <ng-template matStepLabel>Enter Labor Contract</ng-template>
+    <div> 
+        <button mat-button matStepperPrevious>Back</button>
+      <button mat-button matStepperNext>Next</button>
+      <button mat-button >Save</button> 
+      <button mat-button >Cancel</button> 
+      <button mat-button >Finish</button> 
+    </div>
+    <app-laborcontract></app-laborcontract>
+    
+</mat-step>
+      <!-- <mat-step *ngIf="">
+        <ng-template matStepLabel>Enter Education</ng-template>
+        <div> 
+            <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+          <button mat-button >Save</button> 
+          <button mat-button >Cancel</button> 
+          <button mat-button >Finish</button> 
+        </div>
+        <app-education></app-education>
+        
+    </mat-step> -->
+    <mat-step>
+      <ng-template matStepLabel>Enter Workschedule</ng-template>
+      <div> 
+          <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+        <button mat-button >Save</button> 
+        <button mat-button >Cancel</button> 
+        <button mat-button >Finish</button> 
+      </div>
+      <app-workschedule></app-workschedule>
+      
+  </mat-step>
+  <!-- <mat-step *ngIf="">
+    <ng-template matStepLabel>Enter Licenses</ng-template>
+    <div> 
+        <button mat-button matStepperPrevious>Back</button>
+      <button mat-button matStepperNext>Next</button>
+      <button mat-button >Save</button> 
+      <button mat-button >Cancel</button> 
+      <button mat-button >Finish</button> 
+    </div>
+    <app-licenses></app-licenses>
+    
+</mat-step> -->
+<!-- <mat-step *ngIf="">
+  <ng-template matStepLabel>Enter Immigration</ng-template>
+  <div> 
+      <button mat-button matStepperPrevious>Back</button>
+    <button mat-button matStepperNext>Next</button>
+    <button mat-button >Save</button> 
+    <button mat-button >Cancel</button> 
+    <button mat-button >Finish</button> 
+  </div>
+  <app-immigration></app-immigration>
+
+  
+</mat-step> -->
+<mat-step *ngIf="newHire || Rehire || Reassignment
+ ||RoleChange ||SalaryChange ||EmploymentChange
+  ||TimeChange ||LeaveofAbsence ||ReturnofLeave">
+  <ng-template matStepLabel>Enter Basicpay</ng-template>
+  <div> 
+      <button mat-button matStepperPrevious>Back</button>
+    <button mat-button matStepperNext>Next</button>
+    <button mat-button >Save</button> 
+    <button mat-button >Cancel</button> 
+    <button mat-button >Finish</button> 
+  </div>
+  <app-basicpay></app-basicpay>
+  
+</mat-step>
+<mat-step *ngIf="newHire || Rehire">
+  <ng-template matStepLabel>Enter Allowances</ng-template>
+  <div> 
+      <button mat-button matStepperPrevious>Back</button>
+    <button mat-button matStepperNext>Next</button>
+    <button mat-button >Save</button> 
+    <button mat-button >Cancel</button> 
+    <button mat-button >Finish</button> 
+  </div>
+<app-allowances></app-allowances>
+  
+</mat-step>
+<mat-step *ngIf="newHire">
+  <ng-template matStepLabel>Enter Awards</ng-template>
+  <div> 
+      <button mat-button matStepperPrevious>Back</button>
+    <button mat-button matStepperNext>Next</button>
+    <button mat-button >Save</button> 
+    <button mat-button >Cancel</button> 
+    <button mat-button >Finish</button> 
+  </div>
+  <app-awards></app-awards>
+  
+</mat-step>
+      <!-- <mat-step *ngIf="">
+        <ng-template matStepLabel>Enter Files</ng-template>
+        <div> 
+            <button mat-button matStepperPrevious>Back</button>
+        
+          <button mat-button >Save</button> 
+          <button mat-button >Cancel</button> 
+          <button mat-button >Finish</button> 
+        </div>
+        <!-- <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button (click)="stepper.reset()">Reset</button>
+          </div> -->
+        <!-- <app-files></app-files>
+        
+      </mat-step>  -->
+    </mat-horizontal-stepper>
+</div>
+<button type="button" (click)="excute()">get the date</button>
