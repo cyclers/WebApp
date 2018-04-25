@@ -1,4 +1,50 @@
-<div class="panel-body">
+<div style="display: flex">
+  <div class="input-group input-group-sm mb-3">
+    <input class="form-control" placeholder="yyyy-mm-dd"
+    (click)="m.toggle()" name="dp" value="{{InfoPageHeader.ValidFrom | date: 'yyyy-mm-dd' }}" ngbDatepicker #m="ngbDatepicker">
+    <div class="input-group-append" style="display: flex">
+      <!-- <button class="btn-outline-secondary"  style="padding: 0px; border: 1px solid transparent ; cursor: pointer" type="button">
+            <i class="material-icons md-36">date_range</i>
+         <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/> -->
+      <!-- </button> -->
+    </div>
+  </div>
+
+<!-- <input type="text" class="input-sm" name="start" value="05/14/2014"> -->
+        <div style=" padding: 2px;
+        margin-left: 5px; margin-right: 10px;">to</div>
+
+        <div class="input-group input-group-sm mb-3">
+          <input class="form-control" placeholder="yyyy-mm-dd"
+          (click)="t.toggle()" name="dp" value="{{InfoPageHeader.ValidTo | date: 'yyyy-mm-dd' }}" ngbDatepicker #t="ngbDatepicker">
+          <div class="input-group-append" style="display: flex">
+            <!-- <button class="btn-outline-secondary"  style="padding: 0px; border: 1px solid transparent ; cursor: pointer" type="button">
+                  <i class="material-icons md-36">date_range</i>
+               <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/> -->
+            <!-- </button> -->
+          </div>
+        </div>
+
+
+        <!-- <input type="text" class="input-sm" name="end" value="05/22/2014"> -->
+        <div style="padding-left: 32px;">
+        <button class="btn btn-link " type="button"><i class="fa fa-backward"></i></button>
+        <button class="btn btn-link " type="button"><i class="fa fa-forward"></i></button>
+        <button class="btn btn-link " type="button"><i class="fa fa-file"></i> New</button>
+        <button class="btn btn-link " type="button"><i class="fa fa-edit"></i>&nbsp;&nbsp;<span class="bold">Edit</span></button>
+        <button class="btn btn-link " type="button"><i class="fa fa-save"></i>&nbsp;Save</button>
+        <button class="btn btn-link " type="button"><i class="fa fa-eye"></i>&nbsp;Overview</button>
+        </div>
+        
+
+        
+
+    </div>
+    <div style="padding-left: 32px;">
+      By: {{ InfoPageHeader.By }} Last Change: {{ InfoPageHeader.LastChange }} Created at: {{ InfoPageHeader.CreatedAt }} 
+    </div>
+    
+    <div class="panel-body">
   <div class="row">
   <div class="col-sm-6 b-r"><h3 class="m-t-none m-b">Labor Contract
       </h3>

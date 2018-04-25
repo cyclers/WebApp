@@ -16,7 +16,7 @@ export class PreviousComponent implements OnInit {
   }
 
   loadInfoPagePreviousEmployers(id) {
-    this.pdmService.loadStaffRecord('Staff/' +id + '/PreviousEmployers/' + id)
+    this.pdmService.loadStaffRecord('PreviousEmployers/' + id)
       .subscribe(data => this.PreviousEmployers = data)
   }
 }

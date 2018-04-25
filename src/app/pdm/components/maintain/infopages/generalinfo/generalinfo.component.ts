@@ -17,28 +17,33 @@ export class GeneralinfoComponent implements OnInit {
   }
 
   loadInfoPageGeneralInfo(id) {
-    this.pdmService.loadStaffRecord('Staff/' +id + '/General/' + id)
+    this.pdmService.loadStaffRecord('General/' + id)
       .subscribe(data => this.GeneralInfo = data)
   }
 
-  postData(){
-    const data: General = {
-      "id": "51",
-      "StaffId": "77",
-      "createdAt": "1524092767",
-      "name": "Khaled Jamal",
-      "imageUrl": "Khaled Jamal"
-    }
-    this.pdmService.postNewPersonnelAction(data)
-  }
+  // postData(){
+  //   const data: General = {
+  //     "id": "51",
+  //     "createdAt": "1524092767",
+  //     "name": "Khaled Jamal",
+  //     "imageUrl": "Khaled Jamal"
+  //   }
+  //   this.pdmService.postNewPersonnelAction(data)
+  // }
 }
 
 
 export interface General {
 
   "id": any
-  "StaffId": any
   "createdAt":any
   "name": any
   "imageUrl": any
+  "CreatedAt": any
+  "ValidFrom": any
+  "ValidTo": any
+  "isActive": any
+  "isDeleted": any
+  "LastChange": any
+  "By": any
 }

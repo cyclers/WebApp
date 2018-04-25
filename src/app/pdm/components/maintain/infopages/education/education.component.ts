@@ -16,7 +16,7 @@ export class EducationComponent implements OnInit {
   }
 
   loadInfoPageEducation(id:number) {
-    this.pdmService.loadStaffRecord('Staff/' +id + '/Education/' + id)
+    this.pdmService.loadStaffRecord('Education/' + id)
       .subscribe(data => this.education = data)
   }
 }

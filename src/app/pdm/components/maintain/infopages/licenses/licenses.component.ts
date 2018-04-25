@@ -16,7 +16,7 @@ export class LicensesComponent implements OnInit {
   }
 
   loadInfoPageLicenses(id) {
-    this.pdmService.loadStaffRecord('Staff/' +id + '/Licenses/' + id)
+    this.pdmService.loadStaffRecord('Licenses/' + id)
       .subscribe(data => this.licenses = data)
   }
 }

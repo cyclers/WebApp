@@ -1,15 +1,64 @@
+<form [formGroup]="ActionsForm" (ngSubmit)="onSubmit(ActionsForm.value)">
 
-  <div class="panel-body">
+
+  <div style="display: flex">
+  <div class="input-group input-group-sm mb-3">
+    <input class="form-control" placeholder="yyyy-mm-dd"
+    (click)="m.toggle()" name="dp" formControlName="ValidFrom" ngbDatepicker #m="ngbDatepicker">
+    <div class="input-group-append" style="display: flex">
+      <!-- <button class="btn-outline-secondary"  style="padding: 0px; border: 1px solid transparent ; cursor: pointer" type="button">
+            <i class="material-icons md-36">date_range</i>
+         <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/> -->
+      <!-- </button> -->
+    </div>
+  </div>
+
+<!-- <input type="text" class="input-sm" name="start" value="05/14/2014"> -->
+        <div style=" padding: 2px;
+        margin-left: 5px; margin-right: 10px;">to</div>
+
+        <div class="input-group input-group-sm mb-3">
+          <input class="form-control" placeholder="yyyy-mm-dd"
+          (click)="t.toggle()" name="dp" formControlName="ValidTo" ngbDatepicker #t="ngbDatepicker">
+          <div class="input-group-append" style="display: flex">
+            <!-- <button class="btn-outline-secondary"  style="padding: 0px; border: 1px solid transparent ; cursor: pointer" type="button">
+                  <i class="material-icons md-36">date_range</i>
+               <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/> -->
+            <!-- </button> -->
+          </div>
+        </div>
+
+
+        <!-- <input type="text" class="input-sm" name="end" value="05/22/2014"> -->
+        <div style="padding-left: 32px;">
+        <button class="btn btn-link " type="button"><i class="fa fa-backward"></i></button>
+        <button class="btn btn-link " type="button"><i class="fa fa-forward"></i></button>
+        <button (click)="newForm()" class="btn btn-link " type="button"><i class="fa fa-file"></i> New</button>
+        <button class="btn btn-link " type="button"><i class="fa fa-edit"></i>&nbsp;&nbsp;<span class="bold">Edit</span></button>
+        <button type="submit" class="btn btn-link "><i class="fa fa-save"></i>&nbsp;Save</button>
+        <button class="btn btn-link " type="button"><i class="fa fa-eye"></i>&nbsp;Overview</button>
+        </div>
+        
+
+        
+
+    </div>
+    <div style="padding-left: 32px;">
+      By: {{ Actions.By }} Last Change: {{ Actions.LastChange }} Created at: {{ Actions.CreatedAt }} 
+    </div>
+
+
+    <div class="panel-body">
   <div class="row">
   <div class="col-sm-6 b-r"><h3 class="m-t-none m-b">Personnel Action    </h3>
-  <form role="form">
-  <div class="form-group">Action Type <input  [(ngModel)]="Actions && Actions.ActionType" [ngModelOptions]="{standalone: true}" class="form-control"></div>
-  <div class="form-group">Reason for Action <input  [(ngModel)]="Actions && Actions.ActionReason" [ngModelOptions]="{standalone: true}" class="form-control"></div>
-  <div class="form-group"> Termination Reason<input  [(ngModel)]="Actions && Actions.TerminationReason" [ngModelOptions]="{standalone: true}" class="form-control"></div>
-  <div class="form-group">Employment Status <input  [(ngModel)]="Actions && Actions.EmploymentStatus" [ngModelOptions]="{standalone: true}" class="form-control"></div>
+ 
+  <div class="form-group">Action Type <input  formControlName="ActionType" class="form-control"></div>
+  <div class="form-group">Reason for Action <input formControlName="ActionReason" class="form-control"></div>
+  <div class="form-group"> Termination Reason<input formControlName="TeminationReason" class="form-control"></div>
+  <div class="form-group">Employment Status <input formControlName="EmploymentStatus" class="form-control"></div>
 
   
-  </form>
+
   
   </div>
   <div class="col-sm-6">
@@ -18,3 +67,4 @@
   </div>
   </div>
   </div>
+</form>

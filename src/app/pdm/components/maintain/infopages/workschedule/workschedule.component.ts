@@ -16,7 +16,7 @@ export class WorkscheduleComponent implements OnInit {
   }
 
   loadInfoPageWorkSchedules(id) {
-    this.pdmService.loadStaffRecord('Staff/' +id + '/WorkSchedule/' + id)
+    this.pdmService.loadStaffRecord('WorkSchedule/' + id)
       .subscribe(data => this.workSchedules = data)
   }
 }

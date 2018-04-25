@@ -16,7 +16,7 @@ export class AwardsComponent implements OnInit {
   }
 
   loadInfoPageAwards(id){
-    this.pdmService.loadStaffRecord('Staff/' +id + '/Awards/' + id)
+    this.pdmService.loadStaffRecord('Awards/' + id)
     .subscribe(data => this.Awards = data)
     }
     

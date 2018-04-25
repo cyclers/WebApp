@@ -16,7 +16,7 @@ export class DatemilestonesComponent implements OnInit {
   }
 
   loadInfoPageDateMilestones(id) {
-    this.pdmService.loadStaffRecord('Staff/' +id + '/DateMilestones/' + id)
+    this.pdmService.loadStaffRecord('DateMilestones/' + id)
       .subscribe(data => this.DateMilestones = data)
   }
 }

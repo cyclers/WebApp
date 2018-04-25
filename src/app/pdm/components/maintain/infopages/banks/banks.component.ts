@@ -16,7 +16,7 @@ export class BanksComponent implements OnInit {
   }
 
   loadInfoPageBanks(id){
-    this.pdmService.loadStaffRecord('Staff/' +id + '/Banks/' + id)
+    this.pdmService.loadStaffRecord('Banks/' + id)
     .subscribe(data => this.Banks = data)
     
     }

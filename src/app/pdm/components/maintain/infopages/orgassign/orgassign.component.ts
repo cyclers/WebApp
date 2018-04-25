@@ -16,7 +16,7 @@ export class OrgassignComponent implements OnInit {
   }
 
   loadInfoPageOrgAssign(id) {
-    this.pdmService.loadStaffRecord('Staff/' +id + '/OrgAssign/' + id)
+    this.pdmService.loadStaffRecord('OrgAssign/' + id)
       .subscribe(data => this.OrgAssign = data)
   }
 }

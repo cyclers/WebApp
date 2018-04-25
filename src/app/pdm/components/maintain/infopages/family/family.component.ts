@@ -16,7 +16,7 @@ export class FamilyComponent implements OnInit {
   }
 
   loadInfoPageFamily(id) {
-    this.pdmService.loadStaffRecord('Staff/' +id + '/Family/' + id)
+    this.pdmService.loadStaffRecord('Family/' + id)
       .subscribe(data => this.Family = data)
   }
 }

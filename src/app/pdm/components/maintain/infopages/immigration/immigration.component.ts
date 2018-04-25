@@ -16,7 +16,7 @@ export class ImmigrationComponent implements OnInit {
   }
 
   loadInfoPageImmigration(id) {
-    this.pdmService.loadStaffRecord('Staff/' +id + '/Immigration/' + id)
+    this.pdmService.loadStaffRecord('Immigration/' + id)
       .subscribe(data => this.immigration = data)
   }
 }

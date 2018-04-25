@@ -17,6 +17,7 @@ import { AllowancesComponent } from './infopages/allowances/allowances.component
 import { AwardsComponent } from './infopages/awards/awards.component';
 import { FilesComponent } from './infopages/files/files.component';
 import { GeneralinfoComponent } from './infopages/generalinfo/generalinfo.component';
+import { PdmService } from '../../../services/pdm.service';
 
 @Component({
   selector: "app-maintain",
@@ -48,84 +49,127 @@ export class MaintainComponent implements OnInit {
   id:number
   tabId:number
   model
+  InfoPageHeader: Validity
 
-  constructor() { }
+  constructor(private pdmService: PdmService) { }
 
   ngOnInit() {
     this.tabId = 1
+
   }
 
   enteredId(id: number){
     this.id = id
+    
     this.loadTab(this.tabId)
+    
   }
 
   postD(){
     console.log("be5")
-    this.infoPage1.postData()
+    // this.infoPage1.postData()
+  }
+
+  callHeader(){
+    this.pdmService.InfoPageHeader$.subscribe(header => this.InfoPageHeader = header)
+  }
+
+  createNew(){
+    this.pdmService.InfoPageNew.next()
   }
 
   loadTab(tabNo:any ){
+    // this.callHeader()
+
     this.tabId = tabNo
 
     switch (tabNo)  {
+      
       case 1:
         this.infoPage1.loadInfoPageGeneralInfo(this.id)
+        
         break;
         case 2:
+        
         this.infoPage2.loadInfoPageActions(this.id)
+
         break;
         case 3:
         this.infoPage3.loadInfoPageOrgAssign(this.id)
+        
         break;
         case 4:
         this.infoPage4.loadInfoPageDateMilestones(this.id)
+
         break;
         case 5:
         this.infoPage5.loadInfoPagePersonal(this.id)
+
         break;
         case 6:
         this.infoPage6.loadInfoPageAddress(this.id)
+
         break;
         case 7:
         this.infoPage7.loadInfoPageFamily(this.id)
+
         break;
         case 8:
         this.infoPage8.loadInfoPagePreviousEmployers(this.id)
+
         break;
         case 9:
         this.infoPage9.loadInfoPageBanks(this.id)
+
         break;
         case 10:
         this.infoPage10.loadInfoPageLaborContract(this.id)
+
         break;
         case 11:
         this.infoPage11.loadInfoPageEducation(this.id)
+
         break;
         case 12:
         this.infoPage12.loadInfoPageWorkSchedules(this.id)
+
         break;
         case 13:
         this.infoPage13.loadInfoPageLicenses(this.id)
+
         break;
         case 14:
         this.infoPage14.loadInfoPageImmigration(this.id)
+
         break;
         case 15:
         this.infoPage15.loadInfoPageBasicPay(this.id)
+
         break;
         case 16:
         this.infoPage16.loadInfoPageAllowances(this.id)
+
         break;
         case 17:
         this.infoPage17.loadInfoPageAwards(this.id)
+
         break;
         case 18:
         this.infoPage18.loadInfoPageFiles(this.id)
+
         break;
         default:
         break;
 
   }
 }
+}
+
+export interface Validity {
+  "CreatedAt": any
+  "ValidFrom": any
+  "ValidTo": any
+  "LastChange": any
+  "By": any
+
 }
