@@ -15,7 +15,7 @@ export const routeConfig = [
     { path: 'personnel/browse', component: BrowseComponent },
     { path: 'personnel/maintain', component: MaintainComponent },
     { path: 'personeel/employee-action', component: EmployeeActionComponent},
-    { path: 'personeel/employee-action/personeel-acton', component: PersoneelActionComponent},
+    { path: 'personeel/employee-action/personeel-acton/:url', component: PersoneelActionComponent},
     { path: '', component: HomeComponent},] 
 
     

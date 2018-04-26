@@ -4,7 +4,9 @@ import { PdmService } from '../../../../../services/pdm.service';
 @Component({
   selector: 'app-actions',
   templateUrl: './actions.component.html',
-  styles: []
+  styles: [`
+  
+  `]
 })
 export class ActionsComponent implements OnInit {
 
@@ -12,12 +14,15 @@ export class ActionsComponent implements OnInit {
   Actions: Actions
 
   ngOnInit() {
+    
+  
   }
 
   loadInfoPageActions(id: number){
     this.pdmService.loadStaffRecord('Staff/' +id + '/Actions/' + id)
     .subscribe(data => this.Actions = data)
     }
+    
     
     
 }

@@ -10,8 +10,10 @@ import { Observable } from 'rxjs/Observable';
 import { General } from '../pdm/components/maintain/infopages/generalinfo/generalinfo.component';
 import { Actions } from '../pdm/components/maintain/infopages/actions/actions.component';
 
+
 @Injectable()
 export class PdmService {
+ 
 
   constructor(private http: HttpClient) { }
     
@@ -42,4 +44,7 @@ export class PdmService {
    this.http.post<General>('https://5ad281c4df04690014938bea.mockapi.io/api/Khaled', JSON.stringify(data)).subscribe();
    }
 
+  
+
+   
 } 

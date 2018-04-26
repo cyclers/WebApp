@@ -2,6 +2,11 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EmployeeActionComponent } from '../employee-action/employee-action.component';
 import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
+import { Router, ActivatedRoute,ParamMap } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/switchMap';
+import { MatDialog } from '@angular/material';
+import { DialogComponent } from '../dialog/dialog.component';
 //declare var jquery:any;
 declare var $ :any;
 
@@ -13,11 +18,15 @@ declare var $ :any;
 export class PersoneelActionComponent implements OnInit {
 
   @ViewChild(EmployeeActionComponent) private thePersoneelDate:number 
-  constructor() { }
- pd:number;
+  constructor(private route: ActivatedRoute,
+    private router: Router,
+    public dialog: MatDialog) { }
+  allValid : boolean = true;
+  model;
+
   
-  not = false;
-  selectedAction:any = "Time Change";
+  selectedAction:any = "";
+
   newHire:boolean = false;
   Rehire:boolean= false;
   Separation:boolean= false;
@@ -29,8 +38,14 @@ export class PersoneelActionComponent implements OnInit {
   LeaveofAbsence:boolean= false;
   ReturnofLeave:boolean= false;
   ChangeEntryExitDate:boolean= true;
+
   ngOnInit() {
-   
+    this.selectedAction = this.route.snapshot.paramMap.get('url');
+
+
+    
+     
+
     switch(this.selectedAction){
       case "New Hire" : this.newHire= true
       break;
@@ -61,9 +76,11 @@ export class PersoneelActionComponent implements OnInit {
   }
 
 
-    excute(){
-  this.pd = this.thePersoneelDate
+  
+    openDialog() {
+      this.dialog.open(DialogComponent);
     }
-}
+  }
+
 
 
