@@ -1,12 +1,13 @@
 <br>
 
-<div class="col-sm-4"><input type="text" class="form-control"
-     (keyup.enter)="enteredId(staffid.value)" autofocus #staffid placeholder="Enter ID"></div>
+
+<div class="col-sm-4"><input #staffid type="text" class="form-control"
+     (keyup.enter)="enteredId(staffid.value)"  placeholder="Enter ID"></div>
 
 
 
     <br><br><br><br>
-<div class="col-lg-12">
+<div *ngIf="staffid.value" class="col-lg-12">
     <div class="tabs-container">
         <ul class="nav nav-tabs">
             <li (click)="loadTab(1)" class="active"><a data-toggle="tab" href="#tab-1"> Overview</a></li>
@@ -34,11 +35,8 @@
                     </ul>
                 </li>
         </ul>
-        <br>
-        
 
-
-            
+                <br>
 
 <div class="tab-content">
 <div id="tab-1" class="tab-pane active">

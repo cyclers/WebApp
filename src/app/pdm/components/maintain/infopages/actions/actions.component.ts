@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { PdmService } from '../../../../../services/pdm.service';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-actions',
@@ -9,61 +7,47 @@ import { Observable } from 'rxjs/Observable';
   styles: []
 })
 export class ActionsComponent implements OnInit {
-  ActionsForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private pdmService: PdmService) { 
-    this.ActionsForm = this.fb.group({
-      id: "", 
-      ActionType: "",
-      ActionReason: "",
-      TerminationReason: "", 
-      EmploymentStatus: "",
-      ValidFrom: "",
-      ValidTo: "",
-    })
-  }
-  Actions: Actions //Observable<Actions>
-  
-  onSubmit(inputs){
-    console.log(inputs)
-    this.pdmService.postMaintainChange(inputs)
-  }
+  constructor(private pdmService: PdmService) { }
+  Actions: Actions
+  newForm: boolean = false
 
-  newForm(){
-    this.ActionsForm.reset({
 
-    })
-  }
-
-  loadForm(){
-    
-    this.ActionsForm.setValue({
-      id: 51, // this.Actions.id,
-      ActionType: this.Actions.EmploymentStatus,
-      ActionReason: this.Actions.ActionReason,
-      TerminationReason: this.Actions.TerminationReason,
-      EmploymentStatus: this.Actions.EmploymentStatus,
-      ValidFrom: this.Actions.ValidFrom,
-      ValidTo: this.Actions.ValidTo
-    })
-
-  }
   ngOnInit() {
-    
   }
 
   loadInfoPageActions(id: number){
-    
     this.pdmService.loadStaffRecord('Actions/' + id)
-    .subscribe(data =>  {
-      this.Actions = data
-      this.loadForm()
-    })
-    
-        
+    .subscribe(data => this.Actions = data)
     }
     
     
+  NewForm(){
+    this.newForm = true
+    this.Actions.ActionType = "",
+    this.Actions.ActionReason = "",
+    this.Actions.TerminationReason = "",
+    this.Actions.EmploymentStatus = "",
+    this.Actions.ActionCode = ""
+    this.Actions.ValidFrom = ""
+    this.Actions.ValidTo = ""
+  }
+
+  onSave(){
+    switch (this.newForm){
+      case false:
+        console.log("1111111111111",this.Actions)
+        this.pdmService.putPersonnelChange('/Actions/' + this.Actions.id, this.Actions)
+        break;
+
+      case true:
+        console.log("222222222222",this.Actions)
+        this.pdmService.postNewPersonnelAction('/Actions/', this.Actions)
+        break;
+
+    }
+  }
+
 }
 
 export interface Actions {
@@ -72,7 +56,7 @@ export interface Actions {
   "ActionReason": any
   "TerminationReason":any
   "EmploymentStatus": any
-  "ActionCode": any
+  "ActionCode": any,
   "CreatedAt": any
   "ValidFrom": any
   "ValidTo": any
@@ -80,5 +64,6 @@ export interface Actions {
   "isDeleted": any
   "LastChange": any
   "By": any
+  
 
 }

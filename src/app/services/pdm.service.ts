@@ -9,10 +9,6 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { General } from '../pdm/components/maintain/infopages/generalinfo/generalinfo.component';
 import { Actions } from '../pdm/components/maintain/infopages/actions/actions.component';
-import { Subject } from 'rxjs/Subject';
-import 'rxjs/add/operator/do';
-import { Validity } from '../pdm/components/maintain/maintain.component';
-
 
 @Injectable()
 export class PdmService {
@@ -31,39 +27,15 @@ export class PdmService {
 
   loadStaffRecord(suffix: string): Observable<any>{
     return this.http.get<any>('http://5ad91696dc1baa0014c60cef.mockapi.io/api/' + suffix)
-          .do(data => {
-            let infoHeader = {
-              CreatedAt: data.CreatedAt,
-              ValidFrom:  data.ValidFrom,
-              ValidTo: data.ValidTo,
-              LastChange: data.LastChange,
-              By: data.By
-            }
-            this.InfoPageHeader.next(infoHeader)
-          })
-    
-
+ 
    }
 
-   postMaintainChange(data){
-      // console.log("be5 2", data)
-      this.http.post<General>('http://5ad91696dc1baa0014c60cef.mockapi.io/api/Actions', data).subscribe();
+   postNewPersonnelAction(tblName, data){
+     this.http.post('http://5ad91696dc1baa0014c60cef.mockapi.io/api/' + tblName, data).subscribe();
    }
 
-   InfoPageHeader = new Subject<Validity>();
-   InfoPageNew = new Subject();
-   InfoPageEdit = new Subject();
-   InfoPageSave = new Subject();
-   InfoPageForward = new Subject();
-   InfoPageBackward = new Subject();
-   
-
-   InfoPageHeader$ = this.InfoPageHeader.asObservable();
-   InfoPageNew$ = this.InfoPageHeader.asObservable();
-   InfoPageEdit$ = this.InfoPageHeader.asObservable();
-   InfoPageSave$ = this.InfoPageHeader.asObservable();
-   InfoPageForward$ = this.InfoPageHeader.asObservable();
-   InfoPageBackward$ = this.InfoPageHeader.asObservable();
-
+   putPersonnelChange(tblName, data){
+    this.http.put('http://5ad91696dc1baa0014c60cef.mockapi.io/api/' + tblName, data).subscribe();
+  }
 
 } 
