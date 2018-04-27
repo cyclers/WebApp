@@ -45,6 +45,18 @@ export class PdmService {
    }
 
   
+  //  http://5ae3691934b5970014d2ee0e.mockapi.io/personal
 
+  getNew(): Observable<any>{
+  return  this.http.get<any>("http://5ae3691934b5970014d2ee0e.mockapi.io/personal")
+  }
    
+
+  putNew(data){
+    this.http.put("http://5ae3691934b5970014d2ee0e.mockapi.io/personal/1", data).subscribe()
+    }
+
+    postNew(data2){
+this.http.post("http://5ae3691934b5970014d2ee0e.mockapi.io/personal",data2).subscribe()
+    }
 } 
