@@ -1,8 +1,24 @@
 
+<div style="display: flex">
+  <input type="date"> &nbsp;
+  <input type="date">
+  <!-- <input type="text" class="input-sm" name="end" value="05/22/2014"> -->
+  <div style="padding-left: 32px;">
+  <button (click)="backWard()" class="btn btn-link " type="button"><i class="fa fa-backward"></i></button>
+  <button (click)="forWard()" class="btn btn-link " type="button"><i class="fa fa-forward"></i></button>
+  <button (click)="NewForm()" class="btn btn-link " type="button"><i class="fa fa-file"></i> New</button>
+  <button class="btn btn-link " type="button"><i class="fa fa-edit"></i>&nbsp;&nbsp;<span class="bold">Edit</span></button>
+  <button (click)="onSave()" class="btn btn-link " type="button"><i class="fa fa-save"></i>&nbsp;Save</button>
+  <button class="btn btn-link " type="button" data-toggle="modal" data-target="#myModal7"><i class="fa fa-eye"></i>&nbsp;Overview</button>
+  </div>
+
+</div>
+<br>
+
+
   <div class="panel-body">
   <div class="row">
-  <div class="col-sm-6 b-r"><h3 class="m-t-none m-b">Company Structure
-      </h3>
+  <div class="col-sm-6 b-r"><h3 class="m-t-none m-b">Company Structure</h3>
   <form role="form">
   <div class="form-group">Company Code <input [(ngModel)]="OrgAssign && OrgAssign.CompanyCode" [ngModelOptions]="{standalone: true}"class="form-control"></div>
   <div class="form-group">BU <input [(ngModel)]="OrgAssign && OrgAssign.BU" [ngModelOptions]="{standalone: true}" class="form-control"></div>
@@ -29,3 +45,47 @@
   </div>
   </div>
   </div>
+
+
+
+
+  
+  <div class="modal inmodal fade" id="myModal7" tabindex="-1" role="dialog"  aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                
+                <small class="font-bold">Select the time period: {{ selectedVer + 1}} </small>
+            </div>
+            <div class="modal-body">
+              <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Division</th>
+                    <th>Department</th>
+                    <th>Title</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr (click)="selectedVer = i" *ngFor="let item of OrgAssigns; let i = index">
+                    <td>{{ item.ValidFrom }}</td>
+                    <td>{{ item.ValidTo }}</td>
+                    <td>{{ item.Division }}</td>
+                    <td>{{ item.Department }}</td>
+                    <td>{{ item.Title }}</td>
+                </tr>
+                </tbody>
+            </table>            
+          </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+                <button (click)="viewVersion(selectedVer)" type="button" data-dismiss="modal" class="btn btn-primary">View Selected</button>
+            </div>
+        </div>
+    </div>
+</div>
+

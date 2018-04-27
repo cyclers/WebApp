@@ -11,7 +11,7 @@ import * as _ from 'lodash'
 export class AddressComponent implements OnInit {
 
   constructor(private pdmService: PdmService) { }
-  Addresss: Address[]
+  Addresses: Address[]
   Address: Address
   newForm: boolean = false
   selectedVer: number = 0
@@ -20,19 +20,23 @@ export class AddressComponent implements OnInit {
   ngOnInit() {
   }
 
-  loadInfoPageAddresss(id: number){
+  loadInfoPageAddress(id: number){
     
-    this.pdmService.loadStaffRecord(id + '/Addresss/')
+    this.pdmService.loadStaffRecord(id + '/Addresses/')
     .subscribe(data => {
       this.Address = _.last(data)
-      this.Addresss = _.cloneDeep(data)
-      this.selectedVer = this.Addresss.length -1
+      this.Addresses = _.cloneDeep(data)
+      this.selectedVer = this.Addresses.length -1
     })
     }
     
     
   NewForm(){
     this.newForm = true
+    this.Address.id=  "",
+    this.Address.StaffId=  "",
+    this.Address.Address1=  "",
+    this.Address.Address2=  "",
     this.Address.PostalCode=  "",
     this.Address.City=  "",
     this.Address.Country=  "",
@@ -58,13 +62,11 @@ export class AddressComponent implements OnInit {
   onSave(){
     switch (this.newForm){
       case false:
-        console.log("1111111111111",this.Address)
-        this.pdmService.putPersonnelChange(this.Address.StaffId + '/Addresss/' + this.Address.id, this.Address)
+        this.pdmService.putPersonnelChange(this.Address.StaffId + '/Addresses/' + this.Address.id, this.Address)
         break;
 
       case true:
-        console.log("222222222222",this.Address)
-        this.pdmService.postNewPersonnelAction(this.Address.StaffId + '/Addresss', this.Address)
+        this.pdmService.postNewPersonnelAction(this.Address.StaffId + '/Addresses', this.Address)
         this.ngOnInit()
         break;
 
@@ -73,25 +75,24 @@ export class AddressComponent implements OnInit {
   }
 
   viewVersion(ver: number){
-    this.Address = this.Addresss[ver]
+    this.Address = this.Addresses[ver]
   }
 
   backWard(){
     debugger
     if(this.selectedVer > 0){
       this.selectedVer = this.selectedVer -1
-      this.Address = this.Addresss[this.selectedVer]
+      this.Address = this.Addresses[this.selectedVer]
     }
   }
 
   forWard(){
     debugger
-    let max = this.Addresss.length -1
-    console.log("ssssssssss", max)
+    let max = this.Addresses.length -1
     console.log(this.selectedVer)
     if(this.selectedVer < max){
       this.selectedVer = this.selectedVer +1
-      this.Address = this.Addresss[this.selectedVer]
+      this.Address = this.Addresses[this.selectedVer]
     }
   }
 
@@ -121,6 +122,4 @@ export interface Address {
   isDeleted: any
   LastChange: any
   By: any
-
-  
 }
