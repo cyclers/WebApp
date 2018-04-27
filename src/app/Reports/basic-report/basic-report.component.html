@@ -1,0 +1,29 @@
+<p>
+  basic-report works!
+</p>
+
+<table >
+  
+  <thead >
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+      <th scope="col">CategoryID</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let item of basicData">
+      <td scope="row">{{item.PersonnelId}}</td>
+      <td>{{item.hiringDate}}</td>
+      <td>{{item.formOfDate}}</td>
+      <td>{{item.name}}</td>
+      <td>   </td>       
+          </tr>                
+  </tbody>
+</table>
+
+<ul *ngFor="let item of reservedQuery">
+<li >{{item.id}} : {{item.description}}</li>
+</ul>
