@@ -2,9 +2,10 @@
   basic-report works!
 </p>
 
+<button (click)="RunQuery()"> Run </button>
+
 <table >
-  
-  <thead >
+    <thead >
     <tr>
       <th scope="col">#</th>
       <th scope="col">Title</th>
@@ -23,7 +24,7 @@
           </tr>                
   </tbody>
 </table>
-
+Reserved Queries:
 <ul *ngFor="let item of reservedQuery">
 <li >{{item.id}} : {{item.description}}</li>
 </ul>

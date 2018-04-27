@@ -16,10 +16,13 @@ export class BasicReportComponent implements OnInit {
  
   constructor( private _http: Http , private reportServ: ReportService)
    {
-     reportServ.getBasicReport().subscribe(data => {this.basicData = data } );
      reportServ.getReservedQuery().subscribe(data => this.reservedQuery = data);
     }
 
+    RunQuery(){
+      this.reportServ.getBasicReport().subscribe(data => {this.basicData = data } );
+
+    }
   ngOnInit() {
   }
 
