@@ -41,6 +41,11 @@ export class PersoneelActionComponent implements OnInit {
 
   ngOnInit() {
     this.selectedAction = this.route.snapshot.paramMap.get('url');
+    
+    //Added by Khaled
+    this.route.queryParams.subscribe(param => {
+      console.log("Returning --> ", param['id'], param['effectd'] )
+    })
 
 
     
