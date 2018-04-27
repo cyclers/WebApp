@@ -59,7 +59,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr (click)="selectedVer" *ngFor="let xAction of Actions">
+                <tr (click)="selectedVer = i" *ngFor="let xAction of Actions; let i = index">
                     <td>{{ xAction.ValidFrom }}</td>
                     <td>{{ xAction.ValidTo }}</td>
                     <td>{{ xAction.ActionType }}</td>
