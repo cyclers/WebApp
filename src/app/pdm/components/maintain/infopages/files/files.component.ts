@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PdmService } from '../../../../../services/pdm.service';
+import * as _ from 'lodash'
 
 @Component({
   selector: 'app-files',
@@ -16,8 +17,8 @@ export class FilesComponent implements OnInit {
   }
 
   loadInfoPageFiles(id) {
-    this.pdmService.loadStaffRecord('Attachments/' + id)
-      .subscribe(data => this.Files = data)
+    this.pdmService.loadStaffRecord(id + '/Attachments/')
+      .subscribe(data => this.Files = _.last(data))
   }
 }
 

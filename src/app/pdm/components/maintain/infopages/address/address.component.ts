@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PdmService } from '../../../../../services/pdm.service';
 import { NgModel } from '@angular/forms'
+import * as _ from 'lodash'
 
 @Component({
   selector: 'app-address',
@@ -19,8 +20,8 @@ export class AddressComponent implements OnInit {
 
 
   loadInfoPageAddress(id: number){
-    this.pdmService.loadStaffRecord('Addresses/' + id)
-    .subscribe(data => {this.Addresses = data
+    this.pdmService.loadStaffRecord(id + '/Addresses/')
+    .subscribe(data => {this.Addresses = _.last(data)
    
     })
 

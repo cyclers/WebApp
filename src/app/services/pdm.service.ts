@@ -26,16 +26,16 @@ export class PdmService {
        }
 
   loadStaffRecord(suffix: string): Observable<any>{
-    return this.http.get<any>('http://5ad91696dc1baa0014c60cef.mockapi.io/api/' + suffix)
+    return this.http.get<any>('http://5ae2f53f34b5970014d2ed70.mockapi.io/api/Staff/' + suffix)
  
    }
 
    postNewPersonnelAction(tblName, data){
-     this.http.post('http://5ad91696dc1baa0014c60cef.mockapi.io/api/' + tblName, data).subscribe();
+     this.http.post('http://5ae2f53f34b5970014d2ed70.mockapi.io/api/Staff/' + tblName, data).subscribe();
    }
 
    putPersonnelChange(tblName, data){
-    this.http.put('http://5ad91696dc1baa0014c60cef.mockapi.io/api/' + tblName, data).subscribe();
+    this.http.put('http://5ae2f53f34b5970014d2ed70.mockapi.io/api/Staff/' + tblName, data).subscribe();
   }
 
 } 

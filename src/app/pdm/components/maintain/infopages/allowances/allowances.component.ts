@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PdmService } from '../../../../../services/pdm.service';
+import * as _ from 'lodash'
 
 @Component({
   selector: 'app-allowances',
@@ -16,8 +17,8 @@ export class AllowancesComponent implements OnInit {
   }
 
   loadInfoPageAllowances(id){
-    this.pdmService.loadStaffRecord('Allowances/' + id)
-    .subscribe(data => this.Allowances = data)
+    this.pdmService.loadStaffRecord(id + '/Allowances/')
+    .subscribe(data => this.Allowances = _.last(data))
     }
     
 }
