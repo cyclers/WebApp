@@ -7,16 +7,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
   styleUrls: ['./employee-action.component.css']
 })
 export class EmployeeActionComponent implements OnInit {
- employeeAction = [	"New Hire","Rehire","Separation"
-  ,"Reassignment"
-  ,"Role Change"
-  ,"Salary Change"
-  ,"Employment Change"
-  ,"Time Change"
-  ,"Leave of Absence"
-  ,"Return of Leave"
-  ,"Change Entry/Exit Date"
-  ]
+
 
   employeeAction2=[
     {url:"New Hire", actionType: "New Hire"},
@@ -39,15 +30,19 @@ export class EmployeeActionComponent implements OnInit {
   isDisabeld = false;
   constructor(private route: ActivatedRoute,
     private router: Router) { }
-  EffectiveDate : NgbDateStruct ;
+ 
   actionType:string="";
-  employeecode:any;
+
+  employeeCode:any;
+  EffectiveDate  ;
   ngOnInit() {
     
   }
  
-   goToPersoneelPage(url:any){     //      { id: heroId, foo: 'foo' }
-    this.router.navigate(['/personeel/employee-action/personeel-acton', url], { queryParams:{id: this.employeecode, effectd: this.EffectiveDate}, queryParamsHandling: "merge" });
+   goToPersoneelPage(url:any){    
+    this.router.navigate(['/personeel/employee-action/personeel-acton', url],
+     { queryParams:{id: this.employeeCode, effectd: this.EffectiveDate},
+      queryParamsHandling: "merge" });
   }
 
   selected(action:string ){
@@ -61,7 +56,5 @@ export class EmployeeActionComponent implements OnInit {
   
   }
 
-  getCode(code:number){
-    this.employeecode = code;
-  }
+  
 }

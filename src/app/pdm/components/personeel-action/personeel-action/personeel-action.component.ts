@@ -23,6 +23,7 @@ export class PersoneelActionComponent implements OnInit {
     public dialog: MatDialog) { }
   allValid : boolean = true;
   model;
+ 
 
   
   selectedAction:any = "";
@@ -39,15 +40,24 @@ export class PersoneelActionComponent implements OnInit {
   ReturnofLeave:boolean= false;
   ChangeEntryExitDate:boolean= true;
 
+  employeeCode;
+  EffectiveDate;
+  endDate = "9-9-9999";
+  
   ngOnInit() {
     this.selectedAction = this.route.snapshot.paramMap.get('url');
     
     //Added by Khaled
-    this.route.queryParams.subscribe(param => {
-      console.log("Returning --> ", param['id'], param['effectd'] )
-    })
+    // this.route.queryParams.subscribe(param => {
+    //   console.log("Returning --> ", param['id'], param['effectd'] )
+   
+    // })
 
-
+    this.route.queryParams.subscribe(param => 
+      {this.employeeCode = param["id"],
+       this.EffectiveDate = param["effectd"] 
+       })
+    
     
      
 

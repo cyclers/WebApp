@@ -7,22 +7,23 @@
     border: 1px solid #e0dede;
     border-radius: 3px;
     margin-top: 30px;">
-            <h2  >personeeel action</h2>{{employeecode}}
+            <h2  >personeeel action</h2>{{employeeCode}} {{EffectiveDate}}
             <p>
                 <span class="user-text" style="margin-left:40px; padding-right:10px;">
                     user id :</span>
      <input class="form-control" [disabled]="isDisabeld" 
-      #employeeCode  (keyup.enter)="getCode(employeeCode.value)"
+        [(ngModel)]="employeeCode"
+      
      
       type="text" id="searchtxt" placeholder="Emp Code" />
 
             </p>
             <div class="input-group">
                 <span class="user-text">Effective Date :</span> 
-                <input  class="form-control" placeholder="yyyy-mm-dd"
-                (click)="d.toggle()"  name="dp" [(ngModel)]="EffectiveDate" ngbDatepicker #d="ngbDatepicker" #do>
-            </div> <!--the Date is: {{EffectiveDate .day |json}}-{{EffectiveDate .month |json}}-{{EffectiveDate .year |json}} -->
-            the Date is:{{do.value}} 
+                <input  type="date" class="form-control" placeholder="yyyy-mm-dd"
+                [(ngModel)]="EffectiveDate"  >
+            </div> 
+           
             <button  type="button"  value="Excute"
                      (click)="goToPersoneelPage(actionType)"
                  class="btn btn-default pull-right"> Excute</button>

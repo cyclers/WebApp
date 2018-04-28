@@ -1,19 +1,24 @@
 
 
 <h2> You Action Type :
-   <div style="font-weight: bold">{{selectedAction}}</div></h2>
+   <div style="font-weight: bold">{{selectedAction}}
+    {{EffectiveDate}} 
+    {{employeeCode}}</div></h2>
+
    <form class="form-inline">
     <div class="form-group">
       <div class="input-group">
         <label for="dp"> From:</label>
-        <input class="form-control" placeholder="yyyy-mm-dd"
-        (click)="d.toggle()"   name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
-       
+        <input type="date" class="form-control"
+         placeholder="yyyy-mm-dd"
+         [(ngModel)]="EffectiveDate"
+         [ngModelOptions]="{standalone: true}" >
       </div>
       <div class="input-group">
         <label for="dp2">To:</label>
-        <input class="form-control" 
-        (click)="l.toggle()"   name="dp2" [(ngModel)]="newmodel" ngbDatepicker #l="ngbDatepicker">
+        <input type="date" class="form-control" 
+          [(ngModel)]="endDate"
+          [ngModelOptions]="{standalone: true}"  >
        
       </div>
     </div>

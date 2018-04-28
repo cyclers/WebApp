@@ -41,5 +41,5 @@ export class PdmService {
     this.http.put('http://5ae2f53f34b5970014d2ed70.mockapi.io/api/Staff/' + tblName, data).subscribe();
   }
 
-
+  
 } 
