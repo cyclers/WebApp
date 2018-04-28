@@ -9,18 +9,8 @@ import { PdmService } from '../../services/pdm.service';
   templateUrl: './test-area.component.html',
   styles: []
 })
-export class TestAreaComponent implements OnInit {
+export class TestAreaComponent  {
 
   constructor(private pdmservice: PdmService) { }
-  apidata 
-  title = "app ";
-
-  ngOnInit() {
-    
-
-  }
-
-
+   
 }
-
-
