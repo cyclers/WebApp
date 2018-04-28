@@ -10,8 +10,10 @@ import { Observable } from 'rxjs/Observable';
 import { General } from '../pdm/components/maintain/infopages/generalinfo/generalinfo.component';
 import { Actions } from '../pdm/components/maintain/infopages/actions/actions.component';
 
+
 @Injectable()
 export class PdmService {
+ 
 
   constructor(private http: HttpClient) { }
     
@@ -34,8 +36,10 @@ export class PdmService {
      this.http.post('http://5ae2f53f34b5970014d2ed70.mockapi.io/api/Staff/' + tblName, data).subscribe();
    }
 
+
    putPersonnelChange(tblName, data){
     this.http.put('http://5ae2f53f34b5970014d2ed70.mockapi.io/api/Staff/' + tblName, data).subscribe();
   }
+
 
 } 

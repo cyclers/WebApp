@@ -3,7 +3,9 @@ import { AppComponent } from "./app.component";
 import { PdmComponent } from "./pdm/pdm.component";
 import { BrowseComponent } from "./pdm/components/browse/browse.component";
 import { MaintainComponent } from "./pdm/components/maintain/maintain.component";
-import { PersonalActionComponent } from "./pdm/components/personal-action/personal-action.component";
+import { PersoneelActionComponent } from "./pdm/components/personeel-action/personeel-action/personeel-action.component";
+import { EmployeeActionComponent } from "./pdm/components/personeel-action/employee-action/employee-action.component";
+
 
 
 
@@ -12,7 +14,8 @@ export const routeConfig = [
     { path : 'personnel', component: PdmComponent},
     { path: 'personnel/browse', component: BrowseComponent },
     { path: 'personnel/maintain', component: MaintainComponent },
-    { path: 'personal/personal-action', component: PersonalActionComponent },
+    { path: 'personeel/employee-action', component: EmployeeActionComponent},
+    { path: 'personeel/employee-action/personeel-acton/:url', component: PersoneelActionComponent},
     { path: '', component: HomeComponent},] 
 
     

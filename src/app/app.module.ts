@@ -41,12 +41,15 @@ import { AwardsComponent } from './pdm/components/maintain/infopages/awards/awar
 import { FilesComponent } from './pdm/components/maintain/infopages/files/files.component';
 import { DatemilestonesComponent } from './pdm/components/maintain/infopages/datemilestones/datemilestones.component';
 import { GeneralinfoComponent } from './pdm/components/maintain/infopages/generalinfo/generalinfo.component';
-import { PersonalActionComponent } from './pdm/components/personal-action/personal-action.component';
 
+import {MatDialogModule} from '@angular/material/dialog';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { PersoneelActionComponent } from './pdm/components/personeel-action/personeel-action/personeel-action.component';
+import { EmployeeActionComponent } from './pdm/components/personeel-action/employee-action/employee-action.component';
+import { DialogComponent } from './pdm/components/personeel-action/dialog/dialog.component';
 
 @NgModule({
   declarations: [
@@ -80,7 +83,9 @@ import {MatInputModule} from '@angular/material/input';
     FilesComponent,
     DatemilestonesComponent,
     GeneralinfoComponent,
-    PersonalActionComponent,
+    PersoneelActionComponent,
+    EmployeeActionComponent,
+    DialogComponent,
     
   ],
   imports: [
@@ -94,8 +99,12 @@ import {MatInputModule} from '@angular/material/input';
     MatButtonModule, MatCheckboxModule,
     MatStepperModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatDialogModule
 
+  ],
+  entryComponents: [
+    DialogComponent
   ],
   providers: [PdmService],
   bootstrap: [AppComponent]

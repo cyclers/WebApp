@@ -5,7 +5,9 @@ import * as _ from 'lodash'
 @Component({
   selector: 'app-actions',
   templateUrl: './actions.component.html',
-  styles: []
+  styles: [`
+  
+  `]
 })
 export class ActionsComponent implements OnInit {
 
@@ -17,6 +19,8 @@ export class ActionsComponent implements OnInit {
 
 
   ngOnInit() {
+    
+  
   }
 
   loadInfoPageActions(id: number){
@@ -30,6 +34,8 @@ export class ActionsComponent implements OnInit {
     }
     
     
+
+
   NewForm(){
     this.newForm = true
     this.Action.ActionType = "",
