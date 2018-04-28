@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PdmService } from '../../../../../services/pdm.service';
+import * as _ from 'lodash'
 
 @Component({
   selector: 'app-workschedule',
@@ -16,8 +17,8 @@ export class WorkscheduleComponent implements OnInit {
   }
 
   loadInfoPageWorkSchedules(id) {
-    this.pdmService.loadStaffRecord('Staff/' +id + '/WorkSchedule/' + id)
-      .subscribe(data => this.workSchedules = data)
+    this.pdmService.loadStaffRecord(id + '/WorkSchedule/')
+      .subscribe(data => this.workSchedules = _.last(data))
   }
 }
  interface WorkSchedules { 

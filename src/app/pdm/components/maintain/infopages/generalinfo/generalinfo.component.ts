@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PdmService } from '../../../../../services/pdm.service';
 import { Observable } from 'rxjs/Observable';
+import * as _ from 'lodash'
 
 @Component({
   selector: 'app-generalinfo',
@@ -17,20 +18,10 @@ export class GeneralinfoComponent implements OnInit {
   }
 
   loadInfoPageGeneralInfo(id) {
-    this.pdmService.loadStaffRecord('Staff/' +id + '/General/' + id)
-      .subscribe(data => this.GeneralInfo = data)
+    this.pdmService.loadStaffRecord(id + '/General/')
+      .subscribe(data => this.GeneralInfo = _.last(data))
   }
 
-  postData(){
-    const data: General = {
-      "id": "51",
-      "StaffId": "77",
-      "createdAt": "1524092767",
-      "name": "Khaled Jamal",
-      "imageUrl": "Khaled Jamal"
-    }
-    this.pdmService.postNewPersonnelAction(data)
-  }
 }
 
 

@@ -1,30 +1,86 @@
 
+<div style="display: flex">
+  <input type="date"> &nbsp;
+  <input type="date">
+  <!-- <input type="text" class="input-sm" name="end" value="05/22/2014"> -->
+  <div style="padding-left: 32px;">
+  <button (click)="backWard()" class="btn btn-link " type="button"><i class="fa fa-backward"></i></button>
+  <button (click)="forWard()" class="btn btn-link " type="button"><i class="fa fa-forward"></i></button>
+  <button (click)="NewForm()" class="btn btn-link " type="button"><i class="fa fa-file"></i> New</button>
+  <button class="btn btn-link " type="button"><i class="fa fa-edit"></i>&nbsp;&nbsp;<span class="bold">Edit</span></button>
+  <button (click)="onSave()" class="btn btn-link " type="button"><i class="fa fa-save"></i>&nbsp;Save</button>
+  <button class="btn btn-link " type="button" data-toggle="modal" data-target="#myModal6"><i class="fa fa-eye"></i>&nbsp;Overview</button>
+  </div>
+
+</div>
+<br>
 <div class="panel-body">
   <div class="row">
   <div class="col-sm-6 b-r"><h3 class="m-t-none m-b">Address</h3>
     
   <form role="form" >
-  <div class="form-group">Address 1 <input class="form-control" [(ngModel)]="Addresses && Addresses.Address1" [ngModelOptions]="{standalone: true}"></div>
-  <div class="form-group">Address 2 <input class="form-control" [(ngModel)]="Addresses && Addresses.Address2" [ngModelOptions]="{standalone: true}"></div>
-  <div class="form-group">Postal Code <input class="form-control" [(ngModel)]="Addresses && Addresses.PostalCode" [ngModelOptions]="{standalone: true}"></div>
-  <div class="form-group">City <input class="form-control" [(ngModel)]="Addresses && Addresses.City" [ngModelOptions]="{standalone: true}"></div>
-  <div class="form-group">Country <input class="form-control" [(ngModel)]="Addresses && Addresses.Country" [ngModelOptions]="{standalone: true}"></div>
-  <div class="form-group">Private Email <input class="form-control" [(ngModel)]="Addresses && Addresses.PrivateEmail" [ngModelOptions]="{standalone: true}"></div>
-  <div class="form-group">Business Email <input class="form-control" [(ngModel)]="Addresses && Addresses.BusinessEmail" [ngModelOptions]="{standalone: true}"></div>
-  <div class="form-group">Country of Birth <input class="form-control" [(ngModel)]="Addresses && Addresses.Country" [ngModelOptions]="{standalone: true}"></div>
+  <div class="form-group">Address 1 <input class="form-control" [(ngModel)]="Address && Address.Address1" [ngModelOptions]="{standalone: true}"></div>
+  <div class="form-group">Address 2 <input class="form-control" [(ngModel)]="Address && Address.Address2" [ngModelOptions]="{standalone: true}"></div>
+  <div class="form-group">Postal Code <input class="form-control" [(ngModel)]="Address && Address.PostalCode" [ngModelOptions]="{standalone: true}"></div>
+  <div class="form-group">City <input class="form-control" [(ngModel)]="Address && Address.City" [ngModelOptions]="{standalone: true}"></div>
+  <div class="form-group">Country <input class="form-control" [(ngModel)]="Address && Address.Country" [ngModelOptions]="{standalone: true}"></div>
+  <div class="form-group">Private Email <input class="form-control" [(ngModel)]="Address && Address.PrivateEmail" [ngModelOptions]="{standalone: true}"></div>
+  <div class="form-group">Business Email <input class="form-control" [(ngModel)]="Address && Address.BusinessEmail" [ngModelOptions]="{standalone: true}"></div>
+  <div class="form-group">Country of Birth <input class="form-control" [(ngModel)]="Address && Address.Country" [ngModelOptions]="{standalone: true}"></div>
   
   </form>
  
   </div>
   <div class="col-sm-6">
   <br><br><br>
-  <div class="form-group">Private Cell <input class="form-control" [(ngModel)]="Addresses && Addresses.PrivateCell" [ngModelOptions]="{standalone: true}"></div>
-  <div class="form-group">Emergency Name(1) <input class="form-control" [(ngModel)]="Addresses && Addresses.EmergencyName1" [ngModelOptions]="{standalone: true}"></div>
-  <div class="form-group">Relationship <input class="form-control" [(ngModel)]="Addresses && Addresses.Relationship1" [ngModelOptions]="{standalone: true}"></div>
-  <div class="form-group">Phone <input class="form-control" [(ngModel)]="Addresses && Addresses.Phone1" [ngModelOptions]="{standalone: true}"></div>
-  <div class="form-group">Emergency Name(2) <input class="form-control" [(ngModel)]="Addresses && Addresses.EmergencyName2" [ngModelOptions]="{standalone: true}"></div>
-  <div class="form-group">Relationship <input class="form-control" [(ngModel)]="Addresses && Addresses.Relationship2" [ngModelOptions]="{standalone: true}"></div>
-  <div class="form-group">Phone <input class="form-control" [(ngModel)]="Addresses && Addresses.Phone2" [ngModelOptions]="{standalone: true}"></div>
+  <div class="form-group">Private Cell <input class="form-control" [(ngModel)]="Address && Address.PrivateCell" [ngModelOptions]="{standalone: true}"></div>
+  <div class="form-group">Emergency Name(1) <input class="form-control" [(ngModel)]="Address && Address.EmergencyName1" [ngModelOptions]="{standalone: true}"></div>
+  <div class="form-group">Relationship <input class="form-control" [(ngModel)]="Address && Address.Relationship1" [ngModelOptions]="{standalone: true}"></div>
+  <div class="form-group">Phone <input class="form-control" [(ngModel)]="Address && Address.Phone1" [ngModelOptions]="{standalone: true}"></div>
+  <div class="form-group">Emergency Name(2) <input class="form-control" [(ngModel)]="Address && Address.EmergencyName2" [ngModelOptions]="{standalone: true}"></div>
+  <div class="form-group">Relationship <input class="form-control" [(ngModel)]="Address && Address.Relationship2" [ngModelOptions]="{standalone: true}"></div>
+  <div class="form-group">Phone <input class="form-control" [(ngModel)]="Address && Address.Phone2" [ngModelOptions]="{standalone: true}"></div>
   </div>
   </div>
   </div>
+
+
+  <div class="modal inmodal fade" id="myModal6" tabindex="-1" role="dialog"  aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                
+                <small class="font-bold">Select the time period: {{ selectedVer + 1}} </small>
+            </div>
+            <div class="modal-body">
+              <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Country</th>
+                    <th>Business Email</th>
+                    <th>Phone</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr (click)="selectedVer = i" *ngFor="let item of Addresses; let i = index">
+                    <td>{{ item.ValidFrom }}</td>
+                    <td>{{ item.ValidTo }}</td>
+                    <td>{{ item.Country }}</td>
+                    <td>{{ item.BusinessEmail }}</td>
+                    <td>{{ item.PrivateCell }}</td>
+                </tr>
+                </tbody>
+            </table>            
+          </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+                <button (click)="viewVersion(selectedVer)" type="button" data-dismiss="modal" class="btn btn-primary">View Selected</button>
+            </div>
+        </div>
+    </div>
+</div>
+

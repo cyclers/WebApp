@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PdmService } from '../../../../../services/pdm.service';
+import * as _ from 'lodash'
 
 @Component({
   selector: 'app-family',
@@ -16,8 +17,8 @@ export class FamilyComponent implements OnInit {
   }
 
   loadInfoPageFamily(id) {
-    this.pdmService.loadStaffRecord('Staff/' +id + '/Family/' + id)
-      .subscribe(data => this.Family = data)
+    this.pdmService.loadStaffRecord(id + '/Family/')
+      .subscribe(data => this.Family = _.last(data))
   }
 }
 

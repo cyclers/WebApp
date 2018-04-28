@@ -19,11 +19,13 @@ import { FilesComponent } from './infopages/files/files.component';
 import { GeneralinfoComponent } from './infopages/generalinfo/generalinfo.component';
 
 @Component({
-  selector: 'app-maintain',
-  templateUrl: './maintain.component.html',
+  selector: "app-maintain",
+  templateUrl: "./maintain.component.html",
   styles: []
 })
 export class MaintainComponent implements OnInit {
+
+
   @ViewChild(GeneralinfoComponent) private infoPage1: GeneralinfoComponent
   @ViewChild(ActionsComponent) private infoPage2: ActionsComponent
   @ViewChild(OrgassignComponent) private infoPage3: OrgassignComponent
@@ -46,7 +48,7 @@ export class MaintainComponent implements OnInit {
   id:number
   tabId:number
   model
-  
+
   constructor() { }
 
   ngOnInit() {
@@ -58,71 +60,66 @@ export class MaintainComponent implements OnInit {
     this.loadTab(this.tabId)
   }
 
-  postD(){
-    console.log("be5")
-    this.infoPage1.postData()
-  }
-
   loadTab(tabNo:any ){
     this.tabId = tabNo
-    
+
     switch (tabNo)  {
       case 1:
         this.infoPage1.loadInfoPageGeneralInfo(this.id)
-        break; 
+        break;
         case 2:
         this.infoPage2.loadInfoPageActions(this.id)
-        break; 
+        break;
         case 3:
         this.infoPage3.loadInfoPageOrgAssign(this.id)
-        break; 
+        break;
         case 4:
         this.infoPage4.loadInfoPageDateMilestones(this.id)
-        break; 
+        break;
         case 5:
         this.infoPage5.loadInfoPagePersonal(this.id)
-        break; 
+        break;
         case 6:
         this.infoPage6.loadInfoPageAddress(this.id)
-        break; 
+        break;
         case 7:
         this.infoPage7.loadInfoPageFamily(this.id)
-        break; 
+        break;
         case 8:
         this.infoPage8.loadInfoPagePreviousEmployers(this.id)
-        break; 
+        break;
         case 9:
         this.infoPage9.loadInfoPageBanks(this.id)
-        break; 
+        break;
         case 10:
         this.infoPage10.loadInfoPageLaborContract(this.id)
-        break; 
+        break;
         case 11:
         this.infoPage11.loadInfoPageEducation(this.id)
-        break; 
+        break;
         case 12:
         this.infoPage12.loadInfoPageWorkSchedules(this.id)
-        break; 
+        break;
         case 13:
         this.infoPage13.loadInfoPageLicenses(this.id)
-        break; 
+        break;
         case 14:
         this.infoPage14.loadInfoPageImmigration(this.id)
-        break; 
+        break;
         case 15:
         this.infoPage15.loadInfoPageBasicPay(this.id)
-        break; 
+        break;
         case 16:
         this.infoPage16.loadInfoPageAllowances(this.id)
-        break; 
+        break;
         case 17:
         this.infoPage17.loadInfoPageAwards(this.id)
-        break; 
+        break;
         case 18:
         this.infoPage18.loadInfoPageFiles(this.id)
-        break; 
+        break;
         default:
-        break; 
+        break;
 
   }
 }

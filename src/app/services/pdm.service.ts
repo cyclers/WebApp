@@ -28,35 +28,18 @@ export class PdmService {
        }
 
   loadStaffRecord(suffix: string): Observable<any>{
-    return this.http.get<any>('https://5ad281c4df04690014938bea.mockapi.io/api/' + suffix)
+    return this.http.get<any>('http://5ae2f53f34b5970014d2ed70.mockapi.io/api/Staff/' + suffix)
  
    }
 
-   postNewPersonnelAction(data){
-    //  debugger
-     console.log("be5 2", data)
-  //    const headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
-  // const options = new RequestOptions({ headers: headers });
-  // const params = new URLSearchParams();
-  // params.append('mypostField', 'myFieldValue');
-
-  
-   this.http.post<General>('https://5ad281c4df04690014938bea.mockapi.io/api/Khaled', JSON.stringify(data)).subscribe();
+   postNewPersonnelAction(tblName, data){
+     this.http.post('http://5ae2f53f34b5970014d2ed70.mockapi.io/api/Staff/' + tblName, data).subscribe();
    }
 
-  
-  //  http://5ae3691934b5970014d2ee0e.mockapi.io/personal
 
-  getNew(): Observable<any>{
-  return  this.http.get<any>("http://5ae3691934b5970014d2ee0e.mockapi.io/personal")
+   putPersonnelChange(tblName, data){
+    this.http.put('http://5ae2f53f34b5970014d2ed70.mockapi.io/api/Staff/' + tblName, data).subscribe();
   }
-   
 
-  putNew(data){
-    this.http.put("http://5ae3691934b5970014d2ee0e.mockapi.io/personal/1", data).subscribe()
-    }
 
-    postNew(data2){
-this.http.post("http://5ae3691934b5970014d2ee0e.mockapi.io/personal",data2).subscribe()
-    }
 } 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PdmService } from '../../../../../services/pdm.service';
+import * as _ from 'lodash'
 
 @Component({
   selector: 'app-previous',
@@ -16,8 +17,8 @@ export class PreviousComponent implements OnInit {
   }
 
   loadInfoPagePreviousEmployers(id) {
-    this.pdmService.loadStaffRecord('Staff/' +id + '/PreviousEmployers/' + id)
-      .subscribe(data => this.PreviousEmployers = data)
+    this.pdmService.loadStaffRecord(id + '/PreviousEmployers/')
+      .subscribe(data => this.PreviousEmployers = _.last(data))
   }
 }
 
