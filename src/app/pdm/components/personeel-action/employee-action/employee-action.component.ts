@@ -47,7 +47,7 @@ export class EmployeeActionComponent implements OnInit {
   }
  
    goToPersoneelPage(url:any){     //      { id: heroId, foo: 'foo' }
-    this.router.navigate(['/personeel/employee-action/personeel-acton', url], { queryParams:{id: this.employeecode, effectd: this.EffectiveDate.value}, queryParamsHandling: "merge" });
+    this.router.navigate(['/personeel/employee-action/personeel-acton', url], { queryParams:{id: this.employeecode, effectd: this.EffectiveDate}, queryParamsHandling: "merge" });
   }
 
   selected(action:string ){
