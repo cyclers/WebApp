@@ -76,6 +76,7 @@ export class ActionsComponent implements OnInit {
       this.Action = this.Actions[this.selectedVer]
     }
   }
+  
 
   forWard(){
     debugger
@@ -106,5 +107,4 @@ export interface Actions {
   "LastChange": any
   "By": any
   
-
 }

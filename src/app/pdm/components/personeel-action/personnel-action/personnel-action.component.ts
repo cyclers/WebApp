@@ -11,11 +11,11 @@ import { DialogComponent } from '../dialog/dialog.component';
 declare var $ :any;
 
 @Component({
-  selector: 'app-personeel-action',
-  templateUrl: './personeel-action.component.html',
-  styleUrls: ['./personeel-action.component.css']
+  selector: 'app-personnel-action',
+  templateUrl: './personnel-action.component.html',
+  styleUrls: []
 })
-export class PersoneelActionComponent implements OnInit {
+export class PersonnelActionComponent implements OnInit {
 
   @ViewChild(EmployeeActionComponent) private thePersoneelDate:number 
   constructor(private route: ActivatedRoute,
@@ -40,7 +40,7 @@ export class PersoneelActionComponent implements OnInit {
   ReturnofLeave:boolean= false;
   ChangeEntryExitDate:boolean= true;
 
-  employeeCode;
+  employeeCode:any = "";
   EffectiveDate;
   endDate = "9-9-9999";
   

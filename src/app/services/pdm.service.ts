@@ -40,6 +40,10 @@ export class PdmService {
    putPersonnelChange(tblName, data){
     this.http.put('http://5ae2f53f34b5970014d2ed70.mockapi.io/api/Staff/' + tblName, data).subscribe();
   }
+  
 
+  getInfoPersonal(sufex:any):Observable<any>{
+    return this.http.get<any>("http://5ae3691934b5970014d2ee0e.mockapi.io/personal/"+sufex);
+  }
   
 } 

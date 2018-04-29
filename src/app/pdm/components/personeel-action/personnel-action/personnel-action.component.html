@@ -16,7 +16,7 @@
       </div>
       <div class="input-group">
         <label for="dp2">To:</label>
-        <input type="date" class="form-control" 
+        <input class="form-control" 
           [(ngModel)]="endDate"
           [ngModelOptions]="{standalone: true}"  >
        
@@ -43,7 +43,7 @@
             <button mat-button (click)="openDialog()" >Cancel</button> 
             <button mat-button >Finish</button> 
           </div>
-            <app-actions></app-actions>
+            <app-info-actions [idCode]="employeeCode"></app-info-actions>
 
       </mat-step>
       
@@ -80,7 +80,7 @@
         <button mat-button >Cancel</button> 
         <button mat-button >Finish</button> 
       </div>
-        <app-datemilestones></app-datemilestones>
+        <app-info-datemilestones></app-info-datemilestones>
       
   </mat-step>
   <mat-step *ngIf="newHire || Rehire">
