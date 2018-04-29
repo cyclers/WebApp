@@ -23,6 +23,8 @@ export class PersoneelActionComponent implements OnInit {
     public dialog: MatDialog) { }
   allValid : boolean = true;
   model;
+  isLinear
+  newmodel
 
   
   selectedAction:any = "";
@@ -80,6 +82,10 @@ export class PersoneelActionComponent implements OnInit {
 
   }
 
+
+  excute(){
+
+  }
 
   
     openDialog() {

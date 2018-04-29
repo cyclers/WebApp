@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-declare var jquery:any;
-declare var $ :any;
-import { Chart } from 'chart.js';
+import * as Chart from 'chart.js';
 
-import { PdmService } from '../../services/pdm.service';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
+// declare var jquery:any;
+// declare var $ :any;
 
 @Component({
   selector: 'app-test-area',
@@ -13,83 +10,35 @@ import { Observable } from 'rxjs/Observable';
   styles: []
 })
 export class TestAreaComponent  {
-  // chart = []; 
-  // weatherDates = []
-  // temp_max
-  // temp_min
-  // alldates
 
 
-  constructor(private pdmservice: PdmService, private _http: HttpClient) {
-
-   }
-
-   ngOnInit() {
-    console.log("ooooooooooooo")
-    this.callData().
-    subscribe(result => {
-      console.log("xxxxxxxxxxxxxxxxxx", result)
-    }) 
-
-   }
-   callData(): Observable<any> {
-
-    return this._http.get("http://samples.openweathermap.org/data/2.5/history/city?q=Warren,OH&appid=b6907d289e10d714a6e88b30761fae22")
+   constructor() { }
+    canvas: any;
+    ctx: any;
+  
+    ngAfterViewInit() {
+      this.canvas = document.getElementById('myChart');
+      this.ctx = this.canvas.getContext('2d');
+      let myChart = new Chart(this.ctx, {
+        type: 'pie',
+        data: {
+            labels: ["Khaled", "In Progress", "On Hold"],
+            datasets: [{
+                label: '# of Khaleds',
+                data: [2,1,1],
+                backgroundColor: [
+                    'rgba(162, 99, 132, 55)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+          responsive: false,
+          
+        }
+      });
+    }
+  
   }
-   
-}
-
-
-
-    
-    // this.chart = new Chart('canvas', {
-    //   type: 'line',
-    //   data: {
-    //     labels: this.weatherDates,
-    //     datasets: [
-    //       { 
-    //         data: this.temp_max,
-    //         borderColor: "#3cba9f",
-    //         fill: false
-    //       },
-    //       { 
-    //         data: this.temp_min,
-    //         borderColor: "#ffcc00",
-    //         fill: false
-    //       },
-    //     ]
-    //   },
-    //   options: {
-    //     legend: {
-    //       display: false
-    //     },
-    //     scales: {
-    //       xAxes: [{
-    //         display: true
-    //       }],
-    //       yAxes: [{
-    //         display: true
-    //       }],
-    //     }
-    //   }
-    // });
-
-
-
-
-
-
-//     .subscribe(res => {
-//       debugger
-//       console.log("wwwwwwwwww")
-// //       this.temp_max = res['list'].map(res => res.main.temp_max);
-// //       this.temp_min = res['list'].map(res => res.main.temp_min);
-// //       let alldates = res['list'].map(res => res.dt)
-      
-
-// //       alldates.forEach((res) => {
-// //       let jsdate = new Date(res * 1000)
-// //       this.weatherDates.push(jsdate.toLocaleTimeString('en', { year: 'numeric', month: 'short', day: 'numeric' }))
-// // })
-
-//     })

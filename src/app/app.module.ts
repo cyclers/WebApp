@@ -52,6 +52,11 @@ import { EmployeeActionComponent } from './pdm/components/personeel-action/emplo
 import { DialogComponent } from './pdm/components/personeel-action/dialog/dialog.component';
 import { DashboardsComponent } from './pdm/components/dashboards/dashboards.component';
 
+import { ChartsModule } from 'ng2-charts/ng2-charts';
+import { IboxtoolsModule } from './pdm/components/dashboards/common/iboxtools/iboxtools.module'
+
+import { FlotModule } from './pdm/components/dashboards/charts/flotChart';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -94,6 +99,9 @@ import { DashboardsComponent } from './pdm/components/dashboards/dashboards.comp
     BrowserModule,
     RouterModule.forRoot(routeConfig),
     NgbModule.forRoot(),
+    IboxtoolsModule,
+    ChartsModule,
+    FlotModule,    
     // HttpModule, 
     FormsModule, HttpClientModule,
     ReactiveFormsModule,
