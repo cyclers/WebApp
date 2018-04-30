@@ -1,0 +1,409 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+  <div class="col-lg-10">
+      <h2>Dashboards view</h2>
+      <ol class="breadcrumb">
+          <li>
+              <a href="index.html">Main</a>
+          </li>
+          <li>
+              <strong>Headcount</strong>
+          </li>
+          <li class="active">
+              <a>Salaries</a>
+          </li>
+          <li>
+            <a>Leavers</a>
+        </li>
+        <li>
+            <a>Demographics</a>
+        </li>
+      </ol>
+  </div>
+  <div class="col-lg-2">
+
+  </div>
+</div>
+
+<div class="fh-breadcrumb">
+
+  <div class="fh-column">
+      <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 100%;"><div class="full-height-scroll" style="overflow: hidden; width: auto; height: 100%;">
+          <ul class="list-group elements-list">
+              <li *ngFor="let view of chartViews" class="list-group-item">
+                  <a data-toggle="tab" href="#tab-1" aria-expanded="false">
+                      <small class="pull-right text-muted"> {{view.rating}}</small>
+                      <strong>{{ view.title }} </strong>
+                      <div class="small m-t-xs">
+                          <p>
+                              {{view.desc}}
+                          </p>
+                          <p class="m-b-none">
+                              <i class="fa fa-exclamation"></i> Last updated on: 16.02.2015
+                          </p>
+                      </div>
+                  </a>
+              </li>
+              
+          </ul>
+
+      </div><div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 198.719px;"></div><div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div></div>
+  </div>
+
+  <div class="full-height">
+      <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 100%;"><div class="full-height-scroll white-bg border-left" style="overflow: hidden; width: auto; height: 100%;">
+
+          <div class="element-detail-box">
+
+              <div class="tab-content">
+                  <div id="tab-1" class="tab-pane">
+
+                      <div class="pull-right">
+                          <div class="tooltip-demo">
+                              <button class="btn btn-white btn-xs" data-toggle="tooltip" data-placement="left" title="Plug this message"><i class="fa fa-plug"></i> Plug it</button>
+                              <button class="btn btn-white btn-xs" data-toggle="tooltip" data-placement="top" title="Mark as read"><i class="fa fa-eye"></i> </button>
+                              <button class="btn btn-white btn-xs" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mark as important"><i class="fa fa-exclamation"></i> </button>
+                              <button class="btn btn-white btn-xs" data-toggle="tooltip" data-placement="top" title="" data-original-title="Move to trash"><i class="fa fa-trash-o"></i> </button>
+
+                          </div>
+                      </div>
+                      <div class="small text-muted">
+                          <i class="fa fa-clock-o"></i> Friday, 12 April 2014, 12:32 am
+                      </div>
+
+                      <h1>
+                          Workforce heacount visual
+                      </h1>
+
+                      <p>
+                        Workforce analytics is a combination of software and methodology that applies statistical models to worker-related data, allowing enterprise leaders to optimize human resource management (HRM).
+                        
+                      </p>
+                      <br>
+                      <canvas id="myChart" width="700" height="400"></canvas>
+                      <div class="m-t-lg">
+                          <p>
+                              <span><i class="fa fa-paperclip"></i> 2 attachments - </span>
+                              <a href="#">Download all</a>
+                              |
+                              <a href="#">View all images</a>
+                          </p>
+
+                          <div class="attachment">
+                              <div class="file-box">
+                                  <div class="file">
+                                      <a href="#">
+                                          <span class="corner"></span>
+
+                                          <div class="icon">
+                                              <i class="fa fa-file"></i>
+                                          </div>
+                                          <div class="file-name">
+                                              Document_2014.doc
+                                              <br>
+                                              <small>Added: Jan 11, 2014</small>
+                                          </div>
+                                      </a>
+                                  </div>
+
+                              </div>
+                              <div class="file-box">
+                                  <div class="file">
+                                      <a href="#">
+                                          <span class="corner"></span>
+
+                                          <div class="icon">
+                                              <i class="fa fa-line-chart"></i>
+                                          </div>
+                                          <div class="file-name">
+                                              Seels_2015.xls
+                                              <br>
+                                              <small>Added: May 13, 2015</small>
+                                          </div>
+                                      </a>
+                                  </div>
+
+                              </div>
+                              <div class="clearfix"></div>
+                          </div>
+                      </div>
+
+                  </div>
+
+                  <div id="tab-2" class="tab-pane active">
+                      <div class="pull-right">
+                          <div class="tooltip-demo">
+                              <button class="btn btn-white btn-xs" data-toggle="tooltip" data-placement="left" title="Plug this message"><i class="fa fa-plug"></i> Plug it</button>
+                              <button class="btn btn-white btn-xs" data-toggle="tooltip" data-placement="top" title="Mark as read"><i class="fa fa-eye"></i> </button>
+                              <button class="btn btn-white btn-xs" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mark as important"><i class="fa fa-exclamation"></i> </button>
+                              <button class="btn btn-white btn-xs" data-toggle="tooltip" data-placement="top" title="" data-original-title="Move to trash"><i class="fa fa-trash-o"></i> </button>
+
+                          </div>
+                      </div>
+                      <div class="small text-muted">
+                          <i class="fa fa-clock-o"></i> Monday, 21 May 2014, 10:32 am
+                      </div>
+
+                      <h1>
+                          Important notes before reading your dashboards
+                      </h1>
+
+                      <p>
+                        Predictive Workforce Analytics helps managers comb through mounds data to determine which employees have the greatest potential of success with the organization. The data also predicts which employees are most likely to leave in the near future.                    </p>
+                      <p>
+                          The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me?" he thought. It wasn't a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls.
+                      </p>
+
+                      <p>
+                        All great companies are made up of the right people in the right positions. Workforce analytics allows HR leaders to determine who the right people are, which tasks suit them best and how to ensure they remain satisfied in their roles.
+                    </p>
+                      <p>
+                        Analytics aren’t just for statisticians anymore. A growing number of organizations are using analytics to examine and act upon data about their people in the workplace. Known as workforce analytics, these sophisticated tech tools are changing the HR game, and those companies willing and able to harness the power of Big Data for analytics are seeing great gains and meaningful advantages over their competition.
+
+                    </p>
+                      <p>
+                          The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me?" he thought. It wasn't a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls.
+                      </p>
+
+                      <p>
+                        At Ultimate Software, our award-winning solution for HR, payroll, and talent management, UltiPro®, offers a range of predictive and prescriptive analytics designed to combine managers’ expertise with proven algorithms. The winning result? Knowledge without bias.
+
+                    </p>
+                      <p>
+                          To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words. If several languages coalesce, the grammar of the resulting language is more simple and regular than that of the individual languages. The new common language will be more simple and regular than the existing European languages. It will be as simple as Occidental; in fact, it will be Occidental. To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is.
+                      </p>
+                      <p class="small">
+                          <strong>Best regards, Khaled Jamal </strong>
+                      </p>
+
+                      <div class="m-t-lg">
+                          <p>
+                              <span><i class="fa fa-paperclip"></i> 2 attachments - </span>
+                              <a href="#">Download all</a>
+                              |
+                              <a href="#">View all images</a>
+                          </p>
+
+                          <div class="attachment">
+                              <div class="file-box">
+                                  <div class="file">
+                                      <a href="#">
+                                          <span class="corner"></span>
+
+                                          <div class="icon">
+                                              <i class="fa fa-file"></i>
+                                          </div>
+                                          <div class="file-name">
+                                              Document_2014.doc
+                                              <br>
+                                              <small>Added: Jan 11, 2014</small>
+                                          </div>
+                                      </a>
+                                  </div>
+
+                              </div>
+                              <div class="file-box">
+                                  <div class="file">
+                                      <a href="#">
+                                          <span class="corner"></span>
+
+                                          <div class="icon">
+                                              <i class="fa fa-line-chart"></i>
+                                          </div>
+                                          <div class="file-name">
+                                              Seels_2015.xls
+                                              <br>
+                                              <small>Added: May 13, 2015</small>
+                                          </div>
+                                      </a>
+                                  </div>
+
+                              </div>
+                              <div class="clearfix"></div>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div id="tab-3" class="tab-pane">
+                      <div class="pull-right">
+                          <div class="tooltip-demo">
+                              <button class="btn btn-white btn-xs" data-toggle="tooltip" data-placement="left" title="Plug this message"><i class="fa fa-plug"></i> Plug it</button>
+                              <button class="btn btn-white btn-xs" data-toggle="tooltip" data-placement="top" title="Mark as read"><i class="fa fa-eye"></i> </button>
+                              <button class="btn btn-white btn-xs" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mark as important"><i class="fa fa-exclamation"></i> </button>
+                              <button class="btn btn-white btn-xs" data-toggle="tooltip" data-placement="top" title="" data-original-title="Move to trash"><i class="fa fa-trash-o"></i> </button>
+
+                          </div>
+                      </div>
+                      <div class="small text-muted">
+                          <i class="fa fa-clock-o"></i> Tuesday, 15 May 2014, 10:32 am
+                      </div>
+
+                      <h1>
+                          To take a trivial example
+                      </h1>
+
+                      <p>
+                          But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure? On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain.
+                      </p>
+                      <p>
+                          The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me?" he thought. It wasn't a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls.
+                      </p>
+
+                      <p>
+                          he wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and.
+                      </p>
+                      <p>
+                          To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words. If several languages coalesce, the grammar of the resulting language is more simple and regular than that of the individual languages. The new common language will be more simple and regular than the existing European languages. It will be as simple as Occidental; in fact, it will be Occidental. To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is.
+                      </p>
+
+                      <p>
+                          The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary.
+                      </p>
+                      <p>
+                          To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure? On the other hand, we denounce.
+                      </p>
+                      <p class="small">
+                          <strong>Best regards, Anthony Smith </strong>
+                      </p>
+
+                      <div class="m-t-lg">
+                          <p>
+                              <span><i class="fa fa-paperclip"></i> 2 attachments - </span>
+                              <a href="#">Download all</a>
+                              |
+                              <a href="#">View all images</a>
+                          </p>
+
+                          <div class="attachment">
+                              <div class="file-box">
+                                  <div class="file">
+                                      <a href="#">
+                                          <span class="corner"></span>
+
+                                          <div class="icon">
+                                              <i class="fa fa-file"></i>
+                                          </div>
+                                          <div class="file-name">
+                                              Document_2014.doc
+                                              <br>
+                                              <small>Added: Jan 11, 2014</small>
+                                          </div>
+                                      </a>
+                                  </div>
+
+                              </div>
+                              <div class="file-box">
+                                  <div class="file">
+                                      <a href="#">
+                                          <span class="corner"></span>
+
+                                          <div class="icon">
+                                              <i class="fa fa-line-chart"></i>
+                                          </div>
+                                          <div class="file-name">
+                                              Seels_2015.xls
+                                              <br>
+                                              <small>Added: May 13, 2015</small>
+                                          </div>
+                                      </a>
+                                  </div>
+
+                              </div>
+                              <div class="clearfix"></div>
+                          </div>
+                      </div>
+                  </div>
+                  <div id="tab-4" class="tab-pane">
+                      <div class="pull-right">
+                          <div class="tooltip-demo">
+                              <button class="btn btn-white btn-xs" data-toggle="tooltip" data-placement="left" title="Plug this message"><i class="fa fa-plug"></i> Plug it</button>
+                              <button class="btn btn-white btn-xs" data-toggle="tooltip" data-placement="top" title="Mark as read"><i class="fa fa-eye"></i> </button>
+                              <button class="btn btn-white btn-xs" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mark as important"><i class="fa fa-exclamation"></i> </button>
+                              <button class="btn btn-white btn-xs" data-toggle="tooltip" data-placement="top" title="" data-original-title="Move to trash"><i class="fa fa-trash-o"></i> </button>
+
+                          </div>
+                      </div>
+                      <div class="small text-muted">
+                          <i class="fa fa-clock-o"></i> Thursday, 27 april 2014, 10:32 am
+                      </div>
+
+                      <h1>
+                          Gregor Samsa woke from troubled dreams.
+                      </h1>
+
+                      <p>
+                          His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me?" he thought. It wasn't a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls.
+                      </p>
+                      <p>
+                          To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words. If several languages coalesce, the grammar of the resulting language is more simple and regular than that of the individual languages. The new common language will be more simple and regular than the existing European languages. It will be as simple as Occidental; in fact, it will be Occidental. To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is.
+                      </p>
+                      <p>
+                          Travelling day in and day out. Doing business like this takes much more effort than doing your own business at home, and on top of that there's the curse of travelling, worries about making train connections, bad and irregular food, contact with different people all the time so that you can never get to know anyone or become friendly with them.
+                      </p>
+
+                      <p>
+                          The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary.
+                      </p>
+                      <p>
+                          To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words. If several languages coalesce, the grammar of the resulting language is more simple and regular than that of the individual languages. The new common language will be more simple and regular than the existing European languages. It will be as simple as Occidental; in fact, it will be Occidental. To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is.
+                      </p>
+                      <p class="small">
+                          <strong>Best regards, Anthony Smith </strong>
+                      </p>
+
+                      <div class="m-t-lg">
+                          <p>
+                              <span><i class="fa fa-paperclip"></i> 2 attachments - </span>
+                              <a href="#">Download all</a>
+                              |
+                              <a href="#">View all images</a>
+                          </p>
+
+                          <div class="attachment">
+                              <div class="file-box">
+                                  <div class="file">
+                                      <a href="#">
+                                          <span class="corner"></span>
+
+                                          <div class="icon">
+                                              <i class="fa fa-file"></i>
+                                          </div>
+                                          <div class="file-name">
+                                              Document_2014.doc
+                                              <br>
+                                              <small>Added: Jan 11, 2014</small>
+                                          </div>
+                                      </a>
+                                  </div>
+
+                              </div>
+                              <div class="file-box">
+                                  <div class="file">
+                                      <a href="#">
+                                          <span class="corner"></span>
+
+                                          <div class="icon">
+                                              <i class="fa fa-line-chart"></i>
+                                          </div>
+                                          <div class="file-name">
+                                              Seels_2015.xls
+                                              <br>
+                                              <small>Added: May 13, 2015</small>
+                                          </div>
+                                      </a>
+                                  </div>
+
+                              </div>
+                              <div class="clearfix"></div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+
+      </div><div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 132.987px;"></div><div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div></div>
+  </div>
+
+
+
+</div>
