@@ -42,8 +42,8 @@ export class PdmService {
   }
   
 
-  getInfoPersonal(sufex:any):Observable<any>{
-    return this.http.get<any>("http://5ae3691934b5970014d2ee0e.mockapi.io/personal/"+sufex);
+  getInfoPersonal(empcod:any):Observable<any>{
+    return this.http.get<any>("http://5ae3691934b5970014d2ee0e.mockapi.io/personal/"+empcod);
   }
   
 } 

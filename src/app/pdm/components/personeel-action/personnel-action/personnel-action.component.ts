@@ -42,7 +42,7 @@ export class PersonnelActionComponent implements OnInit {
 
   employeeCode:any = "";
   EffectiveDate;
-  endDate = "9-9-9999";
+  endDate = "31-12-9999";
   
   ngOnInit() {
     this.selectedAction = this.route.snapshot.paramMap.get('url');

@@ -10,12 +10,55 @@
 <div class="row">
 
 <div class="col-sm-6 b-r"><h3 class="m-t-none m-b">Personnel Action    </h3>
+
 <form role="form">
+
 <div class="form-group">Action Type 
+<input [(ngModel)]="selectedA" [ngModelOptions]="{standalone: true}" 
+ class="form-control">
+</div>
+
+
+  <div class="form-group"  >
+    <label for="exampleFormControlSelect1">Reason for Action</label>
+    <select *ngIf="newHire || Rehire" class="form-control" id="exampleFormControlSelect1">
+      <option  *ngFor="let r of newHireReasons">{{r}}</option>
+     
+    </select>
+    <select *ngIf="Separation" class="form-control" id="exampleFormControlSelect1">
+            <option  *ngFor="let s of SeparationsReasons">{{s}}</option>
+           
+    </select>
+    <select *ngIf="Reassignment" class="form-control" id="exampleFormControlSelect1">
+            <option  *ngFor="let re of ReassignmentReasons">{{re}}</option>
+           
+    </select>
+    <select *ngIf="RoleChange" class="form-control" id="exampleFormControlSelect1">
+            <option  *ngFor="let ro of RoleChangeReasons">{{ro}}</option>
+           
+    </select>
+    <select *ngIf="SalaryChange" class="form-control" id="exampleFormControlSelect1">
+            <option  *ngFor="let sa of SalaryChangeReasons">{{sa}}</option>
+           
+    </select>
+    <select *ngIf="EmploymentChange" class="form-control" id="exampleFormControlSelect1">
+            <option  *ngFor="let em of EmploymentChangeReasons">{{em}}</option>
+           
+    </select>
+    <select *ngIf="TimeChange" class="form-control" id="exampleFormControlSelect1">
+            <option  *ngFor="let t of TimeChangeReasons">{{t}}</option>
+           
+    </select>
     
-    <input  class="form-control"></div>
-<div class="form-group">Reason for Action <input   class="form-control"></div>
-<div class="form-group"> Termination Reason<input   class="form-control"></div>
+  </div>
+        <div  *ngIf="Separation" class="form-group">
+                <label for="exampleFormControlSelect1">Termination Reason</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                  <option *ngFor="let sep of ReasonsforTermination">{{sep}}</option>
+                 
+                </select>
+              </div>
+
 <div class="form-group">Employment Status <input   class="form-control"></div>
 
 
