@@ -71,6 +71,7 @@ export class EmployeeActionComponent implements OnInit {
      
     }else{
       this.nameinput = false
+      this.employeeCode = this.employeeCode
     }
   
   }
