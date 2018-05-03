@@ -99,7 +99,7 @@ url:any = "";
         TimeChangeReason: '',
         ReasonforTermination: '',
         EmploymentStatus :[this.url],
-        newHireReason: ''
+        newHireReason: '' 
     });
     
   }
