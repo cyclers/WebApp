@@ -1,22 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { data } from '../../../../services/pdm.service';
 @Component({
   selector: 'app-employee-action',
   templateUrl: './employee-action.component.html',
   styleUrls: ['./employee-action.component.css']
 })
 export class EmployeeActionComponent implements OnInit {
- employeeAction = [	"New Hire","Rehire","Separation"
-  ,"Reassignment"
-  ,"Role Change"
-  ,"Salary Change"
-  ,"Employment Change"
-  ,"Time Change"
-  ,"Leave of Absence"
-  ,"Return of Leave"
-  ,"Change Entry/Exit Date"
-  ]
+
 
   employeeAction2=[
     {url:"New Hire", actionType: "New Hire"},
@@ -32,36 +25,61 @@ export class EmployeeActionComponent implements OnInit {
     {url:"Change Entry/Exit Date", actionType: "Change Entry/Exit Date"}
   ]
 
-
-
-
-  
-  isDisabeld = false;
-  constructor(private route: ActivatedRoute,
-    private router: Router) { }
-  EffectiveDate : NgbDateStruct ;
+  nameinput:boolean = false;
   actionType:string="";
-  employeecode:any;
+  employeeCode:any;
+  EffectiveDate ;
+  datalength:any=[];
+  data2:number;
+  name:any;
+  
+  
+  constructor(private route: ActivatedRoute,
+    private router: Router,
+    private http: HttpClient) { }
+ 
+  
   ngOnInit() {
-    
+
+    this.http.get<any>("http://5ae3691934b5970014d2ee0e.mockapi.io/personal")
+    .subscribe(
+      data => {
+        this.datalength = data;
+      this.data2 = this.datalength.length;
+       console.log("data type " + this.datalength.length)
+      }
+    )
   }
  
-   goToPersoneelPage(url:any){     //      { id: heroId, foo: 'foo' }
-    this.router.navigate(['/personeel/employee-action/personeel-acton', url], { queryParams:{id: this.employeecode, effectd: this.EffectiveDate}, queryParamsHandling: "merge" });
+   goToPersoneelPage(){    
+    this.router.navigate(['/personnel/employee-action/personnel-acton'],
+     { queryParams:{id: this.employeeCode,
+       effectd: this.EffectiveDate,
+        actiontype :this.actionType,
+        name : this.name
+      },
+      queryParamsHandling: "merge" });
   }
 
   selected(action:string ){
    this. actionType = action
 
     if(this.actionType === "New Hire"){
-      this.isDisabeld = true
+      
+      this.employeeCode = this.data2 + 1
+      this.nameinput = true;
+     
     }else{
-      this.isDisabeld= false
+      this.nameinput = false
     }
   
   }
-
-  getCode(code:number){
-    this.employeecode = code;
+  createNewEmpolyee(){
+    console.log("esc" + this.employeeCode)
+    this.http.post("http://5ae3691934b5970014d2ee0e.mockapi.io/personal/",{
+      id:this.employeeCode,
+      name: this.name
+    }).subscribe()
   }
+  
 }

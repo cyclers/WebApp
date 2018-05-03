@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-lg-6">
+    <div style="padding: 20px;">
+<form>
+ 
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Example select</label>
+    <select style="margin: 8px" (change)="onChange($event.target.value)" class="form-control" id="exampleFormControlSelect1">
+      <option *ngFor="let fo of myfirst ; let i =index">{{fo}}</option>
+     </select>
+     <select style="margin: 8px" (change)="onChange2($event.target.value)" class="form-control" id="exampleFormControlSelect1">
+      <option *ngFor="let foo of mysecond">{{foo}}</option>
+     </select>
+     <select style="margin: 8px" (change)="onChange3($event.target.value)" class="form-control" id="exampleFormControlSelect1">
+      <option *ngFor="let fooo of mythird">{{fooo}}</option>
+     </select>
+     <select style="margin: 8px" (change)="onChange4($event.target.value)" class="form-control" id="exampleFormControlSelect1">
+      <option *ngFor="let ff of myforth">{{ff}}</option>
+     </select>
+     <select style="margin: 8px" (change)="onChange5($event.target.value)" class="form-control" id="exampleFormControlSelect1">
+      <option *ngFor="let f5 of myfifth">{{f5}}</option>
+     </select>
+     <select style="margin: 8px" (change)="onChange6($event.target.value)" class="form-control" id="exampleFormControlSelect1">
+      <option *ngFor="let f6 of mysixth">{{f6}}</option>
+     </select>
+  </div>
+  
+ 
+</form>
+</div>
+</div>
+<div class="col-lg-4">
+<div style="padding: 20px; padding-top: 40px;">
+<div style="margin: 8px;"><input class="form-control"  type="date"></div>
+<div style="margin: 8px;"><input class="form-control" type="date"></div>
+<div style="margin: 8px;"><input class="form-control" type="date"></div>
+<div style="margin: 8px;"><input class="form-control" type="date"></div>
+<div style="margin: 8px;"><input class="form-control" type="date"></div>
+<div style="margin: 8px;"><input class="form-control" type="date"></div>
+</div>
+</div>
+<div class="col-lg-2"></div>
+</div>

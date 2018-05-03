@@ -23,7 +23,7 @@ export class AwardsComponent implements OnInit {
     
 }
 
-interface Awards {
+export interface Awards {
   "id": any
   "StaffId":any
   "AwardType": any

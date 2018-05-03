@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PdmService } from '../../../../../services/pdm.service';
+
 import * as _ from 'lodash'
 
 @Component({
@@ -76,6 +77,7 @@ export class ActionsComponent implements OnInit {
       this.Action = this.Actions[this.selectedVer]
     }
   }
+  
 
   forWard(){
     debugger
@@ -106,5 +108,4 @@ export interface Actions {
   "LastChange": any
   "By": any
   
-
 }

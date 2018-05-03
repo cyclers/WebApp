@@ -7,26 +7,23 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/switchMap';
 import { MatDialog } from '@angular/material';
 import { DialogComponent } from '../dialog/dialog.component';
+import { PdmService } from '../../../../services/pdm.service';
 //declare var jquery:any;
 declare var $ :any;
 
 @Component({
-  selector: 'app-personeel-action',
-  templateUrl: './personeel-action.component.html',
-  styleUrls: ['./personeel-action.component.css']
+  selector: 'app-personnel-action',
+  templateUrl: './personnel-action.component.html',
+  styleUrls: []
 })
-export class PersoneelActionComponent implements OnInit {
+export class PersonnelActionComponent implements OnInit {
 
-  @ViewChild(EmployeeActionComponent) private thePersoneelDate:number 
   constructor(private route: ActivatedRoute,
     private router: Router,
-    public dialog: MatDialog) { }
-  allValid : boolean = true;
-  model;
-  isLinear
-  newmodel
+    public dialog: MatDialog,
+    private pdmservice : PdmService) { }
+  allValid : boolean = false;
 
-  
   selectedAction:any = "";
 
   newHire:boolean = false;
@@ -41,18 +38,29 @@ export class PersoneelActionComponent implements OnInit {
   ReturnofLeave:boolean= false;
   ChangeEntryExitDate:boolean= true;
 
+  employeeCode:any = "";
+  EffectiveDate;
+  endDate = "31-12-9999";
+  employeeinfo :any= {} ;
+  newEmployeeNmae: any;
   ngOnInit() {
-    this.selectedAction = this.route.snapshot.paramMap.get('url');
+    // this.selectedAction = this.route.snapshot.paramMap.get('url');
+
+    this.route.queryParams.subscribe(param => 
+      {this.employeeCode = param["id"],
+       this.EffectiveDate = param["effectd"] ,
+     this.selectedAction = param["actiontype"],
+     this.newEmployeeNmae = param["name"]
+       })
     
-    //Added by Khaled
-    this.route.queryParams.subscribe(param => {
-      console.log("Returning --> ", param['id'], param['effectd'] )
+     this.pdmservice.getInfoPersonal(this.employeeCode)
+    .subscribe(data => {
+      this.employeeinfo = data["name"]
+      let ggg = JSON.stringify( this.employeeinfo)
+        console.log(" this.employeeinfo "+ ggg )
     })
-
-
-    
      
-
+  
     switch(this.selectedAction){
       case "New Hire" : this.newHire= true
       break;
@@ -82,12 +90,6 @@ export class PersoneelActionComponent implements OnInit {
 
   }
 
-
-  excute(){
-
-  }
-
-  
     openDialog() {
       this.dialog.open(DialogComponent);
     }

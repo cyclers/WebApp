@@ -40,6 +40,30 @@ export class PdmService {
    putPersonnelChange(tblName, data){
     this.http.put('http://5ae2f53f34b5970014d2ed70.mockapi.io/api/Staff/' + tblName, data).subscribe();
   }
+  
+//amany
+  getInfoPersonal(empcod:any):Observable<any>{
+    return this.http.get<data>("http://5ae3691934b5970014d2ee0e.mockapi.io/personal/"+empcod);
+  }
+  
+  getResons():Observable<any[]>{
+   return this.http.get<any[]>("http://5ae3691934b5970014d2ee0e.mockapi.io/reasons")
+  }
 
+  postActions( id , value):Observable<any[]>{
+    return  this.http.post<Actions[]>("http://5ae3691934b5970014d2ee0e.mockapi.io/personal/"+ id,value);
+  }
 
+  editAction(value, idCode):Observable<any[]>{
+   return this.http.put<any>("http://5ae3691934b5970014d2ee0e.mockapi.io/personal/"+idCode+"/action/"+idCode,value)
+  }
 } 
+
+
+export interface data {
+  id: number,
+    awardId: number,
+    createdAt: number,
+    name: string,
+    imageUrl: string
+}

@@ -1,0 +1,163 @@
+<div style="padding: 20px;">
+  <h3>  Action Type : {{selectedAction}}</h3> 
+    <h4> Emplyee Code : {{employeeCode}} </h4>
+      <h4>Emplyee Name : {{ (newHire) ?newEmployeeNmae : employeeinfo }} </h4>
+    
+  </div>
+  
+    <div class="form-group" id="data_5" style=" width: 500px; display: flex;">
+        <label class="font-normal" style="padding-right: 10px; padding-top: 7px;">Effective:</label>
+        <div class="input-daterange input-group" id="datepicker">
+            <span class="input-group-addon">from</span>
+            <input type="date" class="input-sm form-control"
+         placeholder="yyyy-mm-dd"
+         [(ngModel)]="EffectiveDate"
+         [ngModelOptions]="{standalone: true}" >
+            <span class="input-group-addon">to</span>
+            <input class=" input-sm form-control" 
+            [(ngModel)]="endDate"
+            [ngModelOptions]="{standalone: true}"  >
+        </div>
+    </div>
+  
+    
+  
+  
+  <div class="col-lg-12">
+  
+      <mat-horizontal-stepper [linear]="isLinear" #stepper="matHorizontalStepper">
+        
+       
+        <mat-step>
+            <ng-template matStepLabel>Enter Actions</ng-template>
+          
+            <div> 
+                <button mat-button matStepperPrevious>Back</button>
+              <button  mat-button matStepperNext>Next</button>
+              <button [disabled]="allValid" mat-button (click)="save()">Save</button> 
+              <button mat-button (click)="openDialog()" >Cancel</button> 
+              <button mat-button >Finish</button> 
+            </div>
+              <app-info-actions [selectedA]="selectedAction" [idCode]="employeeCode"></app-info-actions>
+  
+        </mat-step>
+        
+        <mat-step *ngIf="ChangeEntryExitDate">
+          <ng-template matStepLabel>Enter Org Assign</ng-template>
+          <div> 
+              <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+            <button mat-button matStepperNext >Save</button> 
+            <button mat-button >Cancel</button> 
+            <button mat-button >Finish</button> 
+          </div>
+          <app-info-orgassign></app-info-orgassign>
+          
+      </mat-step>
+      <mat-step *ngIf="newHire || Rehire">
+        <ng-template matStepLabel>Enter Personal Info</ng-template>
+        <div> 
+            <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+          <button mat-button matStepperNext >Save</button> 
+          <button mat-button >Cancel</button> 
+          <button mat-button >Finish</button> 
+        </div>
+        <app-info-personal></app-info-personal>
+        
+    </mat-step>
+    <mat-step *ngIf="newHire || Rehire || Separation || !ChangeEntryExitDate">
+        <ng-template matStepLabel>Enter Dates</ng-template>
+        <div> 
+            <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+          <button mat-button matStepperNext>Save</button> 
+          <button mat-button >Cancel</button> 
+          <button mat-button >Finish</button> 
+        </div>
+          <app-info-datemilestones></app-info-datemilestones>
+        
+    </mat-step>
+    <mat-step *ngIf="newHire || Rehire">
+      <ng-template matStepLabel>Enter Address</ng-template>
+      <div> 
+          <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+        <button mat-button matStepperNext>Save</button> 
+        <button mat-button >Cancel</button> 
+        <button mat-button >Finish</button> 
+      </div>
+      <app-info-address></app-info-address>
+      
+  </mat-step>
+        
+    <mat-step >
+      <ng-template matStepLabel>Enter Labor Contract</ng-template>
+      <div> 
+          <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+        <button mat-button matStepperNext>Save</button> 
+        <button mat-button >Cancel</button> 
+        <button mat-button >Finish</button> 
+      </div>
+      <app-info-contract></app-info-contract>
+      
+  </mat-step>
+       
+      <mat-step>
+        <ng-template matStepLabel>Enter Workschedule</ng-template>
+        <div> 
+            <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+          <button mat-button matStepperNext>Save</button> 
+          <button mat-button >Cancel</button> 
+          <button mat-button >Finish</button> 
+        </div>
+        <app-info-workschedule></app-info-workschedule>
+    
+        
+    </mat-step>
+   
+  <mat-step *ngIf="newHire || Rehire || Reassignment
+   ||RoleChange ||SalaryChange ||EmploymentChange
+    ||TimeChange ||LeaveofAbsence ||ReturnofLeave">
+    <ng-template matStepLabel>Enter Basicpay</ng-template>
+    <div> 
+        <button mat-button matStepperPrevious>Back</button>
+      <button mat-button matStepperNext>Next</button>
+      <button mat-button matStepperNext>Save</button> 
+      <button mat-button >Cancel</button> 
+      <button mat-button >Finish</button> 
+    </div>
+    <app-info-basicpay></app-info-basicpay>
+    
+  </mat-step>
+  <mat-step *ngIf="newHire || Rehire">
+    <ng-template matStepLabel>Enter Allowances</ng-template>
+    <div> 
+        <button mat-button matStepperPrevious>Back</button>
+      <button mat-button matStepperNext>Next</button>
+      <button mat-button matStepperNext>Save</button> 
+      <button mat-button >Cancel</button> 
+      <button mat-button >Finish</button> 
+    </div>
+  <app-info-allowances></app-info-allowances>
+    </mat-step>
+    
+  <mat-step *ngIf="newHire">
+    <ng-template matStepLabel>Enter Awards</ng-template>
+    <div> 
+        <button mat-button matStepperPrevious>Back</button>
+      <button mat-button matStepperNext>Next</button>
+      <button mat-button matStepperNext>Save</button> 
+      <button mat-button >Cancel</button> 
+      <button mat-button >Finish</button> 
+    </div>
+    <app-info-awards></app-info-awards>
+    
+  </mat-step>
+      
+      </mat-horizontal-stepper>
+  </div>
+  
+  
